@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07151B54E989427E1F7749A4E653643E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C41060A58BD592D61BA4BCEE6EA4E /* Model.swift */; };
+		2A5092A6394E61C9B349C104176029CD /* Pods-Store Front-Sellacha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A58071A076DBBA841204C12F436A02 /* Pods-Store Front-Sellacha-dummy.m */; };
+		2CCB80B4EA09CB396D78C9B0913F0574 /* Siren-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D05B5C0583870E5B012546BD9E528BA2 /* Siren-dummy.m */; };
+		429431A49ED952B63BD98E845CF4B5B0 /* UpdateResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AF191EDD037A83AB3E4C9F320520 /* UpdateResults.swift */; };
+		442134A1D37A55D19C34DAF965FAFCD4 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F61507BDF2C8CE4EA8491DDE9F597 /* BundleExtension.swift */; };
+		58FC2CB0A3DD60FE5D4235E8B9993F57 /* SirenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101B3C9D282C7A288AD1A0C503DA2CE1 /* SirenViewController.swift */; };
+		5B9E7420A0284E837C04012B528EAE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		63667A9E3F21D3EA7D4C2729F9D350AD /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C40920295F94EB822801AF7D110373 /* UIAlertControllerExtension.swift */; };
+		649F8DA5719969E6D50C2A2B2863802C /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613E853353AFFF8D8584BF252D7399D /* APIModel.swift */; };
+		666B89F2AB5925C925BC545EE3ACDA3B /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EB15D0D3DCE76B14166DBC48B6B30 /* Localization.swift */; };
+		7208A44E2643C680D4B1BFA88F856E7F /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F13CA2FC37DF85653DAB6719FED3D8 /* UserDefaultsExtension.swift */; };
+		7C751F65470E081C6BB715539D9204A4 /* RulesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B7C1A206E755C9C8BBB55A871D20B /* RulesManager.swift */; };
+		7E1B570FE6391453543B0D0BB670FD5B /* AppStoreCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42412FE5A8219A69466A3BF5D7E127 /* AppStoreCountry.swift */; };
+		82EC186FDB3BE2A73D380A39356D4A9C /* PerformCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0555BD8E37FA157F7F6283501A18BF /* PerformCheck.swift */; };
+		848CA5A0150EAB9FFC60595EE0CE284A /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF201BFE16BF94BBFB03B69E70BD6C /* AlertAction.swift */; };
+		A1EA2053268A5D5D9AC11C3D74D5BD4F /* Siren-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50705CF0267E1C00171B5FE2E9F0960D /* Siren-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A556E3186780E6598F41D16D63A8D6FA /* KnownError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBC1CDE3B81C833A9ADED5FDE9ED79 /* KnownError.swift */; };
+		A817B69933763751617983654C825A5B /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546E384CEDCC0EF1E3AE5AB86BDDBED /* Rules.swift */; };
+		AB3E06EB378810A0177C7C6874233C0E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767F025151FEC60FFF4CA50F6FCDC1BC /* APIManager.swift */; };
+		B80A02CDC3EA0CE89151E4B7092C08EF /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C989B82B0EA47E11C870470115E8C /* DateExtension.swift */; };
+		BA1DE04B22147788DB8854746906C2ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C42518820A65B063154576160CE40202 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FDB44CD177D3DA46D8331D023267E /* DataParser.swift */; };
+		CB2A5256BB80852B0A40103121A52250 /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436D6F57D4EFB35E76422FC0AE7A450 /* PresentationManager.swift */; };
+		DFA56F24B7BC1B50B5CA895BE142F0C4 /* AlertConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117B72CE76B82B722A1069098AC8154 /* AlertConstants.swift */; };
+		E818FC04D00EFA3FD6DA3DBC814C34BE /* Siren.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61EE7A6DFC7A035501C77FDCFFBEF24 /* Siren.swift */; };
+		FF40E81B2B174F3584493809B90C6668 /* Siren.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F808D31AAADF928EB60D1737C04B44B /* Siren.bundle */; };
+		FF98B46ADE1D7AE8A96355F4EF6EC902 /* Pods-Store Front-Sellacha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45AF30CBFC85851A3B75A49A7CEFC1C1 /* Pods-Store Front-Sellacha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB32477C17AB9FF09B4E20CB22A77921 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0E2640B83527AE54205D7FDE9C5D930;
+			remoteInfo = Siren;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0546E384CEDCC0EF1E3AE5AB86BDDBED /* Rules.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rules.swift; path = Sources/Models/Rules.swift; sourceTree = "<group>"; };
+		101B3C9D282C7A288AD1A0C503DA2CE1 /* SirenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SirenViewController.swift; path = "Sources/View Controllers/SirenViewController.swift"; sourceTree = "<group>"; };
+		1436D6F57D4EFB35E76422FC0AE7A450 /* PresentationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentationManager.swift; path = Sources/Managers/PresentationManager.swift; sourceTree = "<group>"; };
+		17E70395B3CDD0B7EDA622612E2C3144 /* Siren */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Siren; path = Siren.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E8B7C1A206E755C9C8BBB55A871D20B /* RulesManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RulesManager.swift; path = Sources/Managers/RulesManager.swift; sourceTree = "<group>"; };
+		271A8051D7D609FC7D97ED93C21FD1D3 /* Pods-Store Front-Sellacha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Store Front-Sellacha.modulemap"; sourceTree = "<group>"; };
+		2B4F3FD4D734E0A02927171E5A539F1C /* Pods-Store Front-Sellacha-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Store Front-Sellacha-Info.plist"; sourceTree = "<group>"; };
+		367EABB58C5F30C98F1CDACECB5023C2 /* Siren.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Siren.debug.xcconfig; sourceTree = "<group>"; };
+		382286B775C59C5D389F1CFDD520CF58 /* Siren-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Siren-prefix.pch"; sourceTree = "<group>"; };
+		3AC0027BD5920899A8C68ECA0B4EF352 /* Siren.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Siren.modulemap; sourceTree = "<group>"; };
+		403C989B82B0EA47E11C870470115E8C /* DateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = Sources/Extensions/DateExtension.swift; sourceTree = "<group>"; };
+		45A58071A076DBBA841204C12F436A02 /* Pods-Store Front-Sellacha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Store Front-Sellacha-dummy.m"; sourceTree = "<group>"; };
+		45AF30CBFC85851A3B75A49A7CEFC1C1 /* Pods-Store Front-Sellacha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Store Front-Sellacha-umbrella.h"; sourceTree = "<group>"; };
+		4613E853353AFFF8D8584BF252D7399D /* APIModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIModel.swift; path = Sources/Models/APIModel.swift; sourceTree = "<group>"; };
+		496EB15D0D3DCE76B14166DBC48B6B30 /* Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = Sources/Models/Localization.swift; sourceTree = "<group>"; };
+		49C40920295F94EB822801AF7D110373 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIAlertControllerExtension.swift; path = Sources/Extensions/UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		4E8A32600F48A56AE2A64BD326E13845 /* Pods-Store Front-Sellacha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Store Front-Sellacha-acknowledgements.markdown"; sourceTree = "<group>"; };
+		50705CF0267E1C00171B5FE2E9F0960D /* Siren-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Siren-umbrella.h"; sourceTree = "<group>"; };
+		717A1F0F93E3D7B2BA47D2E630AABCC0 /* Siren.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Siren.release.xcconfig; sourceTree = "<group>"; };
+		71D9B6B9064019CFB67EF868877B4FE0 /* Pods-Store Front-Sellacha */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Store Front-Sellacha"; path = Pods_Store_Front_Sellacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		767F025151FEC60FFF4CA50F6FCDC1BC /* APIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Sources/Managers/APIManager.swift; sourceTree = "<group>"; };
+		80F13CA2FC37DF85653DAB6719FED3D8 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserDefaultsExtension.swift; path = Sources/Extensions/UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		870C41060A58BD592D61BA4BCEE6EA4E /* Model.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Sources/Models/Model.swift; sourceTree = "<group>"; };
+		8E9F61507BDF2C8CE4EA8491DDE9F597 /* BundleExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleExtension.swift; path = Sources/Extensions/BundleExtension.swift; sourceTree = "<group>"; };
+		9AB44D43CE0EE1BDB9C50F3D980DF5E9 /* Pods-Store Front-Sellacha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Store Front-Sellacha-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F808D31AAADF928EB60D1737C04B44B /* Siren.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Siren.bundle; path = Sources/Siren.bundle; sourceTree = "<group>"; };
+		A117B72CE76B82B722A1069098AC8154 /* AlertConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertConstants.swift; path = Sources/Models/AlertConstants.swift; sourceTree = "<group>"; };
+		A8EBC1CDE3B81C833A9ADED5FDE9ED79 /* KnownError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KnownError.swift; path = Sources/Utilities/KnownError.swift; sourceTree = "<group>"; };
+		B65FDB44CD177D3DA46D8331D023267E /* DataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataParser.swift; path = Sources/Utilities/DataParser.swift; sourceTree = "<group>"; };
+		B8317E19DA0FBF023A1C418E7484536B /* Pods-Store Front-Sellacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Store Front-Sellacha.release.xcconfig"; sourceTree = "<group>"; };
+		B985F8813D8F62D8E5BFE22A78333F70 /* Pods-Store Front-Sellacha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Store Front-Sellacha.debug.xcconfig"; sourceTree = "<group>"; };
+		BFC24C9C1634C38B09FD932BB20AB0C8 /* Pods-Store Front-Sellacha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Store Front-Sellacha-frameworks.sh"; sourceTree = "<group>"; };
+		C4BF201BFE16BF94BBFB03B69E70BD6C /* AlertAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertAction.swift; path = Sources/Models/AlertAction.swift; sourceTree = "<group>"; };
+		C61EE7A6DFC7A035501C77FDCFFBEF24 /* Siren.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Siren.swift; path = Sources/Siren.swift; sourceTree = "<group>"; };
+		CF81AF191EDD037A83AB3E4C9F320520 /* UpdateResults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UpdateResults.swift; path = Sources/Models/UpdateResults.swift; sourceTree = "<group>"; };
+		D05B5C0583870E5B012546BD9E528BA2 /* Siren-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Siren-dummy.m"; sourceTree = "<group>"; };
+		DA42412FE5A8219A69466A3BF5D7E127 /* AppStoreCountry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppStoreCountry.swift; path = Sources/Models/AppStoreCountry.swift; sourceTree = "<group>"; };
+		DFFCFCEF590A2D880342281E9403E17A /* Siren-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Siren-Info.plist"; sourceTree = "<group>"; };
+		FC0555BD8E37FA157F7F6283501A18BF /* PerformCheck.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformCheck.swift; path = Sources/Models/PerformCheck.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D01825EFADF2015C2D6F895EE2B5C81A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9E7420A0284E837C04012B528EAE4A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7F7ACE0039996CECECD4DBAAE33EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1DE04B22147788DB8854746906C2ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3220C57F8C452D122E7B864F42E22353 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AC0027BD5920899A8C68ECA0B4EF352 /* Siren.modulemap */,
+				D05B5C0583870E5B012546BD9E528BA2 /* Siren-dummy.m */,
+				DFFCFCEF590A2D880342281E9403E17A /* Siren-Info.plist */,
+				382286B775C59C5D389F1CFDD520CF58 /* Siren-prefix.pch */,
+				50705CF0267E1C00171B5FE2E9F0960D /* Siren-umbrella.h */,
+				367EABB58C5F30C98F1CDACECB5023C2 /* Siren.debug.xcconfig */,
+				717A1F0F93E3D7B2BA47D2E630AABCC0 /* Siren.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Siren";
+			sourceTree = "<group>";
+		};
+		53350CD7ACD6FA153CF4B5DE456DC484 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7E8654FAAB30E6A5A4A04872190DEDC /* Pods-Store Front-Sellacha */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A7E8654FAAB30E6A5A4A04872190DEDC /* Pods-Store Front-Sellacha */ = {
+			isa = PBXGroup;
+			children = (
+				271A8051D7D609FC7D97ED93C21FD1D3 /* Pods-Store Front-Sellacha.modulemap */,
+				4E8A32600F48A56AE2A64BD326E13845 /* Pods-Store Front-Sellacha-acknowledgements.markdown */,
+				9AB44D43CE0EE1BDB9C50F3D980DF5E9 /* Pods-Store Front-Sellacha-acknowledgements.plist */,
+				45A58071A076DBBA841204C12F436A02 /* Pods-Store Front-Sellacha-dummy.m */,
+				BFC24C9C1634C38B09FD932BB20AB0C8 /* Pods-Store Front-Sellacha-frameworks.sh */,
+				2B4F3FD4D734E0A02927171E5A539F1C /* Pods-Store Front-Sellacha-Info.plist */,
+				45AF30CBFC85851A3B75A49A7CEFC1C1 /* Pods-Store Front-Sellacha-umbrella.h */,
+				B985F8813D8F62D8E5BFE22A78333F70 /* Pods-Store Front-Sellacha.debug.xcconfig */,
+				B8317E19DA0FBF023A1C418E7484536B /* Pods-Store Front-Sellacha.release.xcconfig */,
+			);
+			name = "Pods-Store Front-Sellacha";
+			path = "Target Support Files/Pods-Store Front-Sellacha";
+			sourceTree = "<group>";
+		};
+		AA0B89EAF510CECA302BE1AC914E798A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71D9B6B9064019CFB67EF868877B4FE0 /* Pods-Store Front-Sellacha */,
+				17E70395B3CDD0B7EDA622612E2C3144 /* Siren */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF73A7FFD5B365F511FAAC60B08961DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2DCC9CD434A43857C42B213C6C4A3F9 /* Siren */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2DCC9CD434A43857C42B213C6C4A3F9 /* Siren */ = {
+			isa = PBXGroup;
+			children = (
+				C4BF201BFE16BF94BBFB03B69E70BD6C /* AlertAction.swift */,
+				A117B72CE76B82B722A1069098AC8154 /* AlertConstants.swift */,
+				767F025151FEC60FFF4CA50F6FCDC1BC /* APIManager.swift */,
+				4613E853353AFFF8D8584BF252D7399D /* APIModel.swift */,
+				DA42412FE5A8219A69466A3BF5D7E127 /* AppStoreCountry.swift */,
+				8E9F61507BDF2C8CE4EA8491DDE9F597 /* BundleExtension.swift */,
+				B65FDB44CD177D3DA46D8331D023267E /* DataParser.swift */,
+				403C989B82B0EA47E11C870470115E8C /* DateExtension.swift */,
+				A8EBC1CDE3B81C833A9ADED5FDE9ED79 /* KnownError.swift */,
+				496EB15D0D3DCE76B14166DBC48B6B30 /* Localization.swift */,
+				870C41060A58BD592D61BA4BCEE6EA4E /* Model.swift */,
+				FC0555BD8E37FA157F7F6283501A18BF /* PerformCheck.swift */,
+				1436D6F57D4EFB35E76422FC0AE7A450 /* PresentationManager.swift */,
+				0546E384CEDCC0EF1E3AE5AB86BDDBED /* Rules.swift */,
+				1E8B7C1A206E755C9C8BBB55A871D20B /* RulesManager.swift */,
+				C61EE7A6DFC7A035501C77FDCFFBEF24 /* Siren.swift */,
+				101B3C9D282C7A288AD1A0C503DA2CE1 /* SirenViewController.swift */,
+				49C40920295F94EB822801AF7D110373 /* UIAlertControllerExtension.swift */,
+				CF81AF191EDD037A83AB3E4C9F320520 /* UpdateResults.swift */,
+				80F13CA2FC37DF85653DAB6719FED3D8 /* UserDefaultsExtension.swift */,
+				E50E29CE1A168D0C1A1F081A491DEA40 /* Resources */,
+				3220C57F8C452D122E7B864F42E22353 /* Support Files */,
+			);
+			name = Siren;
+			path = Siren;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				AF73A7FFD5B365F511FAAC60B08961DC /* Pods */,
+				AA0B89EAF510CECA302BE1AC914E798A /* Products */,
+				53350CD7ACD6FA153CF4B5DE456DC484 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E50E29CE1A168D0C1A1F081A491DEA40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F808D31AAADF928EB60D1737C04B44B /* Siren.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C1B2B775EC37DA6784A580EC336EB857 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1EA2053268A5D5D9AC11C3D74D5BD4F /* Siren-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BEF0C075BE2FE9DFCC3754899CE5BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF98B46ADE1D7AE8A96355F4EF6EC902 /* Pods-Store Front-Sellacha-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A0E2640B83527AE54205D7FDE9C5D930 /* Siren */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D32ED6FCE8895E74A4FB89FACB79DC86 /* Build configuration list for PBXNativeTarget "Siren" */;
+			buildPhases = (
+				C1B2B775EC37DA6784A580EC336EB857 /* Headers */,
+				163E1836FB7579BAEFD469E48402C6BC /* Sources */,
+				D01825EFADF2015C2D6F895EE2B5C81A /* Frameworks */,
+				15A1BDD07A3C42FFD26CA6341DED32EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Siren;
+			productName = Siren;
+			productReference = 17E70395B3CDD0B7EDA622612E2C3144 /* Siren */;
+			productType = "com.apple.product-type.framework";
+		};
+		A52E33F5F27FED2DD5A365C5B2B2DFBE /* Pods-Store Front-Sellacha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D223383D6062B4743C8737E6FB4BD405 /* Build configuration list for PBXNativeTarget "Pods-Store Front-Sellacha" */;
+			buildPhases = (
+				D2BEF0C075BE2FE9DFCC3754899CE5BE /* Headers */,
+				5D5E3608EA81420067CD4BFB25D6922B /* Sources */,
+				DC7F7ACE0039996CECECD4DBAAE33EC1 /* Frameworks */,
+				A005395FD3BF88B810378949E6A6938B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DFCC1539F5F8BDF9A5A5BEEC66F649D /* PBXTargetDependency */,
+			);
+			name = "Pods-Store Front-Sellacha";
+			productName = Pods_Store_Front_Sellacha;
+			productReference = 71D9B6B9064019CFB67EF868877B4FE0 /* Pods-Store Front-Sellacha */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AA0B89EAF510CECA302BE1AC914E798A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A52E33F5F27FED2DD5A365C5B2B2DFBE /* Pods-Store Front-Sellacha */,
+				A0E2640B83527AE54205D7FDE9C5D930 /* Siren */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15A1BDD07A3C42FFD26CA6341DED32EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF40E81B2B174F3584493809B90C6668 /* Siren.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A005395FD3BF88B810378949E6A6938B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		163E1836FB7579BAEFD469E48402C6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848CA5A0150EAB9FFC60595EE0CE284A /* AlertAction.swift in Sources */,
+				DFA56F24B7BC1B50B5CA895BE142F0C4 /* AlertConstants.swift in Sources */,
+				AB3E06EB378810A0177C7C6874233C0E /* APIManager.swift in Sources */,
+				649F8DA5719969E6D50C2A2B2863802C /* APIModel.swift in Sources */,
+				7E1B570FE6391453543B0D0BB670FD5B /* AppStoreCountry.swift in Sources */,
+				442134A1D37A55D19C34DAF965FAFCD4 /* BundleExtension.swift in Sources */,
+				C42518820A65B063154576160CE40202 /* DataParser.swift in Sources */,
+				B80A02CDC3EA0CE89151E4B7092C08EF /* DateExtension.swift in Sources */,
+				A556E3186780E6598F41D16D63A8D6FA /* KnownError.swift in Sources */,
+				666B89F2AB5925C925BC545EE3ACDA3B /* Localization.swift in Sources */,
+				07151B54E989427E1F7749A4E653643E /* Model.swift in Sources */,
+				82EC186FDB3BE2A73D380A39356D4A9C /* PerformCheck.swift in Sources */,
+				CB2A5256BB80852B0A40103121A52250 /* PresentationManager.swift in Sources */,
+				A817B69933763751617983654C825A5B /* Rules.swift in Sources */,
+				7C751F65470E081C6BB715539D9204A4 /* RulesManager.swift in Sources */,
+				E818FC04D00EFA3FD6DA3DBC814C34BE /* Siren.swift in Sources */,
+				2CCB80B4EA09CB396D78C9B0913F0574 /* Siren-dummy.m in Sources */,
+				58FC2CB0A3DD60FE5D4235E8B9993F57 /* SirenViewController.swift in Sources */,
+				63667A9E3F21D3EA7D4C2729F9D350AD /* UIAlertControllerExtension.swift in Sources */,
+				429431A49ED952B63BD98E845CF4B5B0 /* UpdateResults.swift in Sources */,
+				7208A44E2643C680D4B1BFA88F856E7F /* UserDefaultsExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D5E3608EA81420067CD4BFB25D6922B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5092A6394E61C9B349C104176029CD /* Pods-Store Front-Sellacha-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DFCC1539F5F8BDF9A5A5BEEC66F649D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Siren;
+			target = A0E2640B83527AE54205D7FDE9C5D930 /* Siren */;
+			targetProxy = BB32477C17AB9FF09B4E20CB22A77921 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7C3FBC45C4966EFE20583918767EFBE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		962D3DF8CEF580B0174A60A333FCA0E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B985F8813D8F62D8E5BFE22A78333F70 /* Pods-Store Front-Sellacha.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B08801D1BFD61723AFAAAAEEF3D3EF26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8317E19DA0FBF023A1C418E7484536B /* Pods-Store Front-Sellacha.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BCBFF8EF928B547BB0815FB1D8EDDB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 367EABB58C5F30C98F1CDACECB5023C2 /* Siren.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Siren/Siren-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Siren/Siren-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Siren/Siren.modulemap";
+				PRODUCT_MODULE_NAME = Siren;
+				PRODUCT_NAME = Siren;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E46B0FE6677FAAA7EBF07EEA8AB028EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 717A1F0F93E3D7B2BA47D2E630AABCC0 /* Siren.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Siren/Siren-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Siren/Siren-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Siren/Siren.modulemap";
+				PRODUCT_MODULE_NAME = Siren;
+				PRODUCT_NAME = Siren;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF0A36149038A192FFD678E1D4A40D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C3FBC45C4966EFE20583918767EFBE2 /* Debug */,
+				FF0A36149038A192FFD678E1D4A40D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D223383D6062B4743C8737E6FB4BD405 /* Build configuration list for PBXNativeTarget "Pods-Store Front-Sellacha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962D3DF8CEF580B0174A60A333FCA0E4 /* Debug */,
+				B08801D1BFD61723AFAAAAEEF3D3EF26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D32ED6FCE8895E74A4FB89FACB79DC86 /* Build configuration list for PBXNativeTarget "Siren" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBFF8EF928B547BB0815FB1D8EDDB3D /* Debug */,
+				E46B0FE6677FAAA7EBF07EEA8AB028EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

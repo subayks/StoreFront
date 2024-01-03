@@ -1,0 +1,16 @@
+PODS:
+  - Siren (6.1.2)
+
+DEPENDENCIES:
+  - Siren
+
+SPEC REPOS:
+  trunk:
+    - Siren
+
+SPEC CHECKSUMS:
+  Siren: c951ae243b57160629fb2e4d2f630cbfc5d5452b
+
+PODFILE CHECKSUM: 3a879acf7434e99bcb6b2e1718e6e5262e0c9f44
+
+COCOAPODS: 1.12.1

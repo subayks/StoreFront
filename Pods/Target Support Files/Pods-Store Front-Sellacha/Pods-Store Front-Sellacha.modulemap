@@ -1,0 +1,6 @@
+framework module Pods_Store_Front_Sellacha {
+  umbrella header "Pods-Store Front-Sellacha-umbrella.h"
+
+  export *
+  module * { export * }
+}
