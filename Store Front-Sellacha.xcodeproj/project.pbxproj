@@ -16,6 +16,7 @@
 		59ABD8CE2B45A614004AA88C /* Store_Front_SellachaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8CD2B45A614004AA88C /* Store_Front_SellachaTests.swift */; };
 		59ABD8D82B45A614004AA88C /* Store_Front_SellachaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8D72B45A614004AA88C /* Store_Front_SellachaUITests.swift */; };
 		59ABD8DA2B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8D92B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift */; };
+		59C5D07B2B45ABAD00BF841E /* Networks in Resources */ = {isa = PBXBuildFile; fileRef = 59C5D07A2B45ABAD00BF841E /* Networks */; };
 		74F10E4476D749EA0151B741 /* Pods_Store_Front_Sellacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		59ABD8D32B45A614004AA88C /* Store Front-SellachaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Store Front-SellachaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ABD8D72B45A614004AA88C /* Store_Front_SellachaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store_Front_SellachaUITests.swift; sourceTree = "<group>"; };
 		59ABD8D92B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store_Front_SellachaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59C5D07A2B45ABAD00BF841E /* Networks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networks; sourceTree = "<group>"; };
 		901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Store_Front_Sellacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDD5B775A5C37EAC1BB9747 /* Pods-Store Front-Sellacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Store Front-Sellacha.release.xcconfig"; path = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 		59ABD8B52B45A612004AA88C /* Store Front-Sellacha */ = {
 			isa = PBXGroup;
 			children = (
+				59C5D07A2B45ABAD00BF841E /* Networks */,
 				59ABD8B62B45A612004AA88C /* AppDelegate.swift */,
 				59ABD8B82B45A612004AA88C /* SceneDelegate.swift */,
 				59ABD8BA2B45A612004AA88C /* ViewController.swift */,
@@ -140,7 +143,6 @@
 				11C2FD65DBD35B932505F4F2 /* Pods-Store Front-Sellacha.debug.xcconfig */,
 				ECDD5B775A5C37EAC1BB9747 /* Pods-Store Front-Sellacha.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ABD8C32B45A614004AA88C /* LaunchScreen.storyboard in Resources */,
+				59C5D07B2B45ABAD00BF841E /* Networks in Resources */,
 				59ABD8C02B45A614004AA88C /* Assets.xcassets in Resources */,
 				59ABD8BE2B45A612004AA88C /* Main.storyboard in Resources */,
 			);
