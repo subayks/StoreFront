@@ -110,6 +110,7 @@
 		59ABD8B52B45A612004AA88C /* Store Front-Sellacha */ = {
 			isa = PBXGroup;
 			children = (
+				59B3684D2B471A9300BD2F8B /* Home */,
 				59C5D07C2B45BA6400BF841E /* Helper */,
 				59C5D07A2B45ABAD00BF841E /* Networks */,
 				59ABD8B62B45A612004AA88C /* AppDelegate.swift */,
@@ -138,6 +139,13 @@
 				59ABD8D92B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift */,
 			);
 			path = "Store Front-SellachaUITests";
+			sourceTree = "<group>";
+		};
+		59B3684D2B471A9300BD2F8B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		59C5D07C2B45BA6400BF841E /* Helper */ = {
