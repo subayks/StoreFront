@@ -7,59 +7,57 @@
 
 import Foundation
 
-struct StylistCellObject {
-    var stylist: String?
+struct DressCellObject {
+    var price: String?
     var isSelected: Bool?
-    var speciality: String?
+    var description: String?
     var rating: String?
-    var address: String?
     var image: String?
     var id: String?
-    var salonId: String?
 }
 
 class CategoryTableViewCellVM {
-    var stylistCellObject
-    = [StylistCellObject]()
+    var dressCellObject
+    = [DressCellObject]()
     var title: String?
     
     var previousIndex = Int()
     
     var reloadTableClosure:(()->())?
     
-    init(stylistCellObject: [StylistCellObject],title: String) {
+    init(dressCellObject: [DressCellObject],title: String) {
         self.title = title
-        self.stylistCellObject = stylistCellObject
+        self.dressCellObject = dressCellObject
     }
     
     
     
     func getnumberOfRows() ->Int {
-        return stylistCellObject.count
+        return dressCellObject.count
     }
     
     func gettStylistCollectionViewCellVM(indexRow: Int) ->CategoryCollectionViewCellVM {
-        return CategoryCollectionViewCellVM(stylistCellObject: self.stylistCellObject[indexRow], title: self.title ?? "")
+        return CategoryCollectionViewCellVM(stylistCellObject: self.dressCellObject[indexRow], title: self.title ?? "")
     }
     
     func updateValues(indexRow: Int) {
-        let selectedItemIndex = self.stylistCellObject.firstIndex{$0.isSelected == true} ?? 0
+        let selectedItemIndex = self.dressCellObject.firstIndex{$0.isSelected == true} ?? 0
         
-        var item = self.stylistCellObject[selectedItemIndex]
+        var item = self.dressCellObject[selectedItemIndex]
         item.isSelected = false
-        self.stylistCellObject.remove(at: selectedItemIndex)
-        self.stylistCellObject.insert(item, at: selectedItemIndex)
+        self.dressCellObject.remove(at: selectedItemIndex)
+        self.dressCellObject.insert(item, at: selectedItemIndex)
         
-        var selectedItem = self.stylistCellObject[indexRow]
+        var selectedItem = self.dressCellObject[indexRow]
         selectedItem.isSelected = true
-        self.stylistCellObject.remove(at: indexRow)
-        self.stylistCellObject.insert(selectedItem, at: indexRow)
+        self.dressCellObject.remove(at: indexRow)
+        self.dressCellObject.insert(selectedItem, at: indexRow)
         self.reloadTableClosure?()
     }
     
     func getSelectedItem(indexRow: Int) ->(String,String, String, String){
-        let item = self.stylistCellObject[indexRow]
-        return (item.stylist ?? "", item.speciality ?? "", item.salonId ?? "", item.id ?? "")
+        let item = self.dressCellObject[indexRow]
+        return (item.price ?? "", item.description ?? "", item.id ?? "", item.id ?? "")
     }
     
 }

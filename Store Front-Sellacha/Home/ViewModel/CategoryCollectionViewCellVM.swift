@@ -7,24 +7,24 @@
 
 import Foundation
 class CategoryCollectionViewCellVM {
-    var stylistCellObject: StylistCellObject?
+    var stylistCellObject: DressCellObject?
     var title: String?
     
-    init(stylistCellObject: StylistCellObject, title: String) {
+    init(stylistCellObject: DressCellObject, title: String) {
         self.stylistCellObject = stylistCellObject
         self.title = title
     }
     
-    func getStylist() ->String {
-        return stylistCellObject?.stylist ?? ""
+    func getPrice() ->String {
+        return stylistCellObject?.price ?? ""
     }
     
     func isSelected() ->Bool {
         return stylistCellObject?.isSelected ?? false
     }
     
-    func getSpeciality() ->String {
-        return stylistCellObject?.speciality ?? ""
+    func getDescription() ->String {
+        return stylistCellObject?.description ?? ""
     }
     
     func getRating() ->String {
@@ -32,7 +32,7 @@ class CategoryCollectionViewCellVM {
     }
     
     func getAddress() ->String {
-        return self.stylistCellObject?.address ?? ""
+        return self.stylistCellObject?.description ?? ""
     }
     
     func getImageURL() ->String {

@@ -28,7 +28,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,8 +39,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
-          //  cell.popularStylistTableViewCellVM = self.endUserDashboardViewModel.getFeaturedSaloonList()
-         //   cell.reloadCollectionView = true
+            cell.categoryTableViewCellVM = self.vm.getMensCollectionList()
+            cell.reloadCollectionView = true
             cell.didSelectDelegate = { [weak self] (stylist, speciality, row,salonId,  id) in
                 guard let self = self else {return}
              //   self.endUserDashboardViewModel.resetTableView = true
