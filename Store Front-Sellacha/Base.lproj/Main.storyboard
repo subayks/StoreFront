@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Store_Front_Sellacha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Store_Front_Sellacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,15 +56,15 @@
                                 <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WelcomeTableViewCell" rowHeight="230" id="THB-sV-yLb" customClass="WelcomeTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="230"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WelcomeTableViewCell" rowHeight="200" id="THB-sV-yLb" customClass="WelcomeTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="THB-sV-yLb" id="Mal-ye-ril">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="230"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jC4-bo-bhW">
-                                                    <rect key="frame" x="10" y="15" width="373" height="200"/>
+                                                    <rect key="frame" x="10" y="0.0" width="373" height="200"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="t72-cu-MoX"/>
@@ -84,16 +84,18 @@
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Saloon Offer.jpg" highlightedImage="Salon_Offer" translatesAutoresizingMaskIntoConstraints="NO" id="vse-Vi-EK7">
-                                                                        <rect key="frame" x="2" y="2" width="379" height="158"/>
+                                                                        <rect key="frame" x="15" y="2" width="352.33333333333331" height="158"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="vse-Vi-EK7" firstAttribute="centerX" secondItem="Zsp-bh-kJR" secondAttribute="centerX" id="Ixh-kw-EfA"/>
                                                                     <constraint firstItem="vse-Vi-EK7" firstAttribute="top" secondItem="Zsp-bh-kJR" secondAttribute="top" constant="2" id="PAn-dk-GQW"/>
                                                                     <constraint firstItem="vse-Vi-EK7" firstAttribute="height" secondItem="Zsp-bh-kJR" secondAttribute="height" multiplier="0.975309" id="QEU-Tf-uIh"/>
-                                                                    <constraint firstItem="vse-Vi-EK7" firstAttribute="width" secondItem="Zsp-bh-kJR" secondAttribute="width" multiplier="0.989556" id="Yv2-JF-skn"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="vse-Vi-EK7" secondAttribute="trailing" constant="2" id="apu-7w-FdS"/>
-                                                                    <constraint firstItem="vse-Vi-EK7" firstAttribute="leading" secondItem="Zsp-bh-kJR" secondAttribute="leading" constant="2" id="fRY-Mm-3vr"/>
+                                                                    <constraint firstItem="vse-Vi-EK7" firstAttribute="width" secondItem="Zsp-bh-kJR" secondAttribute="width" multiplier="0.92" id="Yv2-JF-skn"/>
+                                                                    <constraint firstItem="vse-Vi-EK7" firstAttribute="leading" secondItem="Zsp-bh-kJR" secondAttribute="leading" constant="15" id="ghn-g2-Dxy"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="vse-Vi-EK7" secondAttribute="trailing" constant="15" id="gsJ-RW-tWK"/>
+                                                                    <constraint firstItem="vse-Vi-EK7" firstAttribute="centerY" secondItem="Zsp-bh-kJR" secondAttribute="centerY" id="soR-s6-100"/>
                                                                     <constraint firstAttribute="bottom" secondItem="vse-Vi-EK7" secondAttribute="bottom" constant="2" id="vgM-6z-QdU"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
@@ -110,8 +112,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="jC4-bo-bhW" secondAttribute="trailing" constant="10" id="0eB-Co-mjr"/>
                                                 <constraint firstItem="jC4-bo-bhW" firstAttribute="leading" secondItem="Mal-ye-ril" secondAttribute="leading" constant="10" id="32N-fQ-Ci1"/>
-                                                <constraint firstAttribute="bottom" secondItem="jC4-bo-bhW" secondAttribute="bottom" constant="15" id="6HQ-W8-AHp"/>
-                                                <constraint firstItem="jC4-bo-bhW" firstAttribute="top" secondItem="Mal-ye-ril" secondAttribute="top" constant="15" id="Do6-Qi-gX1"/>
+                                                <constraint firstItem="jC4-bo-bhW" firstAttribute="top" secondItem="Mal-ye-ril" secondAttribute="top" id="Do6-Qi-gX1"/>
+                                                <constraint firstAttribute="bottom" secondItem="jC4-bo-bhW" secondAttribute="bottom" id="UWa-2z-4Md"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,8 +121,8 @@
                                             <outlet property="offerCollectionView" destination="jC4-bo-bhW" id="beM-jE-kGT"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PopularStylistTableViewCell" rowHeight="210" id="Bze-QR-9FR" customClass="PopularStylistTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="280" width="393" height="210"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryTableViewCell" rowHeight="210" id="Bze-QR-9FR" customClass="CategoryTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="250" width="393" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bze-QR-9FR" id="3iY-v5-mUg">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="210"/>
@@ -146,7 +148,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularStylistCollectionViewCell" id="z69-xZ-cI9" customClass="PopularStylistCollectionViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="z69-xZ-cI9" customClass="CategoryCollectionViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="2" width="150" height="158"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="heV-R0-fg8">
@@ -252,6 +254,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="q7x-eK-DBG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="a2C-41-gZr"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -272,6 +278,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U2f-py-omS"/>
+                    <connections>
+                        <outlet property="HomeTableView" destination="ged-Q0-DmZ" id="30s-4X-4r0"/>
+                        <outlet property="itemSeachBar" destination="bGB-fC-VAV" id="SDv-Ud-vZ1"/>
+                        <outlet property="logoImage" destination="lnw-bF-d37" id="xym-uh-J63"/>
+                        <outlet property="searchButton" destination="f77-Y0-Z1Z" id="kZF-K3-Kgj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
