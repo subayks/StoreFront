@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     func getWelcomeTableViewCellVM() ->WelcomeTableViewCellVM {
         var offers = [Offers]()
-        let imageList = ["Offer2", "Offer3", "Offer1", "Offer4"]
+        let imageList = ["Offer1", "Offer2", "Offer3", "Offer4"]
         for item in imageList {
             var offer = Offers()
             offer.image = item

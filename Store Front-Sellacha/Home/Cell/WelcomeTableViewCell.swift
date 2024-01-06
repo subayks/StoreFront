@@ -10,6 +10,8 @@ import UIKit
 class WelcomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var offerCollectionView: UICollectionView!
+    @IBOutlet weak var carouselPageConrtrol: UIPageControl!
+
     var welcomeTableViewCellVM: WelcomeTableViewCellVM? {
         didSet {
             self.setupView()
@@ -29,6 +31,10 @@ class WelcomeTableViewCell: UITableViewCell {
         offerCollectionView.dataSource = self
         // offerCollectionView.collectionViewLayout = layout
         offerCollectionView.reloadData()
+        self.carouselPageConrtrol.currentPageIndicatorTintColor = CommonConfig.colors.themeColor
+        self.carouselPageConrtrol.pageIndicatorTintColor = UIColor.white
+        self.carouselPageConrtrol.numberOfPages = self.welcomeTableViewCellVM?.offers?.count ?? 0
+      //  self.startTimer()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,34 +43,31 @@ class WelcomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
     func startTimer() {
-        _ =  Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+
+        let timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
     }
-    
-    
+
+
     @objc func scrollAutomatically(_ timer1: Timer) {
         
-        UIView.animate(withDuration: 3, delay: 0, options: .curveEaseOut, animations: {
-            self.offerCollectionView.scrollToItem(at: IndexPath(item: timer1.userInfo! as! Int, section: 0), at: .centeredHorizontally, animated: false)
-        }, completion: nil)
-        
-//        if let coll  = offerCollectionView {
-//            for cell in coll.visibleCells {
-//                let indexPath: IndexPath? = coll.indexPath(for: cell)
-//                if ((indexPath?.row)! < (self.welcomeTableViewCellVM?.getNumberOfItems() ?? 0) - 1){
-//                    let indexPath1: IndexPath?
-//                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-//
-//                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
-//                }
-//                else{
-//                    let indexPath1: IndexPath?
-//                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
-//                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
-//                }
-//            }
-//        }
+        if let coll  = offerCollectionView {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)! < (self.welcomeTableViewCellVM?.offers?.count ?? 0) - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+                    
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+                
+            }
+        }
     }
 }
 
@@ -86,9 +89,14 @@ extension WelcomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
 //        }
 //
 //        scrollingTimer =  Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: rowIndex, repeats: true)
-//
+
         
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        carouselPageConrtrol.currentPage =  Int(
+            (offerCollectionView.contentOffset.x / offerCollectionView.frame.width)
+            .rounded(.toNearestOrAwayFromZero))
+    }
 }
