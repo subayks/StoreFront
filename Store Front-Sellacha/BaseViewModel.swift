@@ -39,12 +39,12 @@ class BaseViewModel {
                 if status == .authorized{
                     self.allowToPhotos?()
                 } else {
-                    self.alertClosure?("Please enable access for photos from settings")
+                    self.alertClosure?(CommonConfig.messages.PHOTOS_ACCESS_ALERT)
                 }
             })
         } else {
             
-            self.alertClosure?("Please enable access for photos from settings")
+            self.alertClosure?(CommonConfig.messages.PHOTOS_ACCESS_ALERT)
         }
     }
     

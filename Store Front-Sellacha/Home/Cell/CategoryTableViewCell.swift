@@ -9,6 +9,7 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var vieewAllLabel: UILabel!
     @IBOutlet weak var popularStylistCollectionView: UICollectionView!
     @IBOutlet weak var labelTitle: UILabel!
     
@@ -30,6 +31,7 @@ class CategoryTableViewCell: UITableViewCell {
         if self.reloadCollectionView == true {
             self.popularStylistCollectionView.reloadData()
         }
+        self.vieewAllLabel.textColor = CommonConfig.colors.themeColor
         self.labelTitle.text = categoryTableViewCellVM?.title
         popularStylistCollectionView.delegate = self
         popularStylistCollectionView.dataSource = self
