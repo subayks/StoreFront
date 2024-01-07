@@ -39,7 +39,8 @@ class CartTableViewCell: UITableViewCell {
         let deleteTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(deleteImageTapped(tapGestureRecognizer:)))
         deleteImage.isUserInteractionEnabled = true
         deleteImage.addGestureRecognizer(deleteTapGestureRecognizer)
-        
+        self.offerPrice.addStrikethrough(.single, strikethroughColor: UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 255/255))
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

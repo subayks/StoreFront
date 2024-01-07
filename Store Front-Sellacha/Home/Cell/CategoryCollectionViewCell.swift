@@ -9,6 +9,7 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var ogPriceLabel: UILabel!
     @IBOutlet weak var ratingCountLabel: UILabel!
     @IBOutlet weak var rating: UIImageView!
     @IBOutlet weak var stylistImage: UIImageView!
@@ -32,6 +33,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.stylistImage.layer.borderWidth = 1
         self.stylistImage.layer.borderColor = UIColor.clear.cgColor
         stylistImage.layer.cornerRadius = 10
+        self.ogPriceLabel.addStrikethrough(.thick, strikethroughColor: UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 255/255))
 //        if self.categoryCollectionViewCellVM?.isStylistCell() == true {
 //            self.stylistImage.image = UIImage(systemName: "person.fill")
 //            self.stylistImage.tintColor = UIColor(red: 102/255, green: 74/255, blue: 151/255, alpha: 1)
