@@ -35,7 +35,8 @@ class CartViewController: UIViewController {
     
 
     @IBAction func actiongoToCart(_ sender: Any) {
-        
+        let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+        self.navigationController?.pushViewController(checkoutViewController, animated: true)
     }
     /*
     // MARK: - Navigation
