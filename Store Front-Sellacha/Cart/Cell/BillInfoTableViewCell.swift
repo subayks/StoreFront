@@ -9,6 +9,7 @@ import UIKit
 
 class BillInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addPromoCode: UILabel!
     @IBOutlet weak var totalvalue: UILabel!
     @IBOutlet weak var totalBillLabel: UILabel!
     @IBOutlet weak var discountValue: UILabel!
@@ -33,7 +34,7 @@ class BillInfoTableViewCell: UITableViewCell {
         // Initialization code
         self.overView.layer.cornerRadius = 10
         self.ticketOverView.layer.cornerRadius = 10
-
+        self.addPromoCode.textColor = CommonConfig.colors.themeColor
     }
     
 

@@ -60,6 +60,15 @@
 		59ABD8DA2B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8D92B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift */; };
 		59BE8D3D2B488E2800697464 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE8D3C2B488E2800697464 /* AccountsViewController.swift */; };
 		59C5D07B2B45ABAD00BF841E /* Networks in Resources */ = {isa = PBXBuildFile; fileRef = 59C5D07A2B45ABAD00BF841E /* Networks */; };
+		59D1B7992B4DCA36000CAAAD /* AddressFilledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7982B4DCA36000CAAAD /* AddressFilledTableViewCell.swift */; };
+		59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B79A2B4DCC12000CAAAD /* CardFilledTableViewCell.swift */; };
+		59D1B79D2B4DCC92000CAAAD /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B79C2B4DCC92000CAAAD /* AddressViewController.swift */; };
+		59D1B79F2B4DCD77000CAAAD /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B79E2B4DCD77000CAAAD /* CardsViewController.swift */; };
+		59D1B7A12B4DD160000CAAAD /* CompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A02B4DD160000CAAAD /* CompletionViewController.swift */; };
+		59D1B7A32B4DD615000CAAAD /* CardFilledTableViewCellVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A22B4DD615000CAAAD /* CardFilledTableViewCellVm.swift */; };
+		59D1B7A52B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A42B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift */; };
+		59D1B7A72B4DD7B0000CAAAD /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A62B4DD7B0000CAAAD /* AddressViewModel.swift */; };
+		59D1B7A92B4DD7E4000CAAAD /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A82B4DD7E4000CAAAD /* CardsViewModel.swift */; };
 		74F10E4476D749EA0151B741 /* Pods_Store_Front_Sellacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +148,15 @@
 		59ABD8D92B45A614004AA88C /* Store_Front_SellachaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store_Front_SellachaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59BE8D3C2B488E2800697464 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		59C5D07A2B45ABAD00BF841E /* Networks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networks; sourceTree = "<group>"; };
+		59D1B7982B4DCA36000CAAAD /* AddressFilledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFilledTableViewCell.swift; sourceTree = "<group>"; };
+		59D1B79A2B4DCC12000CAAAD /* CardFilledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilledTableViewCell.swift; sourceTree = "<group>"; };
+		59D1B79C2B4DCC92000CAAAD /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		59D1B79E2B4DCD77000CAAAD /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		59D1B7A02B4DD160000CAAAD /* CompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionViewController.swift; sourceTree = "<group>"; };
+		59D1B7A22B4DD615000CAAAD /* CardFilledTableViewCellVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilledTableViewCellVm.swift; sourceTree = "<group>"; };
+		59D1B7A42B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFilledTableViewCellVM.swift; sourceTree = "<group>"; };
+		59D1B7A62B4DD7B0000CAAAD /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		59D1B7A82B4DD7E4000CAAAD /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
 		901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Store_Front_Sellacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDD5B775A5C37EAC1BB9747 /* Pods-Store Front-Sellacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Store Front-Sellacha.release.xcconfig"; path = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +203,9 @@
 			children = (
 				59292BE42B4998460021C4D1 /* CartViewController.swift */,
 				59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */,
+				59D1B79C2B4DCC92000CAAAD /* AddressViewController.swift */,
+				59D1B79E2B4DCD77000CAAAD /* CardsViewController.swift */,
+				59D1B7A02B4DD160000CAAAD /* CompletionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +218,10 @@
 				59A3036F2B4DB362003E2225 /* CardTableViewCellVM.swift */,
 				59A303712B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift */,
 				59A303732B4DB697003E2225 /* CheckoutViewControllerVM.swift */,
+				59D1B7A22B4DD615000CAAAD /* CardFilledTableViewCellVm.swift */,
+				59D1B7A42B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift */,
+				59D1B7A62B4DD7B0000CAAAD /* AddressViewModel.swift */,
+				59D1B7A82B4DD7E4000CAAAD /* CardsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,6 +239,8 @@
 				59292BE62B4999530021C4D1 /* CartTableViewCell.swift */,
 				59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */,
 				59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */,
+				59D1B7982B4DCA36000CAAAD /* AddressFilledTableViewCell.swift */,
+				59D1B79A2B4DCC12000CAAAD /* CardFilledTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -652,17 +679,23 @@
 				59292BE72B4999530021C4D1 /* CartTableViewCell.swift in Sources */,
 				59ABD8BB2B45A612004AA88C /* ViewController.swift in Sources */,
 				596A86182B48481100DA4949 /* WelcomeTableViewCellVM.swift in Sources */,
+				59D1B79F2B4DCD77000CAAAD /* CardsViewController.swift in Sources */,
+				59D1B7A52B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift in Sources */,
 				596A86242B484B3300DA4949 /* CategoryTableViewCellVM.swift in Sources */,
 				596A861E2B4848E100DA4949 /* UIImageView + Extension.swift in Sources */,
+				59D1B7A92B4DD7E4000CAAAD /* CardsViewModel.swift in Sources */,
 				59BE8D3D2B488E2800697464 /* AccountsViewController.swift in Sources */,
 				59292BE92B4999F60021C4D1 /* CartTableViewCellVM.swift in Sources */,
 				596A861A2B48485400DA4949 /* OffersCollectionViewCellVM.swift in Sources */,
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
+				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
 				59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */,
 				59292BEB2B499A080021C4D1 /* CartViewModel.swift in Sources */,
+				59D1B7992B4DCA36000CAAAD /* AddressFilledTableViewCell.swift in Sources */,
 				59ABD8B72B45A612004AA88C /* AppDelegate.swift in Sources */,
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
+				59D1B7A12B4DD160000CAAAD /* CompletionViewController.swift in Sources */,
 				596A86112B48456F00DA4949 /* HomeViewModel.swift in Sources */,
 				59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */,
 				596A860D2B48446400DA4949 /* HomeViewController.swift in Sources */,
@@ -673,13 +706,16 @@
 				59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */,
 				59A3036A2B4DB0C2003E2225 /* CheckoutViewController.swift in Sources */,
 				596A86262B484BB900DA4949 /* CategoryCollectionViewCellVM.swift in Sources */,
+				59D1B79D2B4DCC92000CAAAD /* AddressViewController.swift in Sources */,
 				596A86132B4845CF00DA4949 /* BaseViewModel.swift in Sources */,
 				596A864C2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift in Sources */,
 				59292BED2B49DA6F0021C4D1 /* CommonConfig.swift in Sources */,
 				596A86222B484A9B00DA4949 /* CategoryTableViewCell.swift in Sources */,
 				596A86482B486A7700DA4949 /* CategoriesViewController.swift in Sources */,
+				59D1B7A32B4DD615000CAAAD /* CardFilledTableViewCellVm.swift in Sources */,
 				59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */,
 				596A861C2B48488C00DA4949 /* OffersCollectionViewCell.swift in Sources */,
+				59D1B7A72B4DD7B0000CAAAD /* AddressViewModel.swift in Sources */,
 				59A303742B4DB697003E2225 /* CheckoutViewControllerVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
