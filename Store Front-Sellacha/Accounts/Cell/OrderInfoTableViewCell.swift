@@ -33,7 +33,7 @@ class OrderInfoTableViewCell: UITableViewCell {
 
     func setupView() {
         self.productIMage.image = UIImage(named: "\(self.orderInfoTableViewCellVM?.dressInfo?.image ?? "")")
-        self.quantity.text = self.orderInfoTableViewCellVM?.dressInfo?.quantity
+        self.quantity.text = "\(self.orderInfoTableViewCellVM?.dressInfo?.quantity ?? "")" + "X"
         self.productName.text =  self.orderInfoTableViewCellVM?.dressInfo?.productName
     }
 }

@@ -32,6 +32,7 @@ class OrdersViewControllerVM: BaseViewModel {
     func setupDataModel() {
       
         var orderList = [OrdersInfo()]
+        orderList.removeAll()
         var item = OrdersInfo()
         item.dresses = self.getDressArray()
         item.status = .Delivered
@@ -212,7 +213,7 @@ class OrdersViewControllerVM: BaseViewModel {
     }
     
     func getPastList() ->[OrdersInfo] {
-        return self.list?.filter{$0.status != .InProcess} ?? [OrdersInfo]()
+        return self.list?.filter{$0.status == .Cancelled || $0.status == .Delivered} ?? [OrdersInfo]()
     }
     
     func getOrdersTableViewCellVM(index: Int) ->OrdersTableViewCellVM {

@@ -133,86 +133,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2FF5AB4E-AA3C-40C7-BDFB-4A14A6645DC5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Home/Cell/WelcomeTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B6BA02DB-2738-4776-AFF1-6EFA56879FDC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Home/Cell/WelcomeTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E13405D-E864-4CFB-893B-0EABE4ABD1A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Home/Cell/WelcomeTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0A71D828-ABD6-4B32-B872-1481EA466602"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Home/Cell/WelcomeTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6A4E2664-F30F-459E-B830-10C22A32CE2F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Home/Cell/WelcomeTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3B7DDA0B-367B-49B8-A2F0-D46CF1DC7921"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -240,6 +160,38 @@
             endingLineNumber = "65"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B41C4E35-F55B-4785-9C94-72961C347175 - b0b21b5b9dc0817a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "B41C4E35-F55B-4785-9C94-72961C347175 - a38115c341df6f5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.tableView(_: __C.UITableView, numberOfRowsInSection: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,52 +208,36 @@
             endingLineNumber = "67"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F0B93FF2-5C7B-41F7-8615-EA494209AD57"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "getActiveList()"
-            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F0B93FF2-5C7B-41F7-8615-EA494209AD57 - ea49605d01ee517f"
+                  uuid = "65749865-3FE1-4DB2-8C41-C04EF3708CAA - b0b21b5b9dc08159"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Store_Front_Sellacha.OrdersViewControllerVM.getActiveList() -&gt; Swift.Array&lt;Store_Front_Sellacha.OrdersInfo&gt;"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "640">
                </Location>
                <Location
-                  uuid = "F0B93FF2-5C7B-41F7-8615-EA494209AD57 - b5f5efe58d902228"
+                  uuid = "65749865-3FE1-4DB2-8C41-C04EF3708CAA - a38115c341df6f9f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Store_Front_Sellacha.OrdersInfo) -&gt; Swift.Bool in Store_Front_Sellacha.OrdersViewControllerVM.getActiveList() -&gt; Swift.Array&lt;Store_Front_Sellacha.OrdersInfo&gt;"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.tableView(_: __C.UITableView, numberOfRowsInSection: Swift.Int) -&gt; Swift.Int"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "252">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -320,6 +256,38 @@
             endingLineNumber = "36"
             landmarkName = "actionSegment(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "06B87D7B-F67E-43E9-8771-EFF2E4F22B60 - 8d9e9c349263988b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.actionSegment(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "06B87D7B-F67E-43E9-8771-EFF2E4F22B60 - 8d9e9c349263988b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.actionSegment(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -335,6 +303,70 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "actionSegment(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "07ED6026-BF2F-4FA0-B035-2C08FFF6810F - 8d9e9c34926398e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.actionSegment(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "07ED6026-BF2F-4FA0-B035-2C08FFF6810F - 8d9e9c34926398e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewController.actionSegment(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/View/OrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE0EA3E7-0027-423C-922D-EBF2335C7FBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "getPastList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11BB421B-F1A0-4E9D-A50F-0635BB8C3A48"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "setupDataModel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
