@@ -12,6 +12,7 @@ class CommonConfig {
     
     struct colors {
         static let themeColor = UIColor(red: 152/255, green: 195/255, blue: 84/255, alpha: 1)
+        static let themeLightColor = UIColor(red: 245/255, green: 249/255, blue: 238/255, alpha: 1)
         static let appSmallLogo = UIImage(named: "SmallLogo")
     }
     

@@ -33,6 +33,10 @@ class CartViewController: UIViewController {
         mainTabbarController.tabBar.items?[3].badgeColor = CommonConfig.colors.themeColor
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
 
     @IBAction func actiongoToCart(_ sender: Any) {
         let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController

@@ -47,6 +47,12 @@
 		599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924812B5293D1002E0DCB /* UIString + Extension.swift */; };
 		599924842B5293FF002E0DCB /* CardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924832B5293FF002E0DCB /* CardFormatter.swift */; };
 		599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924852B5296FF002E0DCB /* UItextField + Extension.swift */; };
+		599924882B52AB65002E0DCB /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924872B52AB65002E0DCB /* OrdersViewController.swift */; };
+		5999248A2B52ABD2002E0DCB /* OrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924892B52ABD2002E0DCB /* OrdersTableViewCell.swift */; };
+		5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999248B2B52AC48002E0DCB /* OrdersCollectionViewCell.swift */; };
+		5999248E2B52ACD9002E0DCB /* OrdersViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999248D2B52ACD9002E0DCB /* OrdersViewControllerVM.swift */; };
+		599924902B52AD9C002E0DCB /* OrdersTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999248F2B52AD9C002E0DCB /* OrdersTableViewCellVM.swift */; };
+		599924922B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924912B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift */; };
 		59A3036A2B4DB0C2003E2225 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */; };
 		59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */; };
 		59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */; };
@@ -135,6 +141,12 @@
 		599924812B5293D1002E0DCB /* UIString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIString + Extension.swift"; sourceTree = "<group>"; };
 		599924832B5293FF002E0DCB /* CardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatter.swift; sourceTree = "<group>"; };
 		599924852B5296FF002E0DCB /* UItextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UItextField + Extension.swift"; sourceTree = "<group>"; };
+		599924872B52AB65002E0DCB /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		599924892B52ABD2002E0DCB /* OrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCell.swift; sourceTree = "<group>"; };
+		5999248B2B52AC48002E0DCB /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
+		5999248D2B52ACD9002E0DCB /* OrdersViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewControllerVM.swift; sourceTree = "<group>"; };
+		5999248F2B52AD9C002E0DCB /* OrdersTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCellVM.swift; sourceTree = "<group>"; };
+		599924912B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCellVM.swift; sourceTree = "<group>"; };
 		59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -433,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				59BE8D3C2B488E2800697464 /* AccountsViewController.swift */,
+				599924872B52AB65002E0DCB /* OrdersViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -441,6 +454,9 @@
 			isa = PBXGroup;
 			children = (
 				59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */,
+				5999248D2B52ACD9002E0DCB /* OrdersViewControllerVM.swift */,
+				5999248F2B52AD9C002E0DCB /* OrdersTableViewCellVM.swift */,
+				599924912B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -455,6 +471,8 @@
 		59BE8D3B2B48873C00697464 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				599924892B52ABD2002E0DCB /* OrdersTableViewCell.swift */,
+				5999248B2B52AC48002E0DCB /* OrdersCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -703,19 +721,25 @@
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
 				599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */,
+				5999248E2B52ACD9002E0DCB /* OrdersViewControllerVM.swift in Sources */,
 				59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */,
 				59292BEB2B499A080021C4D1 /* CartViewModel.swift in Sources */,
 				59D1B7992B4DCA36000CAAAD /* AddressFilledTableViewCell.swift in Sources */,
 				59ABD8B72B45A612004AA88C /* AppDelegate.swift in Sources */,
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
+				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
+				5999248A2B52ABD2002E0DCB /* OrdersTableViewCell.swift in Sources */,
 				59D1B7A12B4DD160000CAAAD /* CompletionViewController.swift in Sources */,
 				596A86112B48456F00DA4949 /* HomeViewModel.swift in Sources */,
 				59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */,
+				599924922B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift in Sources */,
 				599924802B528B3D002E0DCB /* UIViewController + Extension.swift in Sources */,
 				596A860D2B48446400DA4949 /* HomeViewController.swift in Sources */,
 				593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */,
+				599924902B52AD9C002E0DCB /* OrdersTableViewCellVM.swift in Sources */,
 				596A864A2B486AE100DA4949 /* CategoriesViewModel.swift in Sources */,
+				599924882B52AB65002E0DCB /* OrdersViewController.swift in Sources */,
 				59292BE52B4998460021C4D1 /* CartViewController.swift in Sources */,
 				596A86162B4847C600DA4949 /* WelcomeTableViewCell.swift in Sources */,
 				59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */,

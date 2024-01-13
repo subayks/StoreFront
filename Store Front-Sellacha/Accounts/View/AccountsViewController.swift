@@ -43,6 +43,7 @@ class AccountsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
         self.vm.allowToPhotos = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
@@ -66,6 +67,8 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionOrderView(_ sender: Any) {
+        let ordersViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
+        self.navigationController?.pushViewController(ordersViewController, animated: true)
     }
     @IBAction func actionEdit(_ sender: Any) {
         self.vm.requestPhotoAccess()

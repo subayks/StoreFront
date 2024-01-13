@@ -15,6 +15,8 @@ class CheckoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
+
         self.setupNavigationBar()
         self.orderButton.backgroundColor = CommonConfig.colors.themeColor
         self.orderButton.layer.cornerRadius = 10
@@ -22,6 +24,7 @@ class CheckoutViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         self.vm.reloadTableView = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}

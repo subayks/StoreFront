@@ -13,7 +13,6 @@ class CompletionViewController: UIViewController {
     @IBOutlet weak var buttonAwesome: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.buttonAwesome.backgroundColor = CommonConfig.colors.themeColor
         self.viewOrderDetailsLabel.textColor = CommonConfig.colors.themeColor
         self.buttonAwesome.layer.cornerRadius = 10
