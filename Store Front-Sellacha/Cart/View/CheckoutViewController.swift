@@ -20,6 +20,16 @@ class CheckoutViewController: UIViewController {
         self.orderButton.layer.cornerRadius = 10
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.vm.reloadTableView = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.checkoutTableView.reloadData()
+            }
+        }
+    }
+    
     func setupNavigationBar() {
         self.navigationItem.title = "Checkout"
         self.navigationController?.isNavigationBarHidden = false
@@ -51,28 +61,32 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "CardTableViewCell") as! CardTableViewCell
-            cell.cardTableViewCellVM = self.vm.getAddressCardTableViewCellVM()
-            return cell
+            if self.vm.addressInfo == nil {
+                let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "CardTableViewCell") as! CardTableViewCell
+                cell.cardTableViewCellVM = self.vm.getAddressCardTableViewCellVM()
+                return cell
+            } else {
+                let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "AddressFilledTableViewCell") as! AddressFilledTableViewCell
+                cell.addressFilledTableViewCellVM = self.vm.getAddressFilledTableViewCellVM()
+                return cell
+            }
         } else if indexPath.section == 1 {
-            let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "CardTableViewCell") as! CardTableViewCell
-            cell.cardTableViewCellVM = self.vm.getPaymentCardTableViewCellVM()
-            return cell
-        } else if indexPath.section == 2 {
-            let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "BillInfoTableViewCell") as! BillInfoTableViewCell
-         //   cell.cardTableViewCellVM = self.vm.getAddressCardTableViewCellVM()
-            return cell
-        } else if indexPath.section == 3 {
-            let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "AddressFilledTableViewCell") as! AddressFilledTableViewCell
-         //   cell.cardTableViewCellVM = self.vm.getAddressCardTableViewCellVM()
-            return cell
+            if self.vm.cardInfo == nil {
+                let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "CardTableViewCell") as! CardTableViewCell
+                cell.cardTableViewCellVM = self.vm.getPaymentCardTableViewCellVM()
+                return cell
+            } else {
+                let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "CardFilledTableViewCell") as! CardFilledTableViewCell
+                cell.cardFilledTableViewCellVm = self.vm.getCardFilledTableViewCellVm()
+                return cell
+            }
         } else {
-            let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "CardFilledTableViewCell") as! CardFilledTableViewCell
+            let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "BillInfoTableViewCell") as! BillInfoTableViewCell
          //   cell.cardTableViewCellVM = self.vm.getAddressCardTableViewCellVM()
             return cell
         }
@@ -82,11 +96,19 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let addressViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddressViewController") as! AddressViewController
+            addressViewController.addressClosure = { CardInfo in
+                self.vm.addressInfo = CardInfo
+            }
             self.navigationController?.pushViewController(addressViewController, animated: true)
         } else if indexPath.section == 1 {
             let cardsViewController = self.storyboard?.instantiateViewController(withIdentifier: "CardsViewController") as! CardsViewController
+            cardsViewController.cardClosure = { CardInfo in
+                self.vm.cardInfo = CardInfo
+            }
             self.navigationController?.pushViewController(cardsViewController, animated: true)
         }
     }
     
 }
+
+
