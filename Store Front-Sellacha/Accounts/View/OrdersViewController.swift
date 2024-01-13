@@ -73,4 +73,10 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.vm = self.vm.getOrdersTableViewCellVM(index: indexPath.row)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let orderDetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
+        orderDetailsViewController.vm = self.vm.getOrderDetailsViewControllerVM(index: indexPath.row)
+        self.navigationController?.pushViewController(orderDetailsViewController, animated: true)
+    }
 }

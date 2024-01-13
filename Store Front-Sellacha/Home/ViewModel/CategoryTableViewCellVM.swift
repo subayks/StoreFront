@@ -14,6 +14,8 @@ struct DressCellObject {
     var rating: String?
     var image: String?
     var id: String?
+    var quantity: String?
+    var productName: String?
 }
 
 class CategoryTableViewCellVM {

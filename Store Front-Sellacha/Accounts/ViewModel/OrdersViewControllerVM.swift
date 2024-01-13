@@ -156,6 +156,8 @@ class OrdersViewControllerVM: BaseViewModel {
         dressItem1.description = "Suits Well For your skin tone & best fabric"
         dressItem1.image = "Men"
         dressItem1.rating = "5.0"
+        dressItem1.quantity = "2"
+        dressItem1.productName = "Jean"
         dressArray.append(dressItem1)
 
         var dressItem2 = DressCellObject()
@@ -165,6 +167,8 @@ class OrdersViewControllerVM: BaseViewModel {
         dressItem2.description = "Suits Well For your skin tone & best fabric"
         dressItem2.image = "Kids"
         dressItem2.rating = "4.0"
+        dressItem2.quantity = "2"
+        dressItem2.productName = "Pant"
         dressArray.append(dressItem2)
         
         var dressItem3 = DressCellObject()
@@ -174,6 +178,8 @@ class OrdersViewControllerVM: BaseViewModel {
         dressItem3.description = "Suits Well For your skin tone & best fabric"
         dressItem3.image = "Formals"
         dressItem3.rating = "3.0"
+        dressItem3.quantity = "2"
+        dressItem3.productName = "T-Shirt"
         dressArray.append(dressItem3)
         
         var dressItem4 = DressCellObject()
@@ -183,6 +189,8 @@ class OrdersViewControllerVM: BaseViewModel {
         dressItem4.description = "Suits Well For your skin tone & best fabric"
         dressItem4.image = "Men"
         dressItem4.rating = "2.0"
+        dressItem4.quantity = "2"
+        dressItem4.productName = "Track"
         dressArray.append(dressItem4)
         
         var dressItem5 = DressCellObject()
@@ -192,6 +200,8 @@ class OrdersViewControllerVM: BaseViewModel {
         dressItem5.description = "Suits Well For your skin tone & best fabric"
         dressItem5.image = "Formals"
         dressItem5.rating = "1.0"
+        dressItem5.quantity = "2"
+        dressItem5.productName = "Jacket"
         dressArray.append(dressItem5)
 
         return dressArray
@@ -212,6 +222,14 @@ class OrdersViewControllerVM: BaseViewModel {
         } else {
             return OrdersTableViewCellVM(ordersInfo: self.getPastList()[index])
 
+        }
+    }
+    
+    func getOrderDetailsViewControllerVM(index: Int) ->OrderDetailsViewControllerVM {
+        if selectedIndex == 0 {
+           return OrderDetailsViewControllerVM(ordersInfo: self.getActiveList()[index])
+        } else {
+            return OrderDetailsViewControllerVM(ordersInfo: self.getPastList()[index])
         }
     }
 }
