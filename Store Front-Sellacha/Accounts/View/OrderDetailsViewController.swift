@@ -23,11 +23,15 @@ class OrderDetailsViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
 
         self.orderIDValueLAbel.textColor = CommonConfig.colors.themeColor
-        self.helpButton.layer.cornerRadius = 10
-        self.orderReceivedButton.layer.cornerRadius = 10
+        self.helpButton.layer.cornerRadius = 15
+        self.orderReceivedButton.layer.cornerRadius = 15
+        
         self.helpButton.layer.borderWidth = 1
         self.helpButton.layer.borderColor = CommonConfig.colors.themeColor.cgColor
+        
         self.orderReceivedButton.backgroundColor = CommonConfig.colors.themeColor
+        self.orderReceivedButton.layer.borderWidth = 1
+        self.orderReceivedButton.layer.borderColor = UIColor.white.cgColor
         
         self.setupNavigationBar()
         self.statusLabel.text = self.vm?.ordersInfo?.status.rawValue

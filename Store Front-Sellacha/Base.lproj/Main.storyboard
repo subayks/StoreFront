@@ -2539,7 +2539,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q9A-QB-5xj">
-                                <rect key="frame" x="0.0" y="237.33333333333331" width="402.66666666666669" height="547.66666666666674"/>
+                                <rect key="frame" x="0.0" y="237.33333333333331" width="402.66666666666669" height="541.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderInfoTableViewCell" rowHeight="64" id="QrD-pK-ZMA" customClass="OrderInfoTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
@@ -2977,7 +2977,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JPz-a6-oPG">
-                                <rect key="frame" x="20" y="785" width="362.66666666666669" height="48"/>
+                                <rect key="frame" x="20" y="779" width="362.66666666666669" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-uH-774">
                                         <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="48"/>
@@ -3019,6 +3019,7 @@
                             <constraint firstItem="e71-J2-P6Y" firstAttribute="leading" secondItem="pez-gB-MWM" secondAttribute="leading" constant="15" id="BCr-oq-h68"/>
                             <constraint firstItem="DMU-VL-xEl" firstAttribute="leading" secondItem="pez-gB-MWM" secondAttribute="leading" constant="15" id="CTO-Hd-Jzm"/>
                             <constraint firstItem="SlG-xh-A9G" firstAttribute="top" secondItem="e71-J2-P6Y" secondAttribute="top" id="HXV-L6-oXw"/>
+                            <constraint firstAttribute="bottom" secondItem="JPz-a6-oPG" secondAttribute="bottom" constant="25" id="K2i-8Y-5XW"/>
                             <constraint firstItem="JPz-a6-oPG" firstAttribute="leading" secondItem="pez-gB-MWM" secondAttribute="leading" constant="20" id="L47-4A-18v"/>
                             <constraint firstItem="SlG-xh-A9G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e71-J2-P6Y" secondAttribute="trailing" constant="15" id="QE1-OC-vBM"/>
                             <constraint firstItem="e71-J2-P6Y" firstAttribute="width" secondItem="2IT-vi-eBD" secondAttribute="width" multiplier="0.15" id="VVY-sF-zcG"/>
@@ -3031,7 +3032,6 @@
                             <constraint firstItem="Tue-bd-dLV" firstAttribute="leading" secondItem="pez-gB-MWM" secondAttribute="leading" constant="15" id="po0-UY-u7a"/>
                             <constraint firstItem="pez-gB-MWM" firstAttribute="trailing" secondItem="Tue-bd-dLV" secondAttribute="trailing" constant="15" id="q0V-oK-nZu"/>
                             <constraint firstItem="pez-gB-MWM" firstAttribute="trailing" secondItem="xI5-4N-rjz" secondAttribute="trailing" constant="15" id="uSc-PP-98T"/>
-                            <constraint firstItem="JPz-a6-oPG" firstAttribute="bottom" secondItem="pez-gB-MWM" secondAttribute="bottom" constant="15" id="vK2-Lc-D7e"/>
                             <constraint firstItem="Q9A-QB-5xj" firstAttribute="top" secondItem="e71-J2-P6Y" secondAttribute="bottom" constant="5" id="vjO-z0-IL3"/>
                             <constraint firstItem="DMU-VL-xEl" firstAttribute="top" secondItem="pez-gB-MWM" secondAttribute="top" constant="45" id="vtr-Ec-Opw"/>
                         </constraints>
@@ -3049,6 +3049,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8OM-kc-t3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3849.6183206106871" y="1389.4366197183099"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dws-GE-8nJ">
+            <objects>
+                <viewController id="5lj-lI-Hcz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cnW-2f-haM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="om4-TM-BB6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03q-DJ-fM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4526" y="1396"/>
         </scene>
     </scenes>
     <resources>
