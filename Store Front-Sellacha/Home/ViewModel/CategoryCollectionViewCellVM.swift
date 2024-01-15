@@ -7,43 +7,35 @@
 
 import Foundation
 class CategoryCollectionViewCellVM {
-    var stylistCellObject: DressCellObject?
+    var dressCellObject: DressCellObject?
     var title: String?
     
-    init(stylistCellObject: DressCellObject, title: String) {
-        self.stylistCellObject = stylistCellObject
+    init(dressCellObject: DressCellObject, title: String) {
+        self.dressCellObject = dressCellObject
         self.title = title
     }
     
     func getPrice() ->String {
-        return stylistCellObject?.price ?? ""
+        return dressCellObject?.price ?? ""
     }
     
     func isSelected() ->Bool {
-        return stylistCellObject?.isSelected ?? false
+        return dressCellObject?.isSelected ?? false
     }
     
     func getDescription() ->String {
-        return stylistCellObject?.description ?? ""
+        return dressCellObject?.description ?? ""
     }
     
     func getRating() ->String {
-        return stylistCellObject?.rating ?? ""
+        return dressCellObject?.rating ?? ""
     }
     
     func getAddress() ->String {
-        return self.stylistCellObject?.description ?? ""
+        return self.dressCellObject?.description ?? ""
     }
     
     func getImageURL() ->String {
-        return self.stylistCellObject?.image ?? ""
-    }
-    
-    func isStylistCell() ->Bool {
-        if self.title == "Popular Stylist" || self.title == "Stylist" {
-            return true
-        } else {
-            return false
-        }
+        return self.dressCellObject?.image ?? ""
     }
 }

@@ -57,6 +57,16 @@
 		599924962B52EEAC002E0DCB /* OrderInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924952B52EEAC002E0DCB /* OrderInfoTableViewCell.swift */; };
 		599924982B52F06B002E0DCB /* OrderDetailsViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924972B52F06B002E0DCB /* OrderDetailsViewControllerVM.swift */; };
 		5999249A2B52F226002E0DCB /* OrderInfoTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924992B52F226002E0DCB /* OrderInfoTableViewCellVM.swift */; };
+		5999249C2B558EF8002E0DCB /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999249B2B558EF8002E0DCB /* WishListViewController.swift */; };
+		5999249E2B558F81002E0DCB /* WishListViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999249D2B558F81002E0DCB /* WishListViewControllerVM.swift */; };
+		599924A02B559F9F002E0DCB /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999249F2B559F9F002E0DCB /* CardListViewController.swift */; };
+		599924A22B559FE9002E0DCB /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924A12B559FE9002E0DCB /* CardViewTableViewCell.swift */; };
+		599924A42B55A05F002E0DCB /* AddCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924A32B55A05F002E0DCB /* AddCardTableViewCell.swift */; };
+		599924A62B55A9DA002E0DCB /* ReferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924A52B55A9DA002E0DCB /* ReferViewController.swift */; };
+		599924A82B55B13C002E0DCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924A72B55B13C002E0DCB /* SettingsViewController.swift */; };
+		599924AA2B55B1AB002E0DCB /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924A92B55B1AB002E0DCB /* SettingsTableViewCell.swift */; };
+		599924AC2B55B225002E0DCB /* SettingsViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924AB2B55B225002E0DCB /* SettingsViewControllerVM.swift */; };
+		599924AE2B55B595002E0DCB /* SettingsTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924AD2B55B595002E0DCB /* SettingsTableViewCellVM.swift */; };
 		59A3036A2B4DB0C2003E2225 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */; };
 		59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */; };
 		59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */; };
@@ -155,6 +165,16 @@
 		599924952B52EEAC002E0DCB /* OrderInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoTableViewCell.swift; sourceTree = "<group>"; };
 		599924972B52F06B002E0DCB /* OrderDetailsViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewControllerVM.swift; sourceTree = "<group>"; };
 		599924992B52F226002E0DCB /* OrderInfoTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoTableViewCellVM.swift; sourceTree = "<group>"; };
+		5999249B2B558EF8002E0DCB /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		5999249D2B558F81002E0DCB /* WishListViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewControllerVM.swift; sourceTree = "<group>"; };
+		5999249F2B559F9F002E0DCB /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
+		599924A12B559FE9002E0DCB /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
+		599924A32B55A05F002E0DCB /* AddCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardTableViewCell.swift; sourceTree = "<group>"; };
+		599924A52B55A9DA002E0DCB /* ReferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferViewController.swift; sourceTree = "<group>"; };
+		599924A72B55B13C002E0DCB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		599924A92B55B1AB002E0DCB /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		599924AB2B55B225002E0DCB /* SettingsViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerVM.swift; sourceTree = "<group>"; };
+		599924AD2B55B595002E0DCB /* SettingsTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellVM.swift; sourceTree = "<group>"; };
 		59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -455,6 +475,10 @@
 				59BE8D3C2B488E2800697464 /* AccountsViewController.swift */,
 				599924872B52AB65002E0DCB /* OrdersViewController.swift */,
 				599924932B52EDCF002E0DCB /* OrderDetailsViewController.swift */,
+				5999249B2B558EF8002E0DCB /* WishListViewController.swift */,
+				5999249F2B559F9F002E0DCB /* CardListViewController.swift */,
+				599924A52B55A9DA002E0DCB /* ReferViewController.swift */,
+				599924A72B55B13C002E0DCB /* SettingsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +492,9 @@
 				599924912B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift */,
 				599924972B52F06B002E0DCB /* OrderDetailsViewControllerVM.swift */,
 				599924992B52F226002E0DCB /* OrderInfoTableViewCellVM.swift */,
+				5999249D2B558F81002E0DCB /* WishListViewControllerVM.swift */,
+				599924AB2B55B225002E0DCB /* SettingsViewControllerVM.swift */,
+				599924AD2B55B595002E0DCB /* SettingsTableViewCellVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -485,6 +512,9 @@
 				599924892B52ABD2002E0DCB /* OrdersTableViewCell.swift */,
 				5999248B2B52AC48002E0DCB /* OrdersCollectionViewCell.swift */,
 				599924952B52EEAC002E0DCB /* OrderInfoTableViewCell.swift */,
+				599924A12B559FE9002E0DCB /* CardViewTableViewCell.swift */,
+				599924A32B55A05F002E0DCB /* AddCardTableViewCell.swift */,
+				599924A92B55B1AB002E0DCB /* SettingsTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -724,12 +754,16 @@
 				59D1B79F2B4DCD77000CAAAD /* CardsViewController.swift in Sources */,
 				59D1B7A52B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift in Sources */,
 				596A86242B484B3300DA4949 /* CategoryTableViewCellVM.swift in Sources */,
+				599924AE2B55B595002E0DCB /* SettingsTableViewCellVM.swift in Sources */,
 				596A861E2B4848E100DA4949 /* UIImageView + Extension.swift in Sources */,
 				59D1B7A92B4DD7E4000CAAAD /* CardsViewModel.swift in Sources */,
 				59BE8D3D2B488E2800697464 /* AccountsViewController.swift in Sources */,
+				599924AA2B55B1AB002E0DCB /* SettingsTableViewCell.swift in Sources */,
 				59292BE92B4999F60021C4D1 /* CartTableViewCellVM.swift in Sources */,
 				599924842B5293FF002E0DCB /* CardFormatter.swift in Sources */,
 				599924962B52EEAC002E0DCB /* OrderInfoTableViewCell.swift in Sources */,
+				599924A62B55A9DA002E0DCB /* ReferViewController.swift in Sources */,
+				5999249C2B558EF8002E0DCB /* WishListViewController.swift in Sources */,
 				596A861A2B48485400DA4949 /* OffersCollectionViewCellVM.swift in Sources */,
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
@@ -743,7 +777,10 @@
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
 				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
+				599924AC2B55B225002E0DCB /* SettingsViewControllerVM.swift in Sources */,
 				5999248A2B52ABD2002E0DCB /* OrdersTableViewCell.swift in Sources */,
+				599924A02B559F9F002E0DCB /* CardListViewController.swift in Sources */,
+				5999249E2B558F81002E0DCB /* WishListViewControllerVM.swift in Sources */,
 				59D1B7A12B4DD160000CAAAD /* CompletionViewController.swift in Sources */,
 				596A86112B48456F00DA4949 /* HomeViewModel.swift in Sources */,
 				59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */,
@@ -756,6 +793,8 @@
 				596A864A2B486AE100DA4949 /* CategoriesViewModel.swift in Sources */,
 				599924882B52AB65002E0DCB /* OrdersViewController.swift in Sources */,
 				599924982B52F06B002E0DCB /* OrderDetailsViewControllerVM.swift in Sources */,
+				599924A42B55A05F002E0DCB /* AddCardTableViewCell.swift in Sources */,
+				599924A82B55B13C002E0DCB /* SettingsViewController.swift in Sources */,
 				59292BE52B4998460021C4D1 /* CartViewController.swift in Sources */,
 				596A86162B4847C600DA4949 /* WelcomeTableViewCell.swift in Sources */,
 				59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */,
@@ -768,6 +807,7 @@
 				596A86222B484A9B00DA4949 /* CategoryTableViewCell.swift in Sources */,
 				596A86482B486A7700DA4949 /* CategoriesViewController.swift in Sources */,
 				59D1B7A32B4DD615000CAAAD /* CardFilledTableViewCellVm.swift in Sources */,
+				599924A22B559FE9002E0DCB /* CardViewTableViewCell.swift in Sources */,
 				599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */,
 				59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */,
 				596A861C2B48488C00DA4949 /* OffersCollectionViewCell.swift in Sources */,

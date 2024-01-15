@@ -39,7 +39,7 @@ class CategoryTableViewCellVM {
     }
     
     func gettStylistCollectionViewCellVM(indexRow: Int) ->CategoryCollectionViewCellVM {
-        return CategoryCollectionViewCellVM(stylistCellObject: self.dressCellObject[indexRow], title: self.title ?? "")
+        return CategoryCollectionViewCellVM(dressCellObject: self.dressCellObject[indexRow], title: self.title ?? "")
     }
     
     func updateValues(indexRow: Int) {

@@ -57,13 +57,33 @@ class AccountsViewController: UIViewController {
     
     @IBAction func actionHelp(_ sender: Any) {
     }
+    
     @IBAction func actionreferNow(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ReferViewController")
+        
+        if let presentationController = viewController.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium(), .large()]
+            presentationController.preferredCornerRadius = 20
+
+        }
+        self.present(viewController, animated: true)
     }
+    
     @IBAction func actionSettings(_ sender: Any) {
+        let cardListViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(cardListViewController, animated: true)
     }
+    
     @IBAction func actionCards(_ sender: Any) {
+        let cardListViewController = self.storyboard?.instantiateViewController(withIdentifier: "CardListViewController") as! CardListViewController
+        self.navigationController?.pushViewController(cardListViewController, animated: true)
     }
+    
     @IBAction func actionWishlist(_ sender: Any) {
+        let wishListViewController = self.storyboard?.instantiateViewController(withIdentifier: "WishListViewController") as! WishListViewController
+        wishListViewController.vm = self.vm.getWishListViewControllerVM()
+        self.navigationController?.pushViewController(wishListViewController, animated: true)
     }
     
     @IBAction func actionOrderView(_ sender: Any) {
