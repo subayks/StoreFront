@@ -63,8 +63,8 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.categoryTableViewCellVM?.updateValues(indexRow: indexPath.row)
-        self.didSelectDelegate?(self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).0 ?? "", self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).1 ?? "", indexPath.row, self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).2 ?? "", self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).3 ?? "")
+//        self.categoryTableViewCellVM?.updateValues(indexRow: indexPath.row)
+//        self.didSelectDelegate?(self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).0 ?? "", self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).1 ?? "", indexPath.row, self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).2 ?? "", self.categoryTableViewCellVM?.getSelectedItem(indexRow: indexPath.row).3 ?? "")
     }
     
 }
