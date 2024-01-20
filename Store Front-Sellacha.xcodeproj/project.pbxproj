@@ -15,6 +15,9 @@
 		59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59292BF02B49DE070021C4D1 /* HomeTabbarController.swift */; };
 		59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */; };
 		593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593BE3182B4A88470053CB62 /* UILabel + Extension.swift */; };
+		5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9422B585CF2009B7719 /* HelpViewController.swift */; };
+		5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */; };
+		5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */; };
 		596A860D2B48446400DA4949 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A860C2B48446400DA4949 /* HomeViewController.swift */; };
 		596A86112B48456F00DA4949 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A86102B48456F00DA4949 /* HomeViewModel.swift */; };
 		596A86132B4845CF00DA4949 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A86122B4845CF00DA4949 /* BaseViewModel.swift */; };
@@ -123,6 +126,9 @@
 		59292BF02B49DE070021C4D1 /* HomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarController.swift; sourceTree = "<group>"; };
 		59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		593BE3182B4A88470053CB62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		5958B9422B585CF2009B7719 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewController.swift; sourceTree = "<group>"; };
 		596A860C2B48446400DA4949 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		596A86102B48456F00DA4949 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		596A86122B4845CF00DA4949 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -479,6 +485,8 @@
 				5999249F2B559F9F002E0DCB /* CardListViewController.swift */,
 				599924A52B55A9DA002E0DCB /* ReferViewController.swift */,
 				599924A72B55B13C002E0DCB /* SettingsViewController.swift */,
+				5958B9422B585CF2009B7719 /* HelpViewController.swift */,
+				5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -515,6 +523,7 @@
 				599924A12B559FE9002E0DCB /* CardViewTableViewCell.swift */,
 				599924A32B55A05F002E0DCB /* AddCardTableViewCell.swift */,
 				599924A92B55B1AB002E0DCB /* SettingsTableViewCell.swift */,
+				5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -775,6 +784,7 @@
 				59D1B7992B4DCA36000CAAAD /* AddressFilledTableViewCell.swift in Sources */,
 				59ABD8B72B45A612004AA88C /* AppDelegate.swift in Sources */,
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
+				5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
 				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
 				599924AC2B55B225002E0DCB /* SettingsViewControllerVM.swift in Sources */,
@@ -803,6 +813,7 @@
 				59D1B79D2B4DCC92000CAAAD /* AddressViewController.swift in Sources */,
 				596A86132B4845CF00DA4949 /* BaseViewModel.swift in Sources */,
 				596A864C2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift in Sources */,
+				5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */,
 				59292BED2B49DA6F0021C4D1 /* CommonConfig.swift in Sources */,
 				596A86222B484A9B00DA4949 /* CategoryTableViewCell.swift in Sources */,
 				596A86482B486A7700DA4949 /* CategoriesViewController.swift in Sources */,
@@ -810,6 +821,7 @@
 				599924A22B559FE9002E0DCB /* CardViewTableViewCell.swift in Sources */,
 				599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */,
 				59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */,
+				5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */,
 				596A861C2B48488C00DA4949 /* OffersCollectionViewCell.swift in Sources */,
 				59D1B7A72B4DD7B0000CAAAD /* AddressViewModel.swift in Sources */,
 				59A303742B4DB697003E2225 /* CheckoutViewControllerVM.swift in Sources */,

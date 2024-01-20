@@ -63,6 +63,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         vw.addSubview(button)
         return vw
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.vm.settingsArray?[indexPath.row].title == "Terms Policy" {
+            let termsAndConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsAndConditionViewController") as! TermsAndConditionViewController
+            self.navigationController?.pushViewController(termsAndConditionViewController, animated: true)
+        }
+    }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 150

@@ -56,6 +56,8 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionHelp(_ sender: Any) {
+        let helpViewController = self.storyboard?.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
+        self.navigationController?.pushViewController(helpViewController, animated: true)
     }
     
     @IBAction func actionreferNow(_ sender: Any) {
@@ -71,8 +73,8 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionSettings(_ sender: Any) {
-        let cardListViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-        self.navigationController?.pushViewController(cardListViewController, animated: true)
+        let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     @IBAction func actionCards(_ sender: Any) {
@@ -90,6 +92,7 @@ class AccountsViewController: UIViewController {
         let ordersViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
         self.navigationController?.pushViewController(ordersViewController, animated: true)
     }
+    
     @IBAction func actionEdit(_ sender: Any) {
         self.vm.requestPhotoAccess()
     }

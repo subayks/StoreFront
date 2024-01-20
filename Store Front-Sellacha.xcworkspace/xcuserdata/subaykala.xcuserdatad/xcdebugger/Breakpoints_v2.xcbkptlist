@@ -352,6 +352,38 @@
             endingLineNumber = "216"
             landmarkName = "getPastList()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE0EA3E7-0027-423C-922D-EBF2335C7FBD - bc1286b77066f378"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.OrdersViewControllerVM.getPastList() -&gt; Swift.Array&lt;Store_Front_Sellacha.OrdersInfo&gt;"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "CE0EA3E7-0027-423C-922D-EBF2335C7FBD - ff07feb6100dd64a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Store_Front_Sellacha.OrdersInfo) -&gt; Swift.Bool in Store_Front_Sellacha.OrdersViewControllerVM.getPastList() -&gt; Swift.Array&lt;Store_Front_Sellacha.OrdersInfo&gt;"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Accounts/ViewModel/OrdersViewControllerVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
