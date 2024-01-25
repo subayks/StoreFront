@@ -19,6 +19,18 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.logoImage.image = CommonConfig.colors.appSmallLogo
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+     //   print(tapGestureRecognizer.view?.tag)
+        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+        itemListViewController.vm = self.vm.getItemListViewModel()
+        self.navigationController?.pushViewController(itemListViewController, animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -40,6 +52,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
             cell.categoryTableViewCellVM = self.vm.getMensCollectionList()
             cell.reloadCollectionView = true
+            cell.vieewAllLabel.tag = indexPath.section
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            cell.vieewAllLabel.isUserInteractionEnabled = true
+            cell.vieewAllLabel.addGestureRecognizer(tapGestureRecognizer)
             cell.didSelectDelegate = { [weak self] (stylist, speciality, row,salonId,  id) in
                 guard let self = self else {return}
              //   self.endUserDashboardViewModel.resetTableView = true

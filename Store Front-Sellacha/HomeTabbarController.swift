@@ -7,13 +7,14 @@
 
 import UIKit
 
-class HomeTabbarController: UITabBarController {
+class HomeTabbarController: UITabBarController, UITabBarControllerDelegate {
 
     @IBOutlet weak var MenuTabBar: UITabBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MenuTabBar.tintColor = CommonConfig.colors.themeColor
+        self.delegate = self
     }
     
 
@@ -26,5 +27,24 @@ class HomeTabbarController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+      // you need a reference to your nav controller
+      if let navController = tabBarController.selectedViewController as? UINavigationController {
+        navController.popToRootViewController(animated: false)
+      }
 
+      return true
+    }
+
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if tabBar.selectedItem?.title == "Home" {
+            self.selectedIndex = 0
+        } else if tabBar.selectedItem?.title == "Categories" {
+            self.selectedIndex = 1
+        } else if tabBar.selectedItem?.title == "Account" {
+            self.selectedIndex = 2
+        } else {
+            self.selectedIndex = 3
+        }
+    }
 }

@@ -1448,7 +1448,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfU-pG-WSW">
-                                                                <rect key="frame" x="30.66666666666665" y="73" width="49.666666666666664" height="21.666666666666671"/>
+                                                                <rect key="frame" x="30.666666666666654" y="73" width="49.666666666666657" height="21.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -4297,10 +4297,10 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
             </objects>
             <point key="canvasLocation" x="3955" y="2331"/>
         </scene>
-        <!--View Controller-->
+        <!--Item List View Controller-->
         <scene sceneID="8ZO-29-4CU">
             <objects>
-                <viewController id="TBH-mW-bZH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemListViewController" hidesBottomBarWhenPushed="YES" id="TBH-mW-bZH" customClass="ItemListViewController" customModule="Store_Front_Sellacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3J9-zl-Xuz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4328,6 +4328,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="actionBrand:" destination="TBH-mW-bZH" eventType="touchUpInside" id="62Z-yr-b5k"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -4365,6 +4368,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="actionSort:" destination="TBH-mW-bZH" eventType="touchUpInside" id="dxh-28-Kx7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -4402,6 +4408,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="actionFilter:" destination="TBH-mW-bZH" eventType="touchUpInside" id="QCK-uD-yVP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -4500,11 +4509,11 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                                 <constraint firstAttribute="trailing" secondItem="Ff9-JB-qQO" secondAttribute="trailing" constant="5" id="Kvh-nR-aCa"/>
                                                                 <constraint firstItem="aOZ-qg-OB4" firstAttribute="top" secondItem="Scr-FR-nJ0" secondAttribute="top" id="O5M-f4-Vtv"/>
                                                                 <constraint firstItem="Scr-FR-nJ0" firstAttribute="top" secondItem="18o-ur-4sw" secondAttribute="bottom" constant="10" id="OOb-SF-jJ4"/>
-                                                                <constraint firstAttribute="width" constant="144" id="SiT-yC-4Uh"/>
                                                                 <constraint firstItem="Ff9-JB-qQO" firstAttribute="leading" secondItem="aOZ-qg-OB4" secondAttribute="trailing" constant="5" id="Wuy-IX-bTS"/>
                                                                 <constraint firstItem="18o-ur-4sw" firstAttribute="leading" secondItem="fUg-Rt-kSg" secondAttribute="leading" id="Y0w-ej-Ikd"/>
                                                                 <constraint firstAttribute="trailing" secondItem="18o-ur-4sw" secondAttribute="trailing" id="gvg-vD-5mB"/>
                                                                 <constraint firstItem="Scr-FR-nJ0" firstAttribute="leading" secondItem="fUg-Rt-kSg" secondAttribute="leading" constant="5" id="oub-Jy-3MN"/>
+                                                                <constraint firstAttribute="width" constant="166" id="rCh-Rd-zma"/>
                                                                 <constraint firstItem="1ah-bW-pxw" firstAttribute="trailing" secondItem="Ff9-JB-qQO" secondAttribute="trailing" id="u0d-Ce-Cx9"/>
                                                                 <constraint firstAttribute="bottom" secondItem="1ah-bW-pxw" secondAttribute="bottom" constant="10" id="uuW-qD-meN"/>
                                                                 <constraint firstItem="aOZ-qg-OB4" firstAttribute="height" secondItem="Scr-FR-nJ0" secondAttribute="height" id="zmo-Bs-E5Q"/>
@@ -4533,19 +4542,26 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="5lj-lI-Hcz" id="iGF-g3-SCm"/>
-                                            <outlet property="delegate" destination="5lj-lI-Hcz" id="sXZ-n6-t5a"/>
+                                            <outlet property="dataSource" destination="TBH-mW-bZH" id="uHC-NM-yCd"/>
+                                            <outlet property="delegate" destination="TBH-mW-bZH" id="9Ua-Cb-xuJ"/>
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ3-ri-f4V">
-                                        <rect key="frame" x="150.66666666666666" y="634" width="90.666666666666657" height="48"/>
+                                        <rect key="frame" x="145.33333333333334" y="634" width="101.66666666666666" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="j4A-aT-fDD"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Bag" title="Cart" imagePadding="10"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="  Cart  " image="Bag"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Bag" title="  Cart  " imagePadding="10">
+                                            <fontDescription key="titleFontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="actionCart:" destination="TBH-mW-bZH" eventType="touchUpInside" id="kvP-2Y-SjU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -4571,15 +4587,22 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                             <constraint firstItem="dr2-Ha-XYb" firstAttribute="trailing" secondItem="DvW-4h-ahW" secondAttribute="trailing" constant="15" id="wvt-fo-AY3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonCart" destination="AZ3-ri-f4V" id="qdM-bG-6Qr"/>
+                        <outlet property="itemListCollectionView" destination="Z7b-MM-9HU" id="2vI-de-bfX"/>
+                        <outlet property="overVieFilter" destination="RC4-eo-HJe" id="Wa8-rJ-sb3"/>
+                        <outlet property="overViewBrand" destination="aYx-as-Y0W" id="0CW-32-4P5"/>
+                        <outlet property="overViewSort" destination="Py4-BL-d1t" id="LcM-Xu-ihp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNK-Qp-a0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4875.5725190839694" y="2333.8028169014087"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Detail View Controller-->
         <scene sceneID="OKj-o7-259">
             <objects>
-                <viewController id="Vyo-pF-MFF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetailViewController" id="Vyo-pF-MFF" customClass="ItemDetailViewController" customModule="Store_Front_Sellacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4YZ-aF-FRy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5267,10 +5290,10 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

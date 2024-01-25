@@ -19,7 +19,7 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.logoImage.image = CommonConfig.colors.appSmallLogo
-        
+       
         self.goToCartButton.layer.cornerRadius = 25
         self.goToCartButton.layer.borderWidth = 2
         self.goToCartButton.layer.borderColor = UIColor.white.cgColor

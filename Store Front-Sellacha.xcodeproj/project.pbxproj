@@ -101,6 +101,11 @@
 		59DF3B2B2B62DF6E00719EEF /* LoginOrSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B2A2B62DF6E00719EEF /* LoginOrSignUpViewController.swift */; };
 		59DF3B2D2B62E18300719EEF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B2C2B62E18300719EEF /* SignInViewController.swift */; };
 		59DF3B2F2B62E56C00719EEF /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B2E2B62E56C00719EEF /* SignInViewModel.swift */; };
+		59DF3B362B62F3C800719EEF /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B352B62F3C800719EEF /* ItemListViewController.swift */; };
+		59DF3B382B62F3D800719EEF /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B372B62F3D800719EEF /* ItemDetailViewController.swift */; };
+		59DF3B3A2B62F3E800719EEF /* ItemSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B392B62F3E800719EEF /* ItemSearchViewController.swift */; };
+		59DF3B3C2B62F3FB00719EEF /* ItemSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B3B2B62F3FB00719EEF /* ItemSearchResultViewController.swift */; };
+		59DF3B3E2B62F5B100719EEF /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B3D2B62F5B100719EEF /* ItemListViewModel.swift */; };
 		74F10E4476D749EA0151B741 /* Pods_Store_Front_Sellacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */; };
 /* End PBXBuildFile section */
 
@@ -221,6 +226,11 @@
 		59DF3B2A2B62DF6E00719EEF /* LoginOrSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpViewController.swift; sourceTree = "<group>"; };
 		59DF3B2C2B62E18300719EEF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		59DF3B2E2B62E56C00719EEF /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		59DF3B352B62F3C800719EEF /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		59DF3B372B62F3D800719EEF /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		59DF3B392B62F3E800719EEF /* ItemSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchViewController.swift; sourceTree = "<group>"; };
+		59DF3B3B2B62F3FB00719EEF /* ItemSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchResultViewController.swift; sourceTree = "<group>"; };
+		59DF3B3D2B62F5B100719EEF /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
 		901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Store_Front_Sellacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDD5B775A5C37EAC1BB9747 /* Pods-Store Front-Sellacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Store Front-Sellacha.release.xcconfig"; path = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -427,6 +437,7 @@
 		59ABD8B52B45A612004AA88C /* Store Front-Sellacha */ = {
 			isa = PBXGroup;
 			children = (
+				59DF3B302B62F37B00719EEF /* ItemList */,
 				59DF3B222B62DBAD00719EEF /* Login */,
 				59292BDF2B4996AE0021C4D1 /* Cart */,
 				59BE8D372B48871300697464 /* Accounts */,
@@ -595,6 +606,50 @@
 				59DF3B2E2B62E56C00719EEF /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		59DF3B302B62F37B00719EEF /* ItemList */ = {
+			isa = PBXGroup;
+			children = (
+				59DF3B342B62F3AD00719EEF /* View */,
+				59DF3B332B62F3A600719EEF /* Model */,
+				59DF3B322B62F39E00719EEF /* Cell */,
+				59DF3B312B62F39700719EEF /* ViewModel */,
+			);
+			path = ItemList;
+			sourceTree = "<group>";
+		};
+		59DF3B312B62F39700719EEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				59DF3B3D2B62F5B100719EEF /* ItemListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		59DF3B322B62F39E00719EEF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		59DF3B332B62F3A600719EEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59DF3B342B62F3AD00719EEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59DF3B352B62F3C800719EEF /* ItemListViewController.swift */,
+				59DF3B372B62F3D800719EEF /* ItemDetailViewController.swift */,
+				59DF3B392B62F3E800719EEF /* ItemSearchViewController.swift */,
+				59DF3B3B2B62F3FB00719EEF /* ItemSearchResultViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		69CB969FA6499542BA299B27 /* Pods */ = {
@@ -827,6 +882,7 @@
 				599924942B52EDCF002E0DCB /* OrderDetailsViewController.swift in Sources */,
 				599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */,
 				59DF3B242B62DC0B00719EEF /* SignupViewController.swift in Sources */,
+				59DF3B3A2B62F3E800719EEF /* ItemSearchViewController.swift in Sources */,
 				5999248E2B52ACD9002E0DCB /* OrdersViewControllerVM.swift in Sources */,
 				59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */,
 				59292BEB2B499A080021C4D1 /* CartViewModel.swift in Sources */,
@@ -837,6 +893,7 @@
 				59DF3B2D2B62E18300719EEF /* SignInViewController.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
 				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
+				59DF3B382B62F3D800719EEF /* ItemDetailViewController.swift in Sources */,
 				599924AC2B55B225002E0DCB /* SettingsViewControllerVM.swift in Sources */,
 				59DF3B2B2B62DF6E00719EEF /* LoginOrSignUpViewController.swift in Sources */,
 				5999248A2B52ABD2002E0DCB /* OrdersTableViewCell.swift in Sources */,
@@ -848,6 +905,7 @@
 				599924922B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift in Sources */,
 				5999249A2B52F226002E0DCB /* OrderInfoTableViewCellVM.swift in Sources */,
 				599924802B528B3D002E0DCB /* UIViewController + Extension.swift in Sources */,
+				59DF3B3E2B62F5B100719EEF /* ItemListViewModel.swift in Sources */,
 				596A860D2B48446400DA4949 /* HomeViewController.swift in Sources */,
 				593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */,
 				599924902B52AD9C002E0DCB /* OrdersTableViewCellVM.swift in Sources */,
@@ -859,6 +917,7 @@
 				59292BE52B4998460021C4D1 /* CartViewController.swift in Sources */,
 				596A86162B4847C600DA4949 /* WelcomeTableViewCell.swift in Sources */,
 				59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */,
+				59DF3B3C2B62F3FB00719EEF /* ItemSearchResultViewController.swift in Sources */,
 				59A3036A2B4DB0C2003E2225 /* CheckoutViewController.swift in Sources */,
 				596A86262B484BB900DA4949 /* CategoryCollectionViewCellVM.swift in Sources */,
 				59D1B79D2B4DCC92000CAAAD /* AddressViewController.swift in Sources */,
@@ -874,6 +933,7 @@
 				59DF3B292B62DC9B00719EEF /* SignupViewModel.swift in Sources */,
 				59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */,
 				5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */,
+				59DF3B362B62F3C800719EEF /* ItemListViewController.swift in Sources */,
 				596A861C2B48488C00DA4949 /* OffersCollectionViewCell.swift in Sources */,
 				59D1B7A72B4DD7B0000CAAAD /* AddressViewModel.swift in Sources */,
 				59A303742B4DB697003E2225 /* CheckoutViewControllerVM.swift in Sources */,
