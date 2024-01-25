@@ -8,18 +8,18 @@
 import UIKit
 
 class CartViewController: UIViewController {
-
+    
     @IBOutlet weak var goToCartButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var itemCount: UILabel!
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var logoImage: UIImageView!
-
+    
     var vm = CartViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.logoImage.image = CommonConfig.colors.appSmallLogo
-
+        
         self.goToCartButton.layer.cornerRadius = 25
         self.goToCartButton.layer.borderWidth = 2
         self.goToCartButton.layer.borderColor = UIColor.white.cgColor
@@ -29,7 +29,7 @@ class CartViewController: UIViewController {
         guard let  mainTabbarController = UIApplication.shared.keyWindow?.rootViewController as? HomeTabbarController else { return }
         mainTabbarController.tabBar.items?[3].badgeValue = "3"
         mainTabbarController.tabBar.items?[3].title = "₹2,000"
-
+        
         mainTabbarController.tabBar.items?[3].badgeColor = CommonConfig.colors.themeColor
     }
     
@@ -37,7 +37,7 @@ class CartViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    
     @IBAction func actiongoToCart(_ sender: Any) {
         if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -66,23 +66,23 @@ class CartViewController: UIViewController {
             if let presentationController = viewController.presentationController as? UISheetPresentationController {
                 presentationController.detents = [.medium(), .large()]
                 presentationController.preferredCornerRadius = 20
-
+                
             }
             self.present(viewController, animated: true)
-     } else {
-         let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
-         self.navigationController?.pushViewController(checkoutViewController, animated: true)}
+        } else {
+            let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+            self.navigationController?.pushViewController(checkoutViewController, animated: true)}
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
@@ -116,8 +116,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 50
-        }
+        return 50
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as! CartTableViewCell
