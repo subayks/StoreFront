@@ -66,7 +66,7 @@ extension WishListViewController : UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
-        return CGSize(width: collectionViewWidth/2.07, height: collectionViewWidth/1.5)
+        return CGSize(width: collectionViewWidth/2.07, height: 220)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

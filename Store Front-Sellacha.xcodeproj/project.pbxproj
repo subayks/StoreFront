@@ -96,6 +96,11 @@
 		59D1B7A52B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A42B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift */; };
 		59D1B7A72B4DD7B0000CAAAD /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A62B4DD7B0000CAAAD /* AddressViewModel.swift */; };
 		59D1B7A92B4DD7E4000CAAAD /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1B7A82B4DD7E4000CAAAD /* CardsViewModel.swift */; };
+		59DF3B242B62DC0B00719EEF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B232B62DC0B00719EEF /* SignupViewController.swift */; };
+		59DF3B292B62DC9B00719EEF /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B282B62DC9B00719EEF /* SignupViewModel.swift */; };
+		59DF3B2B2B62DF6E00719EEF /* LoginOrSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B2A2B62DF6E00719EEF /* LoginOrSignUpViewController.swift */; };
+		59DF3B2D2B62E18300719EEF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B2C2B62E18300719EEF /* SignInViewController.swift */; };
+		59DF3B2F2B62E56C00719EEF /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF3B2E2B62E56C00719EEF /* SignInViewModel.swift */; };
 		74F10E4476D749EA0151B741 /* Pods_Store_Front_Sellacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +216,11 @@
 		59D1B7A42B4DD671000CAAAD /* AddressFilledTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFilledTableViewCellVM.swift; sourceTree = "<group>"; };
 		59D1B7A62B4DD7B0000CAAAD /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		59D1B7A82B4DD7E4000CAAAD /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		59DF3B232B62DC0B00719EEF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		59DF3B282B62DC9B00719EEF /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		59DF3B2A2B62DF6E00719EEF /* LoginOrSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpViewController.swift; sourceTree = "<group>"; };
+		59DF3B2C2B62E18300719EEF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		59DF3B2E2B62E56C00719EEF /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		901ED4AF698C3CFD18A40A6B /* Pods_Store_Front_Sellacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Store_Front_Sellacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDD5B775A5C37EAC1BB9747 /* Pods-Store Front-Sellacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Store Front-Sellacha.release.xcconfig"; path = "Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -417,6 +427,7 @@
 		59ABD8B52B45A612004AA88C /* Store Front-Sellacha */ = {
 			isa = PBXGroup;
 			children = (
+				59DF3B222B62DBAD00719EEF /* Login */,
 				59292BDF2B4996AE0021C4D1 /* Cart */,
 				59BE8D372B48871300697464 /* Accounts */,
 				596A86422B486A3000DA4949 /* Categories */,
@@ -548,6 +559,42 @@
 				599924812B5293D1002E0DCB /* UIString + Extension.swift */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		59DF3B222B62DBAD00719EEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				59DF3B272B62DC7A00719EEF /* ViewModel */,
+				59DF3B262B62DC7300719EEF /* Model */,
+				59DF3B252B62DC6C00719EEF /* Cell */,
+				59DF3B232B62DC0B00719EEF /* SignupViewController.swift */,
+				59DF3B2A2B62DF6E00719EEF /* LoginOrSignUpViewController.swift */,
+				59DF3B2C2B62E18300719EEF /* SignInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		59DF3B252B62DC6C00719EEF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		59DF3B262B62DC7300719EEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59DF3B272B62DC7A00719EEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				59DF3B282B62DC9B00719EEF /* SignupViewModel.swift */,
+				59DF3B2E2B62E56C00719EEF /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		69CB969FA6499542BA299B27 /* Pods */ = {
@@ -766,6 +813,7 @@
 				599924AE2B55B595002E0DCB /* SettingsTableViewCellVM.swift in Sources */,
 				596A861E2B4848E100DA4949 /* UIImageView + Extension.swift in Sources */,
 				59D1B7A92B4DD7E4000CAAAD /* CardsViewModel.swift in Sources */,
+				59DF3B2F2B62E56C00719EEF /* SignInViewModel.swift in Sources */,
 				59BE8D3D2B488E2800697464 /* AccountsViewController.swift in Sources */,
 				599924AA2B55B1AB002E0DCB /* SettingsTableViewCell.swift in Sources */,
 				59292BE92B4999F60021C4D1 /* CartTableViewCellVM.swift in Sources */,
@@ -778,6 +826,7 @@
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
 				599924942B52EDCF002E0DCB /* OrderDetailsViewController.swift in Sources */,
 				599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */,
+				59DF3B242B62DC0B00719EEF /* SignupViewController.swift in Sources */,
 				5999248E2B52ACD9002E0DCB /* OrdersViewControllerVM.swift in Sources */,
 				59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */,
 				59292BEB2B499A080021C4D1 /* CartViewModel.swift in Sources */,
@@ -785,9 +834,11 @@
 				59ABD8B72B45A612004AA88C /* AppDelegate.swift in Sources */,
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
 				5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */,
+				59DF3B2D2B62E18300719EEF /* SignInViewController.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
 				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
 				599924AC2B55B225002E0DCB /* SettingsViewControllerVM.swift in Sources */,
+				59DF3B2B2B62DF6E00719EEF /* LoginOrSignUpViewController.swift in Sources */,
 				5999248A2B52ABD2002E0DCB /* OrdersTableViewCell.swift in Sources */,
 				599924A02B559F9F002E0DCB /* CardListViewController.swift in Sources */,
 				5999249E2B558F81002E0DCB /* WishListViewControllerVM.swift in Sources */,
@@ -820,6 +871,7 @@
 				59D1B7A32B4DD615000CAAAD /* CardFilledTableViewCellVm.swift in Sources */,
 				599924A22B559FE9002E0DCB /* CardViewTableViewCell.swift in Sources */,
 				599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */,
+				59DF3B292B62DC9B00719EEF /* SignupViewModel.swift in Sources */,
 				59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */,
 				5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */,
 				596A861C2B48488C00DA4949 /* OffersCollectionViewCell.swift in Sources */,
@@ -1002,19 +1054,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ4U8T6THH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Store Front-Sellacha/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We would like to access your pictures or videos to set up a customised profile picture to stay unique among our users";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sample.Store-Front-Sellacha";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sample.Store-Front-Sellacha-New";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1030,19 +1086,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ4U8T6THH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Store Front-Sellacha/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We would like to access your pictures or videos to set up a customised profile picture to stay unique among our users";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sample.Store-Front-Sellacha";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sample.Store-Front-Sellacha-New";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

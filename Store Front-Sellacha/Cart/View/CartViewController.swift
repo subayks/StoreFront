@@ -39,8 +39,39 @@ class CartViewController: UIViewController {
     }
 
     @IBAction func actiongoToCart(_ sender: Any) {
-        let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
-        self.navigationController?.pushViewController(checkoutViewController, animated: true)
+        if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+            viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                if isSignInClicked {
+                    let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                    signInViewController.isSignInClicked = { [weak self] in
+                        let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+                        self?.navigationController?.pushViewController(checkoutViewController, animated: true)
+                    }
+                    self?.present(signInViewController, animated: true)
+                } else {
+                    let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                    signupViewController.isSignUpClicked = { [weak self] in
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+                            self?.navigationController?.pushViewController(checkoutViewController, animated: true)
+                        }
+                        self?.present(signInViewController, animated: true)
+                    }
+                    self?.present(signupViewController, animated: true)
+                }
+            }
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                presentationController.detents = [.medium(), .large()]
+                presentationController.preferredCornerRadius = 20
+
+            }
+            self.present(viewController, animated: true)
+     } else {
+         let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+         self.navigationController?.pushViewController(checkoutViewController, animated: true)}
     }
     /*
     // MARK: - Navigation
