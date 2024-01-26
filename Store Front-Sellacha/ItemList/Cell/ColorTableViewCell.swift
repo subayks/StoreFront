@@ -9,6 +9,7 @@ import UIKit
 
 class ColorTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var selectedColor: UILabel!
     @IBOutlet weak var color3button: UIButton!
     @IBOutlet weak var color3View: UIView!
     @IBOutlet weak var color2Button: UIButton!
@@ -40,6 +41,7 @@ class ColorTableViewCell: UITableViewCell {
         
         self.color3View.layer.borderWidth = 1
         self.color3View.layer.borderColor = UIColor.clear.cgColor
+        self.selectedColor.text = "Red"
         
     }
 
@@ -53,17 +55,20 @@ class ColorTableViewCell: UITableViewCell {
         self.color1View.layer.borderColor = UIColor.black.cgColor
         self.color2View.layer.borderColor = UIColor.clear.cgColor
         self.color3View.layer.borderColor = UIColor.clear.cgColor
+        self.selectedColor.text = "Red"
     }
     
     @IBAction func actionColor2(_ sender: Any) {
         self.color1View.layer.borderColor = UIColor.clear.cgColor
         self.color2View.layer.borderColor = UIColor.black.cgColor
         self.color3View.layer.borderColor = UIColor.clear.cgColor
+        self.selectedColor.text = "Black"
     }
     
     @IBAction func actionColor3(_ sender: Any) {
         self.color1View.layer.borderColor = UIColor.clear.cgColor
         self.color2View.layer.borderColor = UIColor.clear.cgColor
         self.color3View.layer.borderColor = UIColor.black.cgColor
+        self.selectedColor.text = "Orange"
     }
 }

@@ -82,6 +82,8 @@
 		59A303702B4DB362003E2225 /* CardTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036F2B4DB362003E2225 /* CardTableViewCellVM.swift */; };
 		59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A303712B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift */; };
 		59A303742B4DB697003E2225 /* CheckoutViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A303732B4DB697003E2225 /* CheckoutViewControllerVM.swift */; };
+		59A8C2162B63CBB900841FDA /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A8C2152B63CBB900841FDA /* SuggestionTableViewCell.swift */; };
+		59A8C2182B63CCAF00841FDA /* ItemSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A8C2172B63CCAF00841FDA /* ItemSearchViewModel.swift */; };
 		59ABD8B72B45A612004AA88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8B62B45A612004AA88C /* AppDelegate.swift */; };
 		59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8B82B45A612004AA88C /* SceneDelegate.swift */; };
 		59ABD8BB2B45A612004AA88C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD8BA2B45A612004AA88C /* ViewController.swift */; };
@@ -209,6 +211,8 @@
 		59A3036F2B4DB362003E2225 /* CardTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCellVM.swift; sourceTree = "<group>"; };
 		59A303712B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInfoTableViewCellVM.swift; sourceTree = "<group>"; };
 		59A303732B4DB697003E2225 /* CheckoutViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewControllerVM.swift; sourceTree = "<group>"; };
+		59A8C2152B63CBB900841FDA /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
+		59A8C2172B63CCAF00841FDA /* ItemSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchViewModel.swift; sourceTree = "<group>"; };
 		59ABD8B32B45A612004AA88C /* Store Front-Sellacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Store Front-Sellacha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ABD8B62B45A612004AA88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59ABD8B82B45A612004AA88C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -636,6 +640,7 @@
 			children = (
 				59DF3B3D2B62F5B100719EEF /* ItemListViewModel.swift */,
 				5981361E2B63B26F00F60220 /* ItemDetailViewModel.swift */,
+				59A8C2172B63CCAF00841FDA /* ItemSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 				598136182B63AF6F00F60220 /* SizeTableViewCell.swift */,
 				5981361A2B63B0AC00F60220 /* DescriptionTableViewCell.swift */,
 				5981361C2B63B0DD00F60220 /* ReviewTableViewCell.swift */,
+				59A8C2152B63CBB900841FDA /* SuggestionTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -896,6 +902,7 @@
 				599924962B52EEAC002E0DCB /* OrderInfoTableViewCell.swift in Sources */,
 				599924A62B55A9DA002E0DCB /* ReferViewController.swift in Sources */,
 				5999249C2B558EF8002E0DCB /* WishListViewController.swift in Sources */,
+				59A8C2182B63CCAF00841FDA /* ItemSearchViewModel.swift in Sources */,
 				596A861A2B48485400DA4949 /* OffersCollectionViewCellVM.swift in Sources */,
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
@@ -955,6 +962,7 @@
 				599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */,
 				59DF3B292B62DC9B00719EEF /* SignupViewModel.swift in Sources */,
 				59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */,
+				59A8C2162B63CBB900841FDA /* SuggestionTableViewCell.swift in Sources */,
 				5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */,
 				59DF3B362B62F3C800719EEF /* ItemListViewController.swift in Sources */,
 				598136172B63AEB400F60220 /* ColorTableViewCell.swift in Sources */,

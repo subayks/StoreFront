@@ -32,6 +32,9 @@ class ItemListViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         itemListCollectionView.collectionViewLayout = layout
+        
+        let button1 = UIBarButtonItem(image: UIImage(named: "Search"), style: .plain, target: self, action: #selector(searchClicked(tapGestureRecognizer:)))
+        self.navigationItem.rightBarButtonItem  = button1
     }
     
     func setupNavigationBar() {
@@ -62,6 +65,11 @@ class ItemListViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         self.hidesBottomBarWhenPushed = false
         self.tabBarController?.selectedIndex = 3
+    }
+    
+    @objc func searchClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemSearchViewController") as! ItemSearchViewController
+        self.navigationController?.pushViewController(itemDetailViewController, animated: true)
     }
 }
 
