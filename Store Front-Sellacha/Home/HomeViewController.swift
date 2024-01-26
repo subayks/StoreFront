@@ -51,18 +51,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
             cell.categoryTableViewCellVM = self.vm.getMensCollectionList()
-            cell.reloadCollectionView = true
+           // cell.reloadCollectionView = true
             cell.vieewAllLabel.tag = indexPath.section
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             cell.vieewAllLabel.isUserInteractionEnabled = true
             cell.vieewAllLabel.addGestureRecognizer(tapGestureRecognizer)
-            cell.didSelectDelegate = { [weak self] (stylist, speciality, row,salonId,  id) in
+            cell.didSelectDelegate = { [weak self] in
                 guard let self = self else {return}
-             //   self.endUserDashboardViewModel.resetTableView = true
-//                let shopDetailsView = self.storyboard?.instantiateViewController(withIdentifier: "ShopDetailsView") as! ShopDetailsView
-//                shopDetailsView.shopDetailsViewModel = self.endUserDashboardViewModel.getShopDetailsViewModel(section: indexPath.section, index: row)
-//                self.tabBarController?.tabBar.isHidden = true
-//                self.navigationController?.pushViewController(shopDetailsView, animated: true)
+                let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
+                self.navigationController?.pushViewController(itemDetailViewController, animated: true)
             }
             return cell
         }

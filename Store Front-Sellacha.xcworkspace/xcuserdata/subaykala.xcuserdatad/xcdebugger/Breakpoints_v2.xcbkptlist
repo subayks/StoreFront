@@ -7,64 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8BBDCBD0-DF13-4231-BC70-1F9733D87585"
+            uuid = "E389BF72-9609-4893-BE34-9B6CEF3BCFA8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Cart/View/CartViewController.swift"
+            filePath = "Store Front-Sellacha/ItemList/View/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "imageTapped(tapGestureRecognizer:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8BBDCBD0-DF13-4231-BC70-1F9733D87585 - 4743d13d1b61ec01"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Store_Front_Sellacha.CartViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Cart/View/CartViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "364">
-               </Location>
-               <Location
-                  uuid = "8BBDCBD0-DF13-4231-BC70-1F9733D87585 - 4743d13d1b61edde"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Store_Front_Sellacha.CartViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/Cart/View/CartViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "368">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "51653306-D2A7-4C84-B70D-D4394FEAB5D1"
+            uuid = "AE4DD0E7-FD1C-4C5D-9C5F-6B96D5C6089D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/HomeTabbarController.swift"
+            filePath = "Store Front-Sellacha/ItemList/View/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "tabBar(_:didSelect:)"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "deleteImageTapped(tapGestureRecognizer:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

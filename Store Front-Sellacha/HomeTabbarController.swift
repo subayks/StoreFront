@@ -27,14 +27,14 @@ class HomeTabbarController: UITabBarController, UITabBarControllerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-      // you need a reference to your nav controller
-      if let navController = tabBarController.selectedViewController as? UINavigationController {
-        navController.popToRootViewController(animated: false)
-      }
-
-      return true
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//      // you need a reference to your nav controller
+//      if let navController = tabBarController.selectedViewController as? UINavigationController {
+//        navController.popToRootViewController(animated: false)
+//      }
+//
+//      return true
+//    }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if tabBar.selectedItem?.title == "Home" {

@@ -2060,13 +2060,13 @@
                                                 <rect key="frame" x="15" y="251" width="363" height="56"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmX-Wu-D7y">
-                                                        <rect key="frame" x="7.6666666666666572" y="7.6666666666666856" width="340.33333333333337" height="12"/>
+                                                        <rect key="frame" x="7.6666666666666572" y="7.6666666666666572" width="340.33333333333337" height="12"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFp-P4-GKg">
-                                                        <rect key="frame" x="7.6666666666666572" y="21.666666666666686" width="340.33333333333337" height="25"/>
+                                                        <rect key="frame" x="7.6666666666666572" y="21.666666666666657" width="340.33333333333337" height="25"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="xvf-Pz-iP8"/>
@@ -4306,10 +4306,10 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-4h-ahW">
-                                <rect key="frame" x="15" y="74" width="362" height="36"/>
+                                <rect key="frame" x="15" y="74" width="363" height="36"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-as-Y0W">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="36"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-1s-ghv">
                                                 <rect key="frame" x="15" y="10" width="16" height="16"/>
@@ -4319,13 +4319,13 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brands" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36c-Pl-wsm">
-                                                <rect key="frame" x="46" y="12" width="45" height="12"/>
+                                                <rect key="frame" x="46" y="12" width="45.333333333333343" height="12"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVd-ax-VnU">
-                                                <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -4342,14 +4342,13 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             <constraint firstItem="36c-Pl-wsm" firstAttribute="leading" secondItem="LFI-1s-ghv" secondAttribute="trailing" constant="15" id="VAJ-Pu-eFg"/>
                                             <constraint firstItem="36c-Pl-wsm" firstAttribute="centerY" secondItem="LFI-1s-ghv" secondAttribute="centerY" id="ar2-E9-OVi"/>
                                             <constraint firstItem="VVd-ax-VnU" firstAttribute="leading" secondItem="aYx-as-Y0W" secondAttribute="leading" id="cX7-4T-8ri"/>
-                                            <constraint firstAttribute="width" constant="106" id="f0w-aw-Uqr"/>
                                             <constraint firstItem="LFI-1s-ghv" firstAttribute="centerY" secondItem="aYx-as-Y0W" secondAttribute="centerY" id="g4E-tI-x1I"/>
                                             <constraint firstAttribute="trailing" secondItem="36c-Pl-wsm" secondAttribute="trailing" constant="15" id="gDQ-LB-CId"/>
                                             <constraint firstAttribute="bottom" secondItem="VVd-ax-VnU" secondAttribute="bottom" id="sWB-TS-WaC"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Py4-BL-d1t">
-                                        <rect key="frame" x="128" y="0.0" width="106" height="36"/>
+                                        <rect key="frame" x="128.33333333333334" y="0.0" width="106.33333333333334" height="36"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sort" translatesAutoresizingMaskIntoConstraints="NO" id="nan-xV-h6k">
                                                 <rect key="frame" x="15" y="10" width="16" height="16"/>
@@ -4359,13 +4358,13 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpF-Tg-kyF">
-                                                <rect key="frame" x="46" y="12" width="45" height="12"/>
+                                                <rect key="frame" x="46" y="12" width="45.333333333333343" height="12"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUb-r9-aAU">
-                                                <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -4376,7 +4375,6 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
                                             <constraint firstItem="nan-xV-h6k" firstAttribute="leading" secondItem="Py4-BL-d1t" secondAttribute="leading" constant="15" id="DMF-j2-0BC"/>
-                                            <constraint firstAttribute="width" constant="106" id="InF-yu-A3b"/>
                                             <constraint firstAttribute="trailing" secondItem="wpF-Tg-kyF" secondAttribute="trailing" constant="15" id="KrC-KJ-Seq"/>
                                             <constraint firstItem="OUb-r9-aAU" firstAttribute="top" secondItem="Py4-BL-d1t" secondAttribute="top" id="Rvy-a9-6Pr"/>
                                             <constraint firstItem="OUb-r9-aAU" firstAttribute="leading" secondItem="Py4-BL-d1t" secondAttribute="leading" id="SoP-IF-1x8"/>
@@ -4389,7 +4387,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-eo-HJe">
-                                        <rect key="frame" x="256" y="0.0" width="106" height="36"/>
+                                        <rect key="frame" x="256.66666666666669" y="0.0" width="106.33333333333331" height="36"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Filters" translatesAutoresizingMaskIntoConstraints="NO" id="WkJ-eL-f0b">
                                                 <rect key="frame" x="15" y="10" width="16" height="16"/>
@@ -4399,13 +4397,13 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYY-Hb-wJ9">
-                                                <rect key="frame" x="46" y="12" width="45" height="12"/>
+                                                <rect key="frame" x="46" y="12" width="45.333333333333343" height="12"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01I-KY-hA9">
-                                                <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="36"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -4417,7 +4415,6 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cYY-Hb-wJ9" secondAttribute="trailing" constant="15" id="22O-aC-jV1"/>
                                             <constraint firstItem="WkJ-eL-f0b" firstAttribute="leading" secondItem="RC4-eo-HJe" secondAttribute="leading" constant="15" id="GrR-Yr-8P6"/>
-                                            <constraint firstAttribute="width" constant="106" id="LMn-9g-fYW"/>
                                             <constraint firstAttribute="height" constant="36" id="Wzh-vy-Nao"/>
                                             <constraint firstAttribute="trailing" secondItem="01I-KY-hA9" secondAttribute="trailing" id="dmA-m1-uki"/>
                                             <constraint firstItem="WkJ-eL-f0b" firstAttribute="centerY" secondItem="RC4-eo-HJe" secondAttribute="centerY" id="fPF-K6-pjO"/>
@@ -4432,10 +4429,10 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkS-3F-BVc">
-                                <rect key="frame" x="0.0" y="125" width="392" height="727"/>
+                                <rect key="frame" x="0.0" y="125" width="393" height="727"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z7b-MM-9HU">
-                                        <rect key="frame" x="15" y="10" width="362" height="717"/>
+                                        <rect key="frame" x="15" y="10" width="363" height="717"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="V7H-rZ-Atm">
                                             <size key="itemSize" width="184" height="220"/>
@@ -4547,7 +4544,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ3-ri-f4V">
-                                        <rect key="frame" x="145.33333333333334" y="634" width="101.66666666666666" height="48"/>
+                                        <rect key="frame" x="145.66666666666666" y="634" width="101.66666666666666" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="j4A-aT-fDD"/>
@@ -4602,7 +4599,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
         <!--Item Detail View Controller-->
         <scene sceneID="OKj-o7-259">
             <objects>
-                <viewController storyboardIdentifier="ItemDetailViewController" id="Vyo-pF-MFF" customClass="ItemDetailViewController" customModule="Store_Front_Sellacha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetailViewController" hidesBottomBarWhenPushed="YES" id="Vyo-pF-MFF" customClass="ItemDetailViewController" customModule="Store_Front_Sellacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4YZ-aF-FRy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4611,14 +4608,14 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                 <rect key="frame" x="0.0" y="59" width="393" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="480" id="Jyr-fS-TgR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemImageTableViewCell" rowHeight="480" id="Jyr-fS-TgR" customClass="ItemImageTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="480"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jyr-fS-TgR" id="0cS-av-UaS">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2 126" translatesAutoresizingMaskIntoConstraints="NO" id="ill-29-hDH">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2 126" translatesAutoresizingMaskIntoConstraints="NO" id="ill-29-hDH">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="372"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="372" id="jwb-6c-zSY"/>
@@ -4671,8 +4668,14 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <connections>
+                                            <outlet property="itemDesc" destination="1xJ-SX-Dhr" id="fIE-JB-B1F"/>
+                                            <outlet property="itemImage" destination="ill-29-hDH" id="8hN-e7-72Q"/>
+                                            <outlet property="itemName" destination="SU0-Nd-eg1" id="Xv0-8m-ygo"/>
+                                            <outlet property="ratingCount" destination="tDC-6A-yIl" id="hLI-BF-edg"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="68" id="FcS-CG-lCI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorTableViewCell" rowHeight="68" id="FcS-CG-lCI" customClass="ColorTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="530" width="393" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FcS-CG-lCI" id="dN9-Bo-oJa">
@@ -4691,84 +4694,108 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                     <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7e-pH-WsJ">
-                                                    <rect key="frame" x="15" y="34" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="JoY-a7-ddp"/>
-                                                        <constraint firstAttribute="width" constant="24" id="VRu-QY-sOo"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GP-9I-b1e">
-                                                    <rect key="frame" x="53" y="38" width="16" height="16"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="B5v-ex-XDw"/>
-                                                        <constraint firstAttribute="width" constant="16" id="IQ6-zG-1ne"/>
-                                                    </constraints>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aND-jT-dyH">
-                                                    <rect key="frame" x="49" y="34" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="fqw-5v-EhZ"/>
-                                                        <constraint firstAttribute="width" constant="24" id="t43-ul-0bk"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAU-iE-xd1">
-                                                    <rect key="frame" x="87" y="38" width="16" height="16"/>
-                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <rect key="frame" x="93" y="33.666666666666664" width="24" height="24"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aal-Vb-R11">
+                                                            <rect key="frame" x="4" y="4" width="16" height="16"/>
+                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain"/>
+                                                            <connections>
+                                                                <action selector="actionColor3:" destination="FcS-CG-lCI" eventType="touchUpInside" id="Gut-X3-e6r"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="16" id="VWj-vE-lwM"/>
-                                                        <constraint firstAttribute="height" constant="16" id="Wcw-hL-Zty"/>
+                                                        <constraint firstItem="aal-Vb-R11" firstAttribute="top" secondItem="SAU-iE-xd1" secondAttribute="top" constant="4" id="1tX-up-zhe"/>
+                                                        <constraint firstAttribute="height" constant="24" id="4SH-aN-Dg9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aal-Vb-R11" secondAttribute="trailing" constant="4" id="8HJ-mf-uDx"/>
+                                                        <constraint firstAttribute="width" constant="24" id="T6c-PY-6fa"/>
+                                                        <constraint firstItem="aal-Vb-R11" firstAttribute="leading" secondItem="SAU-iE-xd1" secondAttribute="leading" constant="4" id="iWE-1b-03Y"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aal-Vb-R11" secondAttribute="bottom" constant="4" id="w2H-Lt-gEm"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aal-Vb-R11">
-                                                    <rect key="frame" x="83" y="34" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="6Js-hN-lH7"/>
-                                                        <constraint firstAttribute="width" constant="24" id="Dpo-3z-ZuM"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="564-S7-79d">
-                                                    <rect key="frame" x="19" y="38" width="16" height="16"/>
-                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                    <rect key="frame" x="15" y="33.666666666666664" width="24" height="24"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7e-pH-WsJ">
+                                                            <rect key="frame" x="4" y="4" width="16" height="16"/>
+                                                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="TIT-kN-yzf"/>
+                                                                <constraint firstAttribute="height" constant="16" id="Xty-JH-xzv"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain"/>
+                                                            <connections>
+                                                                <action selector="actionColor1:" destination="FcS-CG-lCI" eventType="touchUpInside" id="wrA-fB-eQw"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="Yj3-iN-6pM"/>
-                                                        <constraint firstAttribute="width" constant="16" id="nqM-qF-ZSJ"/>
+                                                        <constraint firstItem="B7e-pH-WsJ" firstAttribute="top" secondItem="564-S7-79d" secondAttribute="top" constant="4" id="Fvm-8i-KFU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="B7e-pH-WsJ" secondAttribute="trailing" constant="4" id="QXF-0D-4Eq"/>
+                                                        <constraint firstAttribute="width" constant="24" id="Tgs-cz-Qi6"/>
+                                                        <constraint firstAttribute="height" constant="24" id="bRi-8o-ajH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="B7e-pH-WsJ" secondAttribute="bottom" constant="4" id="iXW-Mp-aXW"/>
+                                                        <constraint firstItem="B7e-pH-WsJ" firstAttribute="leading" secondItem="564-S7-79d" secondAttribute="leading" constant="4" id="wQH-PZ-N4X"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GP-9I-b1e">
+                                                    <rect key="frame" x="54" y="33.666666666666664" width="24" height="24"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aND-jT-dyH">
+                                                            <rect key="frame" x="4" y="4" width="16" height="16"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain"/>
+                                                            <connections>
+                                                                <action selector="actionColor2:" destination="FcS-CG-lCI" eventType="touchUpInside" id="cxl-Fo-UaO"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="aND-jT-dyH" secondAttribute="trailing" constant="4" id="3hh-Rt-1Cq"/>
+                                                        <constraint firstItem="aND-jT-dyH" firstAttribute="leading" secondItem="9GP-9I-b1e" secondAttribute="leading" constant="4" id="NTH-eh-tka"/>
+                                                        <constraint firstAttribute="height" constant="24" id="V2X-7N-nSc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aND-jT-dyH" secondAttribute="bottom" constant="4" id="cyw-Co-EuV"/>
+                                                        <constraint firstAttribute="width" constant="24" id="g3t-1Y-Xam"/>
+                                                        <constraint firstItem="aND-jT-dyH" firstAttribute="top" secondItem="9GP-9I-b1e" secondAttribute="top" constant="4" id="szC-TQ-WLu"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9GP-9I-b1e" firstAttribute="centerY" secondItem="aND-jT-dyH" secondAttribute="centerY" id="0Xf-6n-3ZT"/>
+                                                <constraint firstItem="9GP-9I-b1e" firstAttribute="leading" secondItem="564-S7-79d" secondAttribute="trailing" constant="15" id="2kX-uj-Iyf"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dD6-dx-ehw" secondAttribute="trailing" constant="15" id="39q-p9-C3d"/>
-                                                <constraint firstItem="aND-jT-dyH" firstAttribute="leading" secondItem="B7e-pH-WsJ" secondAttribute="trailing" constant="10" id="3AU-5z-v83"/>
                                                 <constraint firstItem="dD6-dx-ehw" firstAttribute="leading" secondItem="fI1-P9-KBg" secondAttribute="trailing" constant="15" id="4Xs-n5-Lh4"/>
-                                                <constraint firstItem="aND-jT-dyH" firstAttribute="top" secondItem="B7e-pH-WsJ" secondAttribute="top" id="B60-ww-vpt"/>
-                                                <constraint firstItem="aal-Vb-R11" firstAttribute="leading" secondItem="aND-jT-dyH" secondAttribute="trailing" constant="10" id="FYX-PM-e5Z"/>
-                                                <constraint firstItem="SAU-iE-xd1" firstAttribute="centerY" secondItem="aal-Vb-R11" secondAttribute="centerY" id="Gtz-iO-CZp"/>
-                                                <constraint firstItem="aal-Vb-R11" firstAttribute="top" secondItem="aND-jT-dyH" secondAttribute="top" id="Kp1-aG-x0b"/>
+                                                <constraint firstItem="SAU-iE-xd1" firstAttribute="top" secondItem="9GP-9I-b1e" secondAttribute="top" id="8WW-GL-QsP"/>
+                                                <constraint firstItem="9GP-9I-b1e" firstAttribute="bottom" secondItem="SAU-iE-xd1" secondAttribute="bottom" id="DYV-ei-9aD"/>
+                                                <constraint firstItem="9GP-9I-b1e" firstAttribute="bottom" secondItem="564-S7-79d" secondAttribute="bottom" id="Dkn-B9-nsG"/>
+                                                <constraint firstAttribute="bottom" secondItem="564-S7-79d" secondAttribute="bottom" constant="10.33" id="EAc-mM-VDn"/>
+                                                <constraint firstItem="564-S7-79d" firstAttribute="top" secondItem="fI1-P9-KBg" secondAttribute="bottom" constant="7" id="LWh-DL-9cL"/>
                                                 <constraint firstItem="fI1-P9-KBg" firstAttribute="top" secondItem="dN9-Bo-oJa" secondAttribute="top" constant="10" id="TPV-91-dLE"/>
-                                                <constraint firstAttribute="bottom" secondItem="B7e-pH-WsJ" secondAttribute="bottom" constant="10" id="Yz9-DZ-o64"/>
-                                                <constraint firstItem="564-S7-79d" firstAttribute="centerY" secondItem="B7e-pH-WsJ" secondAttribute="centerY" id="cVT-kb-kCW"/>
-                                                <constraint firstItem="B7e-pH-WsJ" firstAttribute="top" secondItem="fI1-P9-KBg" secondAttribute="bottom" constant="7.3300000000000001" id="gvy-47-5qX"/>
-                                                <constraint firstItem="B7e-pH-WsJ" firstAttribute="leading" secondItem="dN9-Bo-oJa" secondAttribute="leading" constant="15" id="h8s-OC-cdZ"/>
-                                                <constraint firstItem="9GP-9I-b1e" firstAttribute="centerX" secondItem="aND-jT-dyH" secondAttribute="centerX" id="i9i-39-e2h"/>
+                                                <constraint firstItem="SAU-iE-xd1" firstAttribute="leading" secondItem="9GP-9I-b1e" secondAttribute="trailing" constant="15" id="aJf-gq-U6P"/>
+                                                <constraint firstItem="564-S7-79d" firstAttribute="leading" secondItem="dN9-Bo-oJa" secondAttribute="leading" constant="15" id="jEg-1l-6ms"/>
                                                 <constraint firstItem="fI1-P9-KBg" firstAttribute="leading" secondItem="dN9-Bo-oJa" secondAttribute="leading" constant="15" id="kuP-Zb-Nlj"/>
-                                                <constraint firstItem="aND-jT-dyH" firstAttribute="bottom" secondItem="B7e-pH-WsJ" secondAttribute="bottom" id="mgx-bs-WCf"/>
-                                                <constraint firstItem="aal-Vb-R11" firstAttribute="bottom" secondItem="aND-jT-dyH" secondAttribute="bottom" id="pX2-bB-DP8"/>
-                                                <constraint firstItem="SAU-iE-xd1" firstAttribute="centerX" secondItem="aal-Vb-R11" secondAttribute="centerX" id="svn-62-L6z"/>
-                                                <constraint firstItem="564-S7-79d" firstAttribute="centerX" secondItem="B7e-pH-WsJ" secondAttribute="centerX" id="uGd-BX-sE4"/>
                                                 <constraint firstItem="dD6-dx-ehw" firstAttribute="top" secondItem="fI1-P9-KBg" secondAttribute="top" id="uhQ-Ej-mM8"/>
+                                                <constraint firstItem="9GP-9I-b1e" firstAttribute="top" secondItem="564-S7-79d" secondAttribute="top" id="yFi-4D-Isc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <connections>
+                                            <outlet property="color1Button" destination="B7e-pH-WsJ" id="utU-kf-KAR"/>
+                                            <outlet property="color1View" destination="564-S7-79d" id="LDx-zY-G4m"/>
+                                            <outlet property="color2Button" destination="aND-jT-dyH" id="ELK-99-hNQ"/>
+                                            <outlet property="color2View" destination="9GP-9I-b1e" id="Gju-9c-HQk"/>
+                                            <outlet property="color3View" destination="SAU-iE-xd1" id="Neb-X6-gQn"/>
+                                            <outlet property="color3button" destination="aal-Vb-R11" id="Ybc-Q2-6JU"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="73" id="U69-9r-Mrc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SizeTableViewCell" rowHeight="73" id="U69-9r-Mrc" customClass="SizeTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="598" width="393" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U69-9r-Mrc" id="DVi-Do-ypx">
@@ -4791,6 +4818,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                     <color key="tintColor" red="0.59999999999999998" green="0.76470588240000004" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="  Small  "/>
+                                                    <connections>
+                                                        <action selector="actionSmall:" destination="U69-9r-Mrc" eventType="touchUpInside" id="Ifd-WP-Gj3"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0D-sM-DuE">
                                                     <rect key="frame" x="72" y="39" width="56" height="24"/>
@@ -4802,6 +4832,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="  Medium  "/>
+                                                    <connections>
+                                                        <action selector="actionMEdium:" destination="U69-9r-Mrc" eventType="touchUpInside" id="Qze-kh-lA4"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsX-pd-uh4">
                                                     <rect key="frame" x="143" y="39" width="42" height="24"/>
@@ -4813,6 +4846,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="  Large  "/>
+                                                    <connections>
+                                                        <action selector="actionBig:" destination="U69-9r-Mrc" eventType="touchUpInside" id="XUG-Ev-sg6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -4831,8 +4867,13 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <connections>
+                                            <outlet property="buttonBig" destination="RsX-pd-uh4" id="xde-wD-3iS"/>
+                                            <outlet property="buttonMedium" destination="y0D-sM-DuE" id="hNs-o4-ULn"/>
+                                            <outlet property="buttonSmall" destination="rje-gu-PgA" id="rXp-Ub-VdO"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="115" id="ArL-7R-8hj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionTableViewCell" rowHeight="115" id="ArL-7R-8hj" customClass="DescriptionTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="671" width="393" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ArL-7R-8hj" id="wkN-sZ-phB">
@@ -4864,8 +4905,11 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <connections>
+                                            <outlet property="labelDescription" destination="gzt-t2-IwC" id="UXf-qK-IWq"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="208" id="dt4-fi-bwz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" rowHeight="208" id="dt4-fi-bwz" customClass="ReviewTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="786" width="393" height="208"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dt4-fi-bwz" id="khl-Qx-JBg">
@@ -4911,6 +4955,9 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                             <color key="tintColor" red="0.59999999999999998" green="0.76470588240000004" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal" title="  View All  "/>
+                                                            <connections>
+                                                                <action selector="actionViewAll:" destination="dt4-fi-bwz" eventType="touchUpInside" id="aP5-EW-UTk"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Good Quality product. Fast delivery time. Material was good. Product which shows in pictures you'll get same as it is in real." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-9S-HpE">
                                                             <rect key="frame" x="15" y="73" width="333" height="49.333333333333343"/>
@@ -4995,6 +5042,18 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <connections>
+                                            <outlet property="buttonviewAll" destination="GZV-Pz-pTy" id="Jtr-jh-Asj"/>
+                                            <outlet property="imageOverView" destination="gz6-jU-LPb" id="0ZA-DH-ycn"/>
+                                            <outlet property="imageStar" destination="svk-bQ-KpW" id="QdZ-EF-NFZ"/>
+                                            <outlet property="labelReviewComment" destination="O9T-9S-HpE" id="I8P-Ue-yUQ"/>
+                                            <outlet property="overview" destination="mnR-bw-CnC" id="0yq-LN-X85"/>
+                                            <outlet property="ratingCount" destination="Aoa-V8-gXR" id="qmI-4u-gbx"/>
+                                            <outlet property="reviewCount" destination="PlA-uW-nCb" id="Nlr-Oc-8R7"/>
+                                            <outlet property="reviewDate" destination="efq-Mo-4wG" id="day-iu-bH1"/>
+                                            <outlet property="reviewerImage" destination="Oow-VQ-psH" id="IJb-uA-PHN"/>
+                                            <outlet property="reviewerName" destination="0JX-v5-9sc" id="Sn1-v9-jnC"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryTableViewCell" rowHeight="246" id="1RY-lQ-FPx" customClass="CategoryTableViewCell" customModule="Store_Front_Sellacha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="994" width="393" height="246"/>
@@ -5034,7 +5093,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                                         <rect key="frame" x="0.0" y="0.0" width="140" height="196"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Offer2" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-gG-zuA">
-                                                                                <rect key="frame" x="5" y="5" width="130" height="140"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="145"/>
                                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="140" id="Nll-Mq-7qo"/>
@@ -5083,14 +5142,14 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                                         <constraints>
                                                                             <constraint firstAttribute="bottom" secondItem="Xnc-z2-Y5a" secondAttribute="bottom" constant="12" id="0gm-AL-LvT"/>
                                                                             <constraint firstItem="OLE-YE-8Fs" firstAttribute="leading" secondItem="kJ7-dX-Knt" secondAttribute="trailing" constant="5" id="2Cb-YM-40M"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="WQO-gG-zuA" secondAttribute="trailing" constant="5" id="8d2-NG-a8l"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="WQO-gG-zuA" secondAttribute="trailing" id="8d2-NG-a8l"/>
                                                                             <constraint firstItem="9u1-4A-GSd" firstAttribute="top" secondItem="kJ7-dX-Knt" secondAttribute="top" id="E21-Ma-SD5"/>
                                                                             <constraint firstItem="Xnc-z2-Y5a" firstAttribute="top" secondItem="kJ7-dX-Knt" secondAttribute="bottom" constant="5" id="LfT-ma-ueG"/>
                                                                             <constraint firstItem="kJ7-dX-Knt" firstAttribute="top" secondItem="WQO-gG-zuA" secondAttribute="bottom" constant="5" id="N2H-qF-8fr"/>
                                                                             <constraint firstItem="9u1-4A-GSd" firstAttribute="bottom" secondItem="kJ7-dX-Knt" secondAttribute="bottom" id="UfB-f9-1Rj"/>
                                                                             <constraint firstItem="9u1-4A-GSd" firstAttribute="leading" secondItem="OLE-YE-8Fs" secondAttribute="trailing" constant="5" id="Wjc-wD-vHy"/>
                                                                             <constraint firstAttribute="width" constant="144" id="c0V-Y0-o5O"/>
-                                                                            <constraint firstItem="WQO-gG-zuA" firstAttribute="leading" secondItem="TmU-Su-vZZ" secondAttribute="leading" constant="5" id="eWF-SS-LUv"/>
+                                                                            <constraint firstItem="WQO-gG-zuA" firstAttribute="leading" secondItem="TmU-Su-vZZ" secondAttribute="leading" id="eWF-SS-LUv"/>
                                                                             <constraint firstItem="OLE-YE-8Fs" firstAttribute="top" secondItem="kJ7-dX-Knt" secondAttribute="top" id="jLJ-zm-7xO"/>
                                                                             <constraint firstItem="Xnc-z2-Y5a" firstAttribute="trailing" secondItem="9u1-4A-GSd" secondAttribute="trailing" id="lxx-EY-1G0"/>
                                                                             <constraint firstItem="9u1-4A-GSd" firstAttribute="width" secondItem="TmU-Su-vZZ" secondAttribute="width" multiplier="0.3" id="m7q-EJ-0f0"/>
@@ -5098,7 +5157,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                                             <constraint firstItem="OLE-YE-8Fs" firstAttribute="height" secondItem="kJ7-dX-Knt" secondAttribute="height" id="tfj-ax-HIG"/>
                                                                             <constraint firstItem="Xnc-z2-Y5a" firstAttribute="leading" secondItem="kJ7-dX-Knt" secondAttribute="leading" id="tgK-be-azA"/>
                                                                             <constraint firstItem="kJ7-dX-Knt" firstAttribute="leading" secondItem="TmU-Su-vZZ" secondAttribute="leading" constant="5" id="v8K-fb-GY3"/>
-                                                                            <constraint firstItem="WQO-gG-zuA" firstAttribute="top" secondItem="TmU-Su-vZZ" secondAttribute="top" constant="5" id="zLa-5l-1ut"/>
+                                                                            <constraint firstItem="WQO-gG-zuA" firstAttribute="top" secondItem="TmU-Su-vZZ" secondAttribute="top" id="zLa-5l-1ut"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
@@ -5110,7 +5169,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                                     <constraint firstAttribute="bottom" secondItem="TmU-Su-vZZ" secondAttribute="bottom" id="T2p-E4-fLR"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                             <size key="customSize" width="140" height="196"/>
                                                             <connections>
                                                                 <outlet property="addressLabel" destination="Xnc-z2-Y5a" id="QkL-sx-LMm"/>
@@ -5132,8 +5191,8 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-NR-jeX">
-                                                    <rect key="frame" x="378" y="10" width="0.0" height="19"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="etret" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-NR-jeX">
+                                                    <rect key="frame" x="348.66666666666669" y="10" width="29.333333333333314" height="19"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.76470588240000004" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5162,15 +5221,19 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vyo-pF-MFF" id="54M-4c-8ao"/>
+                                    <outlet property="delegate" destination="Vyo-pF-MFF" id="OHx-2a-wx2"/>
+                                </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bin_Small" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-Cc-LiY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bin48" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-Cc-LiY">
                                 <rect key="frame" x="30" y="790" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="3jf-ME-EQB"/>
                                     <constraint firstAttribute="width" constant="24" id="adp-L1-5Tp"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="FhN-HM-DdT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plus 1" translatesAutoresizingMaskIntoConstraints="NO" id="FhN-HM-DdT">
                                 <rect key="frame" x="124" y="790" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="AKX-Vw-Ezf"/>
@@ -5206,7 +5269,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add to Cart"/>
                                 <connections>
-                                    <action selector="actiongoToCart:" destination="FbN-Eb-LuP" eventType="touchUpInside" id="glz-RP-GIS"/>
+                                    <action selector="actionAddToCart:" destination="Vyo-pF-MFF" eventType="touchUpInside" id="Iz9-yv-WUY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -5227,6 +5290,14 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                             <constraint firstItem="3Ha-Cc-LiY" firstAttribute="leading" secondItem="SAt-wf-qoD" secondAttribute="leading" constant="30" id="r8b-Ob-m3u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonAddToCart" destination="FYx-aw-ZDY" id="fzK-UQ-EEO"/>
+                        <outlet property="countLabel" destination="sB5-fO-31A" id="Dr9-K0-7WD"/>
+                        <outlet property="countOverView" destination="bRh-W5-86G" id="FdM-Ds-jST"/>
+                        <outlet property="imageDelete" destination="3Ha-Cc-LiY" id="P3I-zs-UWu"/>
+                        <outlet property="imagePlus" destination="FhN-HM-DdT" id="6x5-wY-bLg"/>
+                        <outlet property="itemDetailsTableView" destination="AGr-cg-xwh" id="qsc-eh-u77"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpu-UZ-1nX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5238,6 +5309,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
         <image name="Bag" width="24" height="24"/>
         <image name="Bags" width="24" height="24"/>
         <image name="Bin" width="24" height="24"/>
+        <image name="Bin48" width="48" height="48"/>
         <image name="Bin_Small" width="16" height="16"/>
         <image name="Bridal" width="343" height="200"/>
         <image name="Card" width="24" height="24"/>
@@ -5263,6 +5335,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
         <image name="Payments_Green" width="24" height="24"/>
         <image name="Phone_call" width="73" height="72"/>
         <image name="Plus" width="16" height="16"/>
+        <image name="Plus 1" width="48" height="48"/>
         <image name="Plus_green" width="41" height="41"/>
         <image name="Rectangle" width="73" height="72"/>
         <image name="Refer and Earn_Green" width="24" height="24"/>
@@ -5290,13 +5363,13 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
