@@ -49,6 +49,21 @@
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "184">
                </Location>
+               <Location
+                  uuid = "E389BF72-9609-4893-BE34-9B6CEF3BCFA8 - 465f206d7e988463"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.ItemDetailViewController.imageTapped(tapGestureRecognizer: __C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/ItemList/View/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "184">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -112,6 +127,21 @@
                   startingLineNumber = "37"
                   endingLineNumber = "37"
                   offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "52B2BFB5-C5E6-40F5-9C9D-647B8DE04609 - f8679449af3e5cae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.ItemSearchViewController.searchBarSearchButtonClicked(__C.UISearchBar) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/ItemList/View/ItemSearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "268">
                </Location>
             </Locations>
          </BreakpointContent>
