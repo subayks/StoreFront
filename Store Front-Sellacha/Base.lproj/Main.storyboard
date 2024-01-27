@@ -5321,7 +5321,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LMW-Ml-kk7">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="15" y="59" width="363" height="759"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="N1j-hd-7zP">
                                     <size key="itemSize" width="184" height="220"/>
@@ -5471,11 +5471,11 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rb1-9c-fQ3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="LMW-Ml-kk7" firstAttribute="leading" secondItem="Rb1-9c-fQ3" secondAttribute="leading" id="CZM-U8-C31"/>
+                            <constraint firstItem="LMW-Ml-kk7" firstAttribute="leading" secondItem="Rb1-9c-fQ3" secondAttribute="leading" constant="15" id="CZM-U8-C31"/>
                             <constraint firstItem="rLl-HH-CQN" firstAttribute="top" secondItem="Rb1-9c-fQ3" secondAttribute="top" id="HYQ-y9-V08"/>
-                            <constraint firstItem="LMW-Ml-kk7" firstAttribute="trailing" secondItem="Rb1-9c-fQ3" secondAttribute="trailing" id="MU3-ix-xgD"/>
+                            <constraint firstItem="LMW-Ml-kk7" firstAttribute="trailing" secondItem="Rb1-9c-fQ3" secondAttribute="trailing" constant="-15" id="MU3-ix-xgD"/>
                             <constraint firstItem="Rb1-9c-fQ3" firstAttribute="bottom" secondItem="rLl-HH-CQN" secondAttribute="bottom" id="Pj2-4j-Mhx"/>
                             <constraint firstItem="LMW-Ml-kk7" firstAttribute="top" secondItem="Rb1-9c-fQ3" secondAttribute="top" id="Q4G-0B-LLY"/>
                             <constraint firstItem="rLl-HH-CQN" firstAttribute="leading" secondItem="Rb1-9c-fQ3" secondAttribute="leading" id="SPI-y1-zYZ"/>

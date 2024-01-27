@@ -18,6 +18,7 @@ class ItemSearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         searchBar.placeholder = "Please search here"
         self.searchBar.delegate = self
         navigationItem.titleView = searchBar

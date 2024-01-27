@@ -93,28 +93,13 @@
             filePath = "Store Front-Sellacha/ItemList/View/ItemSearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "52B2BFB5-C5E6-40F5-9C9D-647B8DE04609 - b0560df37bcfec27"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Store_Front_Sellacha.ItemSearchViewController.collectionView(_: __C.UICollectionView, numberOfItemsInSection: Swift.Int) -&gt; Swift.Int"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/ItemList/View/ItemSearchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "52B2BFB5-C5E6-40F5-9C9D-647B8DE04609 - f8679449af3e5c8f"
+                  uuid = "52B2BFB5-C5E6-40F5-9C9D-647B8DE04609 - f8679449af3e5c41"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -124,12 +109,12 @@
                   urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/ItemList/View/ItemSearchViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "276">
                </Location>
                <Location
-                  uuid = "52B2BFB5-C5E6-40F5-9C9D-647B8DE04609 - f8679449af3e5cae"
+                  uuid = "52B2BFB5-C5E6-40F5-9C9D-647B8DE04609 - f8679449af3e5c41"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -139,8 +124,8 @@
                   urlString = "file:///Users/subaykala/Desktop/StoreFront-Git/StoreFront/Store%20Front-Sellacha/ItemList/View/ItemSearchViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
                   offsetFromSymbolStart = "268">
                </Location>
             </Locations>
