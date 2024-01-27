@@ -21,7 +21,7 @@ class OrderDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.orderIDValueLAbel.textColor = CommonConfig.colors.themeColor
         self.helpButton.layer.cornerRadius = 15
         self.orderReceivedButton.layer.cornerRadius = 15

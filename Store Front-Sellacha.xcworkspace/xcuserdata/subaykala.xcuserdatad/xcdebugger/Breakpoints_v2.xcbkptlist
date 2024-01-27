@@ -14,8 +14,8 @@
             filePath = "Store Front-Sellacha/ItemList/View/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "imageTapped(tapGestureRecognizer:)"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "Store Front-Sellacha/ItemList/View/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "deleteImageTapped(tapGestureRecognizer:)"
             landmarkType = "7">
          </BreakpointContent>
