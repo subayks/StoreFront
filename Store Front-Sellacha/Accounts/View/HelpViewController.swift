@@ -21,11 +21,11 @@ class HelpViewController: UIViewController {
         self.overViewEmail.layer.cornerRadius = 10
         self.overViewLiveChat.layer.cornerRadius = 10
         
-        self.navigationController?.navigationBar.isHidden = false
         setupNavigationBar()
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Help Center"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()
@@ -38,6 +38,7 @@ class HelpViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     

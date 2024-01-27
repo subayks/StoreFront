@@ -12,7 +12,6 @@ class CardListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
         setupNavigationBar()
     }
 
@@ -25,6 +24,7 @@ class CardListViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Cards"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()

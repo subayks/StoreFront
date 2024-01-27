@@ -19,10 +19,13 @@ class ItemListViewController: UIViewController {
     var filterPicker = UIPickerView()
     var sortPicker = UIPickerView()
     var brandPicker = UIPickerView()
+    
+    var sortedShown = false
+    var brandShown = false
+    var filterShown = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
         
         self.buttonCart.layer.cornerRadius = 10
         self.overVieFilter.layer.cornerRadius = 10
@@ -42,6 +45,7 @@ class ItemListViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = self.vm?.title ?? ""
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()
@@ -57,42 +61,63 @@ class ItemListViewController: UIViewController {
     }
 
     @IBAction func actionFilter(_ sender: Any) {
-        filterPicker = UIPickerView.init()
-        filterPicker.delegate = self
-        filterPicker.dataSource = self
-        self.filterPicker.tag = 3
-        filterPicker.backgroundColor = UIColor.white
-        filterPicker.setValue(UIColor.black, forKey: "textColor")
-        filterPicker.autoresizingMask = .flexibleWidth
-        filterPicker.contentMode = .center
-        filterPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-        self.view.addSubview(filterPicker)
+        if !filterShown {
+            self.filterShown = true
+            self.sortedShown = false
+            self.brandShown = false
+            self.brandPicker.isHidden = !self.brandShown
+            self.sortPicker.isHidden = !self.sortedShown
+            filterPicker = UIPickerView.init()
+            filterPicker.delegate = self
+            filterPicker.dataSource = self
+            self.filterPicker.tag = 3
+            filterPicker.backgroundColor = UIColor.white
+            filterPicker.setValue(UIColor.black, forKey: "textColor")
+            filterPicker.autoresizingMask = .flexibleWidth
+            filterPicker.contentMode = .center
+            filterPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+            self.view.addSubview(filterPicker)
+        }
     }
     
     @IBAction func actionSort(_ sender: Any) {
-        sortPicker = UIPickerView.init()
-        sortPicker.delegate = self
-        sortPicker.dataSource = self
-        self.sortPicker.tag = 2
-        sortPicker.backgroundColor = UIColor.white
-        sortPicker.setValue(UIColor.black, forKey: "textColor")
-        sortPicker.autoresizingMask = .flexibleWidth
-        sortPicker.contentMode = .center
-        sortPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-        self.view.addSubview(sortPicker)
+        if !sortedShown {
+            self.sortedShown = true
+            self.brandShown = false
+            self.filterShown = false
+            self.brandPicker.isHidden = !self.brandShown
+            self.filterPicker.isHidden = !self.filterShown
+            sortPicker = UIPickerView.init()
+            sortPicker.delegate = self
+            sortPicker.dataSource = self
+            self.sortPicker.tag = 2
+            sortPicker.backgroundColor = UIColor.white
+            sortPicker.setValue(UIColor.black, forKey: "textColor")
+            sortPicker.autoresizingMask = .flexibleWidth
+            sortPicker.contentMode = .center
+            sortPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+            self.view.addSubview(sortPicker)
+        }
     }
     
     @IBAction func actionBrand(_ sender: Any) {
-        brandPicker = UIPickerView.init()
-        brandPicker.delegate = self
-        brandPicker.dataSource = self
-        self.brandPicker.tag = 1
-        brandPicker.backgroundColor = UIColor.white
-        brandPicker.setValue(UIColor.black, forKey: "textColor")
-        brandPicker.autoresizingMask = .flexibleWidth
-        brandPicker.contentMode = .scaleAspectFit
-        brandPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-        self.view.addSubview(brandPicker)
+        if !brandShown {
+            self.brandShown = true
+            self.sortedShown = false
+            self.filterShown = false
+            self.sortPicker.isHidden = !self.sortedShown
+            self.filterPicker.isHidden = !self.filterShown
+            brandPicker = UIPickerView.init()
+            brandPicker.delegate = self
+            brandPicker.dataSource = self
+            self.brandPicker.tag = 1
+            brandPicker.backgroundColor = UIColor.white
+            brandPicker.setValue(UIColor.black, forKey: "textColor")
+            brandPicker.autoresizingMask = .flexibleWidth
+            brandPicker.contentMode = .scaleAspectFit
+            brandPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+            self.view.addSubview(brandPicker)
+        }
     }
     
     @IBAction func actionCart(_ sender: Any) {
@@ -105,6 +130,16 @@ class ItemListViewController: UIViewController {
         let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemSearchViewController") as! ItemSearchViewController
         self.navigationController?.pushViewController(itemDetailViewController, animated: true)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         let touch = touches.first
+         if touch?.view == self.view {
+             self.brandPicker.isHidden = true
+             self.sortPicker.isHidden = true
+             self.filterPicker.isHidden = true
+        }
+    }
+    
 }
 
 extension ItemListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -119,6 +154,10 @@ extension ItemListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.brandPicker.isHidden = true
+        self.sortPicker.isHidden = true
+        self.filterPicker.isHidden = true
+        
         let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
         self.navigationController?.pushViewController(itemDetailViewController, animated: true)
     }
@@ -177,15 +216,18 @@ extension ItemListViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.brandPicker.isHidden = true
+        self.sortPicker.isHidden = true
+        self.filterPicker.isHidden = true
         switch pickerView.tag {
         case 1:
-            return self.brandPicker.isHidden = true
+            return self.brandShown = false
         case 2:
-            return self.sortPicker.isHidden = true
+            return self.sortedShown = false
         case 3:
-            return self.filterPicker.isHidden = true
+            return self.filterShown = false
         default:
-            return self.brandPicker.isHidden = true
+            return
         }
     }
 }

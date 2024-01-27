@@ -16,7 +16,6 @@ class OrdersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.vm.setupDataModel()
-        self.navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
         self.ordersSegmentView.layer.cornerRadius = 10
         
@@ -43,6 +42,7 @@ class OrdersViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Orders"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()

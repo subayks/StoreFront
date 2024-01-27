@@ -14,7 +14,6 @@ class WishListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
         setupNavigationBar()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -25,6 +24,7 @@ class WishListViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Wishlist"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()

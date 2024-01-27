@@ -20,8 +20,6 @@ class OrderDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.orderIDValueLAbel.textColor = CommonConfig.colors.themeColor
         self.helpButton.layer.cornerRadius = 15
         self.orderReceivedButton.layer.cornerRadius = 15
@@ -54,7 +52,8 @@ class OrderDetailsViewController: UIViewController {
     }
     
     @IBAction func actionHelp(_ sender: Any) {
-        
+        let helpViewController = self.storyboard?.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
+        self.navigationController?.pushViewController(helpViewController, animated: true)
     }
     
     @IBAction func actionOrderReceived(_ sender: Any) {
@@ -62,6 +61,8 @@ class OrderDetailsViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.title = "Orders Details"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()

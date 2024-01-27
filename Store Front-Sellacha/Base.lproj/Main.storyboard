@@ -1294,6 +1294,7 @@
                     <size key="freeformSize" width="393" height="1262"/>
                     <connections>
                         <outlet property="logoImage" destination="nL0-Tz-h3q" id="rWF-06-VMC"/>
+                        <outlet property="searchButton" destination="hke-GK-lgP" id="IRV-bG-yH6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfh-bl-m8u" sceneMemberID="firstResponder"/>

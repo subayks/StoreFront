@@ -14,11 +14,11 @@ class TermsAndConditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.isHidden = false
         setupNavigationBar()
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Terms & conditions"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()

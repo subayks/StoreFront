@@ -15,11 +15,11 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.vm.createDataStructure()
-        self.navigationController?.navigationBar.isHidden = false
         setupNavigationBar()
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Settings"
         self.navigationController?.isNavigationBarHidden = false
         let appearance = UINavigationBarAppearance()

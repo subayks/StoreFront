@@ -17,8 +17,7 @@ class ItemSearchViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.setupNavigationBar()
         searchBar.placeholder = "Please search here"
         self.searchBar.delegate = self
         navigationItem.titleView = searchBar
@@ -37,6 +36,22 @@ class ItemSearchViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.suggestionTableView.isHidden = true
         searchBar.resignFirstResponder()
+    }
+    
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.isNavigationBarHidden = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        appearance.titleTextAttributes = [.font: UIFont(name: "Roboto-Medium", size: 16)!,
+                                          .foregroundColor: UIColor.black]
+        
+        // Customizing our navigation bar
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
 

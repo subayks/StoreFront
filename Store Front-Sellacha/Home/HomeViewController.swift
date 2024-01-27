@@ -18,6 +18,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.logoImage.image = CommonConfig.colors.appSmallLogo
+        
+        let addTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(searchTapped(tapGestureRecognizer:)))
+        searchButton.isUserInteractionEnabled = true
+        searchButton.addGestureRecognizer(addTapGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +34,11 @@ class HomeViewController: UIViewController {
         let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
         itemListViewController.vm = self.vm.getItemListViewModel()
         self.navigationController?.pushViewController(itemListViewController, animated: true)
+    }
+    
+    @objc func searchTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let itemSearchViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemSearchViewController") as! ItemSearchViewController
+        self.navigationController?.pushViewController(itemSearchViewController, animated: true)
     }
 }
 
