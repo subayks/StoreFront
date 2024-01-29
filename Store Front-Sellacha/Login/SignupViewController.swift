@@ -9,7 +9,10 @@ import UIKit
 
 class SignupViewController: UIViewController {
     
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var signupScrollView: UIScrollView!
+    @IBOutlet weak var imageEye: UIImageView!
     @IBOutlet weak var mobilenumberOverView: UIView!
     @IBOutlet weak var emailOverView: UIView!
     @IBOutlet weak var userNameOverView: UIView!
@@ -19,11 +22,16 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     var vm = SignupViewModel()
     var isSignUpClicked:(()->())?
-    
+    var iconClick = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
         self.hideKeyboardWhenTappedAround()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageEye.isUserInteractionEnabled = true
+        imageEye.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setupView() {
@@ -57,6 +65,18 @@ class SignupViewController: UIViewController {
     @IBAction func actionContiune(_ sender: Any) {
         self.dismiss(animated: true)
         self.isSignUpClicked?()
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        if iconClick {
+            passwordField.isSecureTextEntry = false
+            self.imageEye.image = UIImage(named: "eye.slash.fill")
+        } else {
+            passwordField.isSecureTextEntry = true
+            self.imageEye.image = UIImage(named: "Eye")
+
+        }
+        iconClick = !iconClick
     }
 }
 

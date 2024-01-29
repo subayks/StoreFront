@@ -67,8 +67,10 @@ class SignInViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         if iconClick {
             passwordField.isSecureTextEntry = false
+            self.imageEye.image = UIImage(named: "eye.slash.fill")
         } else {
             passwordField.isSecureTextEntry = true
+            self.imageEye.image = UIImage(named: "Eye")
         }
         iconClick = !iconClick
     }
