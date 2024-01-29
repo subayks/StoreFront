@@ -8,6 +8,12 @@
 import Foundation
 
 class HomeViewModel: BaseViewModel {
+    var apiServices: HomeApiServicesProtocol?
+
+    init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
+        self.apiServices = apiServices
+    }
+    
     func getWelcomeTableViewCellVM() ->WelcomeTableViewCellVM {
         var offers = [Offers]()
         let imageList = ["Offer1", "Offer2", "Offer3", "Offer4"]

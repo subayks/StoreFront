@@ -20,7 +20,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var EmailIdField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
-    var vm = SignupViewModel()
+    var viewwModel = SignupViewModel()
     var isSignUpClicked:(()->())?
     var iconClick = true
 
@@ -32,6 +32,54 @@ class SignupViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageEye.isUserInteractionEnabled = true
         imageEye.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewwModel.errorClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if error != "" {
+                    let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        self.viewwModel.alertClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        self.viewwModel.showLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.showSpinner(onView: self.view)
+            }
+        }
+        
+        self.viewwModel.hideLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.removeSpinner()
+            }
+        }
+        
+        self.viewwModel.navigationClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.dismiss(animated: true)
+                self.isSignUpClicked?()
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let tabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
+//                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
+            }
+        }
     }
     
     func setupView() {
@@ -63,18 +111,16 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func actionContiune(_ sender: Any) {
-        self.dismiss(animated: true)
-        self.isSignUpClicked?()
+        self.viewwModel.validateFields(name: self.userNameField.text ?? "", email: self.EmailIdField.text ?? "", password: self.passwordField.text ?? "", phoneNumber: self.phoneNumberField.text ?? "")
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         if iconClick {
             passwordField.isSecureTextEntry = false
-            self.imageEye.image = UIImage(named: "eye.slash.fill")
+            self.imageEye.image = UIImage(systemName: "eye.slash.fill")
         } else {
             passwordField.isSecureTextEntry = true
             self.imageEye.image = UIImage(named: "Eye")
-
         }
         iconClick = !iconClick
     }

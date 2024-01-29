@@ -17,7 +17,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var signinScrollView: UIScrollView!
-    var vm  = SignInViewModel()
+    var viewwModel  = SignInViewModel()
     var isSignInClicked:(()->())?
     var iconClick = true
 
@@ -25,6 +25,55 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         self.setupView()
         self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewwModel.errorClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if error != "" {
+                    let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        self.viewwModel.alertClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        self.viewwModel.showLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.showSpinner(onView: self.view)
+            }
+        }
+        
+        self.viewwModel.hideLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.removeSpinner()
+            }
+        }
+        
+        self.viewwModel.navigationClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.dismiss(animated: true)
+                self.isSignInClicked?()
+                UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let tabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
+//                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
+            }
+        }
     }
     
     func setupView() {
@@ -59,15 +108,13 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: Any) {
-        self.dismiss(animated: true)
-        self.isSignInClicked?()
-        UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+        self.viewwModel.validateFields(email: self.nameField.text ?? "", password: self.passwordField.text ?? "")
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         if iconClick {
             passwordField.isSecureTextEntry = false
-            self.imageEye.image = UIImage(named: "eye.slash.fill")
+            self.imageEye.image = UIImage(systemName: "eye.slash.fill")
         } else {
             passwordField.isSecureTextEntry = true
             self.imageEye.image = UIImage(named: "Eye")

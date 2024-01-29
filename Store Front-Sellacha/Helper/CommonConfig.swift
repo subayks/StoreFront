@@ -19,4 +19,9 @@ class CommonConfig {
     struct messages {
         static let PHOTOS_ACCESS_ALERT = "Please enable access for photos, We would like to access your pictures or videos to set up a customised profile picture to stay unique among our users"
     }
+    
+    struct url {
+        static let finalURL = "https://storefront.sellacha.com/api"
+        static let createProductURL = "http://thedemostore.in/api/store"
+    }
 }

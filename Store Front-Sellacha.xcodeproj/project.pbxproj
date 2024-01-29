@@ -15,6 +15,11 @@
 		59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59292BF02B49DE070021C4D1 /* HomeTabbarController.swift */; };
 		59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */; };
 		593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593BE3182B4A88470053CB62 /* UILabel + Extension.swift */; };
+		5954E84D2B67F60C0039E537 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E84C2B67F60C0039E537 /* BaseResponse.swift */; };
+		5954E84F2B67F61C0039E537 /* HomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E84E2B67F61C0039E537 /* HomeApiService.swift */; };
+		5954E8512B67F8210039E537 /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8502B67F8200039E537 /* LoginApiService.swift */; };
+		5954E8542B67F8950039E537 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8532B67F8950039E537 /* LoginModel.swift */; };
+		5954E8562B67FC0C0039E537 /* UIviewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8552B67FC0C0039E537 /* UIviewController + Extension.swift */; };
 		5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9422B585CF2009B7719 /* HelpViewController.swift */; };
 		5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */; };
 		5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */; };
@@ -52,7 +57,6 @@
 		5981361B2B63B0AC00F60220 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981361A2B63B0AC00F60220 /* DescriptionTableViewCell.swift */; };
 		5981361D2B63B0DD00F60220 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981361C2B63B0DD00F60220 /* ReviewTableViewCell.swift */; };
 		5981361F2B63B26F00F60220 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981361E2B63B26F00F60220 /* ItemDetailViewModel.swift */; };
-		599924802B528B3D002E0DCB /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999247F2B528B3D002E0DCB /* UIViewController + Extension.swift */; };
 		599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924812B5293D1002E0DCB /* UIString + Extension.swift */; };
 		599924842B5293FF002E0DCB /* CardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924832B5293FF002E0DCB /* CardFormatter.swift */; };
 		599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924852B5296FF002E0DCB /* UItextField + Extension.swift */; };
@@ -146,6 +150,11 @@
 		59292BF02B49DE070021C4D1 /* HomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarController.swift; sourceTree = "<group>"; };
 		59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		593BE3182B4A88470053CB62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		5954E84C2B67F60C0039E537 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		5954E84E2B67F61C0039E537 /* HomeApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApiService.swift; sourceTree = "<group>"; };
+		5954E8502B67F8200039E537 /* LoginApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
+		5954E8532B67F8950039E537 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		5954E8552B67FC0C0039E537 /* UIviewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIviewController + Extension.swift"; sourceTree = "<group>"; };
 		5958B9422B585CF2009B7719 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +192,6 @@
 		5981361A2B63B0AC00F60220 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		5981361C2B63B0DD00F60220 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5981361E2B63B26F00F60220 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
-		5999247F2B528B3D002E0DCB /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		599924812B5293D1002E0DCB /* UIString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIString + Extension.swift"; sourceTree = "<group>"; };
 		599924832B5293FF002E0DCB /* CardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatter.swift; sourceTree = "<group>"; };
 		599924852B5296FF002E0DCB /* UItextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UItextField + Extension.swift"; sourceTree = "<group>"; };
@@ -340,6 +348,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		5954E84B2B67F5E70039E537 /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				5954E8502B67F8200039E537 /* LoginApiService.swift */,
+				5954E84E2B67F61C0039E537 /* HomeApiService.swift */,
+				5954E84C2B67F60C0039E537 /* BaseResponse.swift */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		5954E8522B67F8740039E537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5954E8532B67F8950039E537 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		596A860E2B48454400DA4949 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +483,7 @@
 		59ABD8B52B45A612004AA88C /* Store Front-Sellacha */ = {
 			isa = PBXGroup;
 			children = (
+				5954E84B2B67F5E70039E537 /* ApiServices */,
 				59ABD8B62B45A612004AA88C /* AppDelegate.swift */,
 				59F69D692B67F30B00838F5E /* Network */,
 				59DF3B302B62F37B00719EEF /* ItemList */,
@@ -578,6 +605,7 @@
 				59292BEC2B49DA6F0021C4D1 /* CommonConfig.swift */,
 				593BE3182B4A88470053CB62 /* UILabel + Extension.swift */,
 				599924852B5296FF002E0DCB /* UItextField + Extension.swift */,
+				5954E8552B67FC0C0039E537 /* UIviewController + Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -586,7 +614,6 @@
 			isa = PBXGroup;
 			children = (
 				596A86272B4867F900DA4949 /* RobotoFont */,
-				5999247F2B528B3D002E0DCB /* UIViewController + Extension.swift */,
 				599924812B5293D1002E0DCB /* UIString + Extension.swift */,
 			);
 			path = Font;
@@ -595,28 +622,13 @@
 		59DF3B222B62DBAD00719EEF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5954E8522B67F8740039E537 /* Model */,
 				59DF3B272B62DC7A00719EEF /* ViewModel */,
-				59DF3B262B62DC7300719EEF /* Model */,
-				59DF3B252B62DC6C00719EEF /* Cell */,
 				59DF3B232B62DC0B00719EEF /* SignupViewController.swift */,
 				59DF3B2A2B62DF6E00719EEF /* LoginOrSignUpViewController.swift */,
 				59DF3B2C2B62E18300719EEF /* SignInViewController.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		59DF3B252B62DC6C00719EEF /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		59DF3B262B62DC7300719EEF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		59DF3B272B62DC7A00719EEF /* ViewModel */ = {
@@ -920,16 +932,19 @@
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
 				599924942B52EDCF002E0DCB /* OrderDetailsViewController.swift in Sources */,
+				5954E84D2B67F60C0039E537 /* BaseResponse.swift in Sources */,
 				599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */,
 				59DF3B242B62DC0B00719EEF /* SignupViewController.swift in Sources */,
 				59DF3B3A2B62F3E800719EEF /* ItemSearchViewController.swift in Sources */,
 				5999248E2B52ACD9002E0DCB /* OrdersViewControllerVM.swift in Sources */,
 				59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */,
 				59292BEB2B499A080021C4D1 /* CartViewModel.swift in Sources */,
+				5954E8512B67F8210039E537 /* LoginApiService.swift in Sources */,
 				59D1B7992B4DCA36000CAAAD /* AddressFilledTableViewCell.swift in Sources */,
 				59ABD8B72B45A612004AA88C /* AppDelegate.swift in Sources */,
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
 				5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */,
+				5954E8542B67F8950039E537 /* LoginModel.swift in Sources */,
 				59DF3B2D2B62E18300719EEF /* SignInViewController.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
 				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
@@ -943,12 +958,13 @@
 				59D1B7A12B4DD160000CAAAD /* CompletionViewController.swift in Sources */,
 				596A86112B48456F00DA4949 /* HomeViewModel.swift in Sources */,
 				5981361F2B63B26F00F60220 /* ItemDetailViewModel.swift in Sources */,
+				5954E8562B67FC0C0039E537 /* UIviewController + Extension.swift in Sources */,
 				59F69D6B2B67F31600838F5E /* HTTPClass.swift in Sources */,
 				59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */,
 				599924922B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift in Sources */,
 				5999249A2B52F226002E0DCB /* OrderInfoTableViewCellVM.swift in Sources */,
-				599924802B528B3D002E0DCB /* UIViewController + Extension.swift in Sources */,
 				59DF3B3E2B62F5B100719EEF /* ItemListViewModel.swift in Sources */,
+				5954E84F2B67F61C0039E537 /* HomeApiService.swift in Sources */,
 				596A860D2B48446400DA4949 /* HomeViewController.swift in Sources */,
 				593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */,
 				599924902B52AD9C002E0DCB /* OrdersTableViewCellVM.swift in Sources */,
