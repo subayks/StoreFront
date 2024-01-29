@@ -7,13 +7,13 @@
 
 import Foundation
 class OffersCollectionViewCellVM {
-    var offer: Offers?
+    var posts: Posts?
     
-    init(offer: Offers) {
-        self.offer = offer
+    init(posts: Posts) {
+        self.posts = posts
     }
     
     func getImage() ->String {
-        return self.offer?.image ?? ""
+        return self.posts?.name ?? ""
     }
 }

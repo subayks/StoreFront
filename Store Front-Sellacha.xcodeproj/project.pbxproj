@@ -20,6 +20,7 @@
 		5954E8512B67F8210039E537 /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8502B67F8200039E537 /* LoginApiService.swift */; };
 		5954E8542B67F8950039E537 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8532B67F8950039E537 /* LoginModel.swift */; };
 		5954E8562B67FC0C0039E537 /* UIviewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8552B67FC0C0039E537 /* UIviewController + Extension.swift */; };
+		5954E8592B6806370039E537 /* SliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8582B6806370039E537 /* SliderModel.swift */; };
 		5958B9432B585CF2009B7719 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9422B585CF2009B7719 /* HelpViewController.swift */; };
 		5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */; };
 		5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */; };
@@ -155,6 +156,7 @@
 		5954E8502B67F8200039E537 /* LoginApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
 		5954E8532B67F8950039E537 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5954E8552B67FC0C0039E537 /* UIviewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIviewController + Extension.swift"; sourceTree = "<group>"; };
+		5954E8582B6806370039E537 /* SliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderModel.swift; sourceTree = "<group>"; };
 		5958B9422B585CF2009B7719 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		5958B9442B585DB8009B7719 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		5958B9462B586024009B7719 /* TermsAndConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewController.swift; sourceTree = "<group>"; };
@@ -366,9 +368,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		596A860E2B48454400DA4949 /* Model */ = {
+		5954E8572B6806280039E537 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5954E8582B6806370039E537 /* SliderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -525,9 +528,9 @@
 		59B3684D2B471A9300BD2F8B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5954E8572B6806280039E537 /* Model */,
 				596A86142B4847A700DA4949 /* Cell */,
 				596A860F2B48454C00DA4949 /* ViewModel */,
-				596A860E2B48454400DA4949 /* Model */,
 				596A860C2B48446400DA4949 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -984,6 +987,7 @@
 				59D1B79D2B4DCC92000CAAAD /* AddressViewController.swift in Sources */,
 				596A86132B4845CF00DA4949 /* BaseViewModel.swift in Sources */,
 				596A864C2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift in Sources */,
+				5954E8592B6806370039E537 /* SliderModel.swift in Sources */,
 				59F69D6D2B67F31A00838F5E /* NetworkAdapter.swift in Sources */,
 				5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */,
 				59292BED2B49DA6F0021C4D1 /* CommonConfig.swift in Sources */,

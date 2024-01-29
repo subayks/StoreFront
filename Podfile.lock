@@ -1,16 +1,39 @@
 PODS:
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - SDWebImage/Core (5.17.0)
+  - SDWebImageWebPCoder (0.14.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
   - Siren (6.1.2)
 
 DEPENDENCIES:
+  - SDWebImageWebPCoder
   - Siren
 
 SPEC REPOS:
   trunk:
+    - libwebp
+    - SDWebImage
+    - SDWebImageWebPCoder
     - Siren
 
 SPEC CHECKSUMS:
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  SDWebImageWebPCoder: eb7970094ac1401eb4c8a1cd077f472dbc66497b
   Siren: c951ae243b57160629fb2e4d2f630cbfc5d5452b
 
-PODFILE CHECKSUM: 3a879acf7434e99bcb6b2e1718e6e5262e0c9f44
+PODFILE CHECKSUM: ad0ed325fab129f5e630eebf1b525e8d9ec9f8ac
 
 COCOAPODS: 1.12.1

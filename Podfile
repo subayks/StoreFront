@@ -7,5 +7,6 @@ target 'Store Front-Sellacha' do
 
   
 pod 'Siren'
+pod 'SDWebImageWebPCoder'
 
 end

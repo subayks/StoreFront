@@ -7,15 +7,17 @@
 
 import Foundation
 protocol HomeApiServicesProtocol {
-    func getStaticData(finalURL: String, withParameters: String, completion: @escaping(_ status: Bool?, _ code: String?, _ response: AnyObject?, _ error: String?)-> Void)
+    func getSliderData(finalURL: String, withParameters: String, completion: @escaping(_ status: Bool?, _ code: String?, _ response: AnyObject?, _ error: String?)-> Void)
+    
 }
 
 class HomeApiService: HomeApiServicesProtocol {
-    func getStaticData(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
+    func getSliderData(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
         let headers = [
             "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
             ]
-        NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "GET", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
+        //Bearer 1465|uY3O2qgAAOn0Fu4VIx58vXN8ORp4J8XeKYNsldKB
+        NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
                 completion(false,errorCode,nil,error)
@@ -30,8 +32,8 @@ class HomeApiService: HomeApiServicesProtocol {
                         completion(false,errorCode,nil,"Unhandled Error")
                         return
                     }
-//                    let values = try decoder.decode(BaseResponse<StaticData>.self, from: result!)
-//                    completion(true,errorCode,values as AnyObject?,error)
+                    let values = try decoder.decode(BaseResponse<SliderModel>.self, from: result!)
+                    completion(true,errorCode,values as AnyObject?,error)
                     
                 } catch let error as NSError {
                     //do something with error

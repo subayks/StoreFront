@@ -9,21 +9,38 @@ import Foundation
 
 class HomeViewModel: BaseViewModel {
     var apiServices: HomeApiServicesProtocol?
+    var sliderModel: SliderModel?
+    var reloadSliderCollectionView:(()->())?
 
     init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
         self.apiServices = apiServices
     }
     
-    func getWelcomeTableViewCellVM() ->WelcomeTableViewCellVM {
-        var offers = [Offers]()
-        let imageList = ["Offer1", "Offer2", "Offer3", "Offer4"]
-        for item in imageList {
-            var offer = Offers()
-            offer.image = item
-            offer.id = "111"
-            offers.append(offer)
+    func getSliderInfo() {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.getSliderData(finalURL: "\(CommonConfig.url.finalURL)/get_slider", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<SliderModel>
+                        self.sliderModel = model?.data
+                        self.reloadSliderCollectionView?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
         }
-        return WelcomeTableViewCellVM(offers: offers)
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getWelcomeTableViewCellVM() ->WelcomeTableViewCellVM {
+        return WelcomeTableViewCellVM(posts: self.sliderModel?.posts ?? [Posts]())
     }
     
     func getMensCollectionList() ->CategoryTableViewCellVM {

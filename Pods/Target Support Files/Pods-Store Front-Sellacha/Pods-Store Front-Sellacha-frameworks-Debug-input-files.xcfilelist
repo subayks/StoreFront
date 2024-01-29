@@ -1,2 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Store Front-Sellacha/Pods-Store Front-Sellacha-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework
 ${BUILT_PRODUCTS_DIR}/Siren/Siren.framework
+${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework

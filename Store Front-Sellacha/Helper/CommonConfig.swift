@@ -22,6 +22,7 @@ class CommonConfig {
     
     struct url {
         static let finalURL = "https://storefront.sellacha.com/api"
+        static let imageBaseUrl = "https://storefront.sellacha.com/"
         static let createProductURL = "http://thedemostore.in/api/store"
     }
 }

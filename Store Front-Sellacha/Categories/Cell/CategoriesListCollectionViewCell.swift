@@ -22,11 +22,11 @@ class CategoriesListCollectionViewCell: UICollectionViewCell {
         self.offerImage.layer.borderWidth = 1
         self.offerImage.layer.cornerRadius = 10
         self.offerImage.layer.borderColor = UIColor.clear.cgColor
-        if self.offersCollectionViewCellVM?.offer?.id == "111" {
-            self.offerImage.image = UIImage(named: self.offersCollectionViewCellVM?.getImage() ?? "")
-        } else {
-        self.offerImage.loadImageUsingURL(self.offersCollectionViewCellVM?.getImage() ?? "")
-        }
+//        if self.offersCollectionViewCellVM?.offer?.id == "111" {
+//            self.offerImage.image = UIImage(named: self.offersCollectionViewCellVM?.getImage() ?? "")
+//        } else {
+//        self.offerImage.loadImageUsingURL(self.offersCollectionViewCellVM?.getImage() ?? "")
+//        }
 
 //        if let url = URL(string: self.offersCollectionViewCellVM?.getImage() ?? "") {
 //

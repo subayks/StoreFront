@@ -13,18 +13,18 @@ struct Offers {
 
 class WelcomeTableViewCellVM {
     
-    var offers: [Offers]?
+    var posts: [Posts]?
     
-    init(offers: [Offers]) {
-        self.offers = offers
+    init(posts: [Posts]) {
+        self.posts = posts
     }
     
     func getNumberOfItems() ->Int {
-        return offers?.count ?? 0
+        return posts?.count ?? 0
     }
     
     func getOffersCollectionViewCellVM(index: Int) ->OffersCollectionViewCellVM {
-        return OffersCollectionViewCellVM(offer: offers?[index] ?? Offers())
+        return OffersCollectionViewCellVM(posts: posts?[index] ?? Posts())
     }
     
 }

@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIImageView!
     @IBOutlet weak var HomeTableView: UITableView!
     
-    var vm = HomeViewModel()
+    var viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +22,66 @@ class HomeViewController: UIViewController {
         let addTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(searchTapped(tapGestureRecognizer:)))
         searchButton.isUserInteractionEnabled = true
         searchButton.addGestureRecognizer(addTapGestureRecognizer)
+        self.viewModel.getSliderInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+
+        self.viewModel.errorClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if error != "" {
+                    let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        self.viewModel.alertClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        self.viewModel.showLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.showSpinner(onView: self.view)
+            }
+        }
+        
+        self.viewModel.hideLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.removeSpinner()
+            }
+        }
+        
+        self.viewModel.reloadSliderCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.HomeTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            }
+        }
+        
+        self.viewModel.navigationClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+               
+            }
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
      //   print(tapGestureRecognizer.view?.tag)
         let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel()
+        itemListViewController.vm = self.viewModel.getItemListViewModel()
         self.navigationController?.pushViewController(itemListViewController, animated: true)
     }
     
@@ -54,12 +103,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "WelcomeTableViewCell") as! WelcomeTableViewCell
-            cell.welcomeTableViewCellVM = self.vm.getWelcomeTableViewCellVM()
+            cell.welcomeTableViewCellVM = self.viewModel.getWelcomeTableViewCellVM()
             cell.setupView()
             return cell
         } else {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
-            cell.categoryTableViewCellVM = self.vm.getMensCollectionList()
+            cell.categoryTableViewCellVM = self.viewModel.getMensCollectionList()
            // cell.reloadCollectionView = true
             cell.vieewAllLabel.tag = indexPath.section
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))

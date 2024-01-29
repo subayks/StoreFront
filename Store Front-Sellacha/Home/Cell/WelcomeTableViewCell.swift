@@ -33,7 +33,7 @@ class WelcomeTableViewCell: UITableViewCell {
         offerCollectionView.reloadData()
         self.carouselPageConrtrol.currentPageIndicatorTintColor = CommonConfig.colors.themeColor
         self.carouselPageConrtrol.pageIndicatorTintColor = UIColor.white
-        self.carouselPageConrtrol.numberOfPages = self.welcomeTableViewCellVM?.offers?.count ?? 0
+        self.carouselPageConrtrol.numberOfPages = self.welcomeTableViewCellVM?.posts?.count ?? 0
       //  self.startTimer()
     }
     
@@ -54,7 +54,7 @@ class WelcomeTableViewCell: UITableViewCell {
         if let coll  = offerCollectionView {
             for cell in coll.visibleCells {
                 let indexPath: IndexPath? = coll.indexPath(for: cell)
-                if ((indexPath?.row)! < (self.welcomeTableViewCellVM?.offers?.count ?? 0) - 1){
+                if ((indexPath?.row)! < (self.welcomeTableViewCellVM?.posts?.count ?? 0) - 1){
                     let indexPath1: IndexPath?
                     indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
                     

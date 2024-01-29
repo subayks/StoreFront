@@ -7,18 +7,6 @@
 
 import Foundation
 class CategoriesViewModel: BaseViewModel {
-    func getWelcomeTableViewCellVM(index: Int) ->OffersCollectionViewCellVM {
-        var offers = [Offers]()
-        let imageList = ["Women", "Men", "Kids", "Offer4", "Offer1"]
-        for item in imageList {
-            var offer = Offers()
-            offer.image = item
-            offer.id = "111"
-            offers.append(offer)
-        }
-        return OffersCollectionViewCellVM(offer: offers[index])
-    }
-    
     
     func getItemListViewModel(title: String) ->ItemListViewModel {
         return ItemListViewModel(dressArray: self.getDressArray(), title: title)
