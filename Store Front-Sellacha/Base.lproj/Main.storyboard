@@ -1806,7 +1806,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i48-tP-u4X">
                                                     <rect key="frame" x="15" y="5" width="363" height="120"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Toothpaste 7" translatesAutoresizingMaskIntoConstraints="NO" id="vKk-TU-ocn">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="vKk-TU-ocn">
                                                             <rect key="frame" x="12" y="12" width="64" height="96"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="64" id="xNE-9L-FqB"/>
@@ -2418,7 +2418,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-Yg-vH0">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-Yg-vH0">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="F1x-tf-ZwD"/>
@@ -2562,7 +2562,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyB-MR-y9B">
                                                     <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="64"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-Bs-yj9">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-Bs-yj9">
                                                             <rect key="frame" x="14" y="12" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="01d-jJ-QbK"/>
@@ -3088,7 +3088,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-FA-b4v">
                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="220"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Offer2" translatesAutoresizingMaskIntoConstraints="NO" id="g32-hd-Q52">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="g32-hd-Q52">
                                                             <rect key="frame" x="0.0" y="0.0" width="166" height="164"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -4511,7 +4511,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUg-Rt-kSg">
                                                             <rect key="frame" x="0.0" y="0.0" width="166" height="220"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Offer2" translatesAutoresizingMaskIntoConstraints="NO" id="18o-ur-4sw">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="18o-ur-4sw">
                                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="164"/>
                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
@@ -4675,7 +4675,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2 126" translatesAutoresizingMaskIntoConstraints="NO" id="ill-29-hDH">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="ill-29-hDH">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="372"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="372" id="jwb-6c-zSY"/>
@@ -4749,7 +4749,7 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD6-dx-ehw">
-                                                    <rect key="frame" x="63.666666666666664" y="10" width="29.333333333333336" height="14.333333333333336"/>
+                                                    <rect key="frame" x="63.666666666666664" y="10" width="29.333333333333321" height="14.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                     <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -5546,7 +5546,6 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
         </scene>
     </scenes>
     <resources>
-        <image name="2 126" width="516" height="512"/>
         <image name="Bag" width="24" height="24"/>
         <image name="Bags" width="24" height="24"/>
         <image name="Bin" width="24" height="24"/>
@@ -5588,7 +5587,6 @@ ROUTINE USES Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
         <image name="Sports" width="531" height="512"/>
         <image name="Thanks_Card" width="512" height="512"/>
         <image name="Ticket" width="32" height="32"/>
-        <image name="Toothpaste 7" width="64" height="96"/>
         <image name="User" width="24" height="24"/>
         <image name="Winter" width="878" height="512"/>
         <image name="Women" width="878" height="512"/>
