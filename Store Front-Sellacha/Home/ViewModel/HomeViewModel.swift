@@ -10,8 +10,10 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     var apiServices: HomeApiServicesProtocol?
     var sliderModel: SliderModel?
+    var productsModel: ProductsModel?
+    var productDetailsModel: ProductDetailsModel?
     var reloadSliderCollectionView:(()->())?
-
+    var titles = ["Men's Fashion", "Women's Fashion", "Kid's Fashion", "Special Deal"]
     init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
         self.apiServices = apiServices
     }
@@ -26,7 +28,55 @@ class HomeViewModel: BaseViewModel {
                     if status == true {
                         let model  = result as? BaseResponse<SliderModel>
                         self.sliderModel = model?.data
-                        self.reloadSliderCollectionView?()
+                        self.getProductsList()
+
+                      //  self.reloadSliderCollectionView?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getProductsList() {
+        if Reachability.isConnectedToNetwork() {
+         //   self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.getProductsList(finalURL: "\(CommonConfig.url.finalURL)/product", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<ProductsModel>
+                        self.productsModel = model?.data
+                        self.reloadCollectionView?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getProductDetails(id: String) {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_pro_detail?id=\(id)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<ProductDetailsModel>
+                        self.productDetailsModel = model?.data
+                        self.navigationClosure?()
                     }
                     else{
                         self.alertClosure?(errorMessage ?? "Some Technical Problem")
@@ -40,77 +90,31 @@ class HomeViewModel: BaseViewModel {
     }
     
     func getWelcomeTableViewCellVM() ->WelcomeTableViewCellVM {
-        return WelcomeTableViewCellVM(posts: self.sliderModel?.posts ?? [Posts]())
+        return WelcomeTableViewCellVM(posts: self.sliderModel?.posts ?? [SliderPost]())
     }
     
-    func getMensCollectionList() ->CategoryTableViewCellVM {
-        return CategoryTableViewCellVM(dressCellObject: self.getDressArray(), title: "Men's Fashion")
+    func getCategoryTableViewCellVM(index: Int) ->CategoryTableViewCellVM {
+        return CategoryTableViewCellVM(dressCellObject: self.sortList(index: index), title: titles[index-1])
     }
     
-    func getDressArray() -> [DressCellObject] {
-        var dressArray = [DressCellObject]()
-        
-        var dressItem1 = DressCellObject()
-        dressItem1.price = "₹1000"
-        dressItem1.id = "1"
-        dressItem1.isSelected = false
-        dressItem1.description = "Suits Well For your skin tone & best fabric"
-        dressItem1.image = "Men"
-        dressItem1.rating = "5.0"
-        dressItem1.quantity = "2"
-        dressItem1.productName = "Jean"
-        dressArray.append(dressItem1)
-
-        var dressItem2 = DressCellObject()
-        dressItem2.price = "₹2000"
-        dressItem2.id = "2"
-        dressItem2.isSelected = false
-        dressItem2.description = "Suits Well For your skin tone & best fabric"
-        dressItem2.image = "Kids"
-        dressItem2.rating = "4.0"
-        dressItem2.quantity = "2"
-        dressItem2.productName = "Pant"
-        dressArray.append(dressItem2)
-        
-        var dressItem3 = DressCellObject()
-        dressItem3.price = "₹2,200"
-        dressItem3.id = "3"
-        dressItem3.isSelected = false
-        dressItem3.description = "Suits Well For your skin tone & best fabric"
-        dressItem3.image = "Formals"
-        dressItem3.rating = "3.0"
-        dressItem3.quantity = "2"
-        dressItem3.productName = "T-Shirt"
-        dressArray.append(dressItem3)
-        
-        var dressItem4 = DressCellObject()
-        dressItem4.price = "₹1,200"
-        dressItem4.id = "4"
-        dressItem4.isSelected = false
-        dressItem4.description = "Suits Well For your skin tone & best fabric"
-        dressItem4.image = "Men"
-        dressItem4.rating = "2.0"
-        dressItem4.quantity = "2"
-        dressItem4.productName = "Track"
-        dressArray.append(dressItem4)
-        
-        var dressItem5 = DressCellObject()
-        dressItem5.price = "₹500"
-        dressItem5.id = "5"
-        dressItem5.isSelected = false
-        dressItem5.description = "Suits Well For your skin tone & best fabric"
-        dressItem5.image = "Formals"
-        dressItem5.rating = "1.0"
-        dressItem5.quantity = "2"
-        dressItem5.productName = "Jacket"
-        dressArray.append(dressItem5)
-
-        return dressArray
+    func getItemListViewModel(index: Int) ->ItemListViewModel {
+        return ItemListViewModel(postsModel: self.productsModel?.posts ?? Posts(),title: titles[index-1], index: index)
     }
     
+    func sortList(index: Int)->[PostsItem] {
+        if index == 1 {
+            return self.productsModel?.posts?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "men" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        } else if index == 2 {
+            return self.productsModel?.posts?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "women" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        } else if index == 3 {
+            return self.productsModel?.posts?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "kids" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        } else {
+            return self.productsModel?.posts?.data?.filter{$0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        }
+    }
     
-    func getItemListViewModel() ->ItemListViewModel {
-        return ItemListViewModel(dressArray: self.getDressArray(), title: "Men")
+    func getItemDetailViewModel() ->ItemDetailViewModel {
+        return ItemDetailViewModel(productDetails: self.productDetailsModel ?? ProductDetailsModel())
     }
     
 }

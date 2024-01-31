@@ -7,23 +7,71 @@
 
 import Foundation
 class ItemListViewModel: BaseViewModel {
-    var dressArray: [DressCellObject]?
+    var postsModel: Posts?
+    var apiServices: HomeApiServicesProtocol?
+    var productDetailsModel: ProductDetailsModel?
+
     var title: String?
-    
+    var index: Int = 0
     var brandArray = ["Puma", "Adidas", "Polo", "LP"]
     var sortArray = ["Low to High", "High to Low", "Discount"]
     var filterArray = ["Men", "Women", "Kids"]
     
-    init(dressArray: [DressCellObject], title: String) {
-        self.dressArray = dressArray
+    init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
+        self.apiServices = apiServices
+    }
+    
+    init(postsModel: Posts, title: String, index: Int = 0,apiServices: HomeApiServicesProtocol = HomeApiService()) {
+        self.postsModel = postsModel
         self.title = title
+        self.index = index
+        self.apiServices = apiServices
+    }
+    
+    func getProductDetails(id: String) {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_pro_detail?id=\(id)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<ProductDetailsModel>
+                        self.productDetailsModel = model?.data
+                        self.navigationClosure?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func sortList()->[PostsItem] {
+        if index == 1 {
+            return self.postsModel?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "men" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        } else if index == 2 {
+            return self.postsModel?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "women" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        } else if index == 3 {
+            return self.postsModel?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "kids" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        } else {
+            return self.postsModel?.data?.filter{$0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        }
     }
     
     func getnumberOfRows() ->Int {
-        return dressArray?.count ?? 0
+        return self.sortList().count
     }
     
     func getCategoryCollectionViewCell(index: Int) ->CategoryCollectionViewCellVM {
-        return CategoryCollectionViewCellVM(dressCellObject: self.dressArray?[index] ?? DressCellObject(), title: "")
+        return CategoryCollectionViewCellVM(dressCellObject: self.sortList()[index], title: "")
+    }
+    
+    func getItemDetailViewModel() ->ItemDetailViewModel {
+        return ItemDetailViewModel(productDetails: self.productDetailsModel ?? ProductDetailsModel())
     }
 }

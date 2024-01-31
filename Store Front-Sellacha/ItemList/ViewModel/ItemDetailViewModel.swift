@@ -7,68 +7,112 @@
 
 import Foundation
 class ItemDetailViewModel: BaseViewModel {
-    func getMensCollectionList() ->CategoryTableViewCellVM {
-        return CategoryTableViewCellVM(dressCellObject: self.getDressArray(), title: "You may also like")
+    var apiServices: HomeApiServicesProtocol?
+    var productDetailsModel: ProductDetailsModel?
+    var wishListResponseModel: WishListeResponseModel?
+    var title: String?
+    var reloadHeartImage:(()->())?
+    var isFromWishList: Bool?
+    
+    init(productDetails: ProductDetailsModel, apiServices: HomeApiServicesProtocol = HomeApiService(), isFromWishList: Bool = false) {
+        self.productDetailsModel = productDetails
+        self.title = productDetails.info?.title
+        self.apiServices = apiServices
+        self.isFromWishList = isFromWishList
     }
     
-    func getDressArray() -> [DressCellObject] {
-        var dressArray = [DressCellObject]()
-        
-        var dressItem1 = DressCellObject()
-        dressItem1.price = "₹1000"
-        dressItem1.id = "1"
-        dressItem1.isSelected = false
-        dressItem1.description = "Suits Well For your skin tone & best fabric"
-        dressItem1.image = "Men"
-        dressItem1.rating = "5.0"
-        dressItem1.quantity = "2"
-        dressItem1.productName = "Jean"
-        dressArray.append(dressItem1)
-
-        var dressItem2 = DressCellObject()
-        dressItem2.price = "₹2000"
-        dressItem2.id = "2"
-        dressItem2.isSelected = false
-        dressItem2.description = "Suits Well For your skin tone & best fabric"
-        dressItem2.image = "Kids"
-        dressItem2.rating = "4.0"
-        dressItem2.quantity = "2"
-        dressItem2.productName = "Pant"
-        dressArray.append(dressItem2)
-        
-        var dressItem3 = DressCellObject()
-        dressItem3.price = "₹2,200"
-        dressItem3.id = "3"
-        dressItem3.isSelected = false
-        dressItem3.description = "Suits Well For your skin tone & best fabric"
-        dressItem3.image = "Formals"
-        dressItem3.rating = "3.0"
-        dressItem3.quantity = "2"
-        dressItem3.productName = "T-Shirt"
-        dressArray.append(dressItem3)
-        
-        var dressItem4 = DressCellObject()
-        dressItem4.price = "₹1,200"
-        dressItem4.id = "4"
-        dressItem4.isSelected = false
-        dressItem4.description = "Suits Well For your skin tone & best fabric"
-        dressItem4.image = "Men"
-        dressItem4.rating = "2.0"
-        dressItem4.quantity = "2"
-        dressItem4.productName = "Track"
-        dressArray.append(dressItem4)
-        
-        var dressItem5 = DressCellObject()
-        dressItem5.price = "₹500"
-        dressItem5.id = "5"
-        dressItem5.isSelected = false
-        dressItem5.description = "Suits Well For your skin tone & best fabric"
-        dressItem5.image = "Formals"
-        dressItem5.rating = "1.0"
-        dressItem5.quantity = "2"
-        dressItem5.productName = "Jacket"
-        dressArray.append(dressItem5)
-
-        return dressArray
+    init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
+        self.apiServices = apiServices
+    }
+    
+    func getProductDetails(id: String) {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_pro_detail?id=\(id)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<ProductDetailsModel>
+                        self.productDetailsModel = model?.data
+                        self.navigationClosure?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func addToWishList(id: String) {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.addToWishList(finalURL: "\(CommonConfig.url.finalURL)/add_to_wishlist?email=alauddinansari7379@gmail.com&term_id=\(id)&device_id=c62700640ddcd2e2", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<WishListeResponseModel>
+                        self.wishListResponseModel = model?.data
+                        self.reloadHeartImage?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func removeWishList(id: String) {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            self.apiServices?.removeWishList(finalURL: "\(CommonConfig.url.finalURL)/remove_wishlist?id=\(id)", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<WishListeResponseModel>
+                        self.wishListResponseModel = model?.data
+                        self.reloadHeartImage?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getMensCollectionList() ->CategoryTableViewCellVM {
+        return CategoryTableViewCellVM(dressCellObject: self.makeMoreSection(), title: "You may also like")
+    }
+    
+    func makeMoreSection() ->[PostsItem] {
+        return [self.productDetailsModel?.previous ?? PostsItem(),  self.productDetailsModel?.next ?? PostsItem()]
+    }
+    
+    func getItemDetailViewModel() ->ItemDetailViewModel {
+        return ItemDetailViewModel(productDetails: self.productDetailsModel ?? ProductDetailsModel())
+    }
+    
+    func getItemImageTableViewCellVM() ->ItemImageTableViewCellVM {
+        var image = ""
+        if self.productDetailsModel?.info?.medias?.count ?? 0 > 0 {
+            image = self.productDetailsModel?.info?.medias?[0].url ?? ""
+        } else {
+            image = self.productDetailsModel?.info?.preview?.url ?? ""
+        }
+        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: "No Desc from Api",ratingCount: "0", itemName: self.productDetailsModel?.info?.title ?? "", itemImage: image))
     }
 }

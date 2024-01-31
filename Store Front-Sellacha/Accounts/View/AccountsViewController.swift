@@ -53,6 +53,62 @@ class AccountsViewController: UIViewController {
                 self.present(pickerController, animated: true)
             }
         }
+        
+        self.vm.errorClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if error != "" {
+                    let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        self.vm.alertClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        self.vm.showLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.showSpinner(onView: self.view)
+            }
+        }
+        
+        self.vm.hideLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.removeSpinner()
+            }
+        }
+        
+        self.vm.reloadCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+            }
+        }
+        
+        self.vm.navigationClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+               
+            }
+        }
+        
+        self.vm.navigationToWishListClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let wishListViewController = self.storyboard?.instantiateViewController(withIdentifier: "WishListViewController") as! WishListViewController
+                wishListViewController.vm = self.vm.getWishListViewControllerVM()
+                self.navigationController?.pushViewController(wishListViewController, animated: true)
+            }
+        }
     }
     
     @IBAction func actionHelp(_ sender: Any) {
@@ -83,9 +139,7 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionWishlist(_ sender: Any) {
-        let wishListViewController = self.storyboard?.instantiateViewController(withIdentifier: "WishListViewController") as! WishListViewController
-        wishListViewController.vm = self.vm.getWishListViewControllerVM()
-        self.navigationController?.pushViewController(wishListViewController, animated: true)
+        self.vm.getWishList()
     }
     
     @IBAction func actionOrderView(_ sender: Any) {

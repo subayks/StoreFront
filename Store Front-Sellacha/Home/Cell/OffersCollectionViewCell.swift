@@ -23,7 +23,7 @@ class OffersCollectionViewCell: UICollectionViewCell {
         self.offerImage.layer.borderWidth = 1
         self.offerImage.layer.cornerRadius = 10
         self.offerImage.layer.borderColor = UIColor.clear.cgColor
-        let urlString = "\(CommonConfig.url.imageBaseUrl)\(String(describing: self.offersCollectionViewCellVM?.posts?.name))"
+        let urlString = "\(CommonConfig.url.imageBaseUrl)\(self.offersCollectionViewCellVM?.posts?.name ?? "")"
         if let webpURL = URL(string: urlString)  {
             DispatchQueue.main.async {
                 self.offerImage.sd_setImage(with: webpURL)

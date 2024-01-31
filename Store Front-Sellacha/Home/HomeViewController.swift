@@ -66,22 +66,31 @@ class HomeViewController: UIViewController {
         self.viewModel.reloadSliderCollectionView = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
-                self.HomeTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+              //  self.HomeTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            }
+        }
+        
+        self.viewModel.reloadCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.HomeTableView.reloadData()
             }
         }
         
         self.viewModel.navigationClosure = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
-               
+                let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
+                itemDetailViewController.vm = self.viewModel.getItemDetailViewModel()
+                self.navigationController?.pushViewController(itemDetailViewController, animated: true)
             }
         }
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+    @objc func viewAllTapped(tapGestureRecognizer: UITapGestureRecognizer){
      //   print(tapGestureRecognizer.view?.tag)
         let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.viewModel.getItemListViewModel()
+        itemListViewController.vm = self.viewModel.getItemListViewModel(index: tapGestureRecognizer.view?.tag ?? 1)
         self.navigationController?.pushViewController(itemListViewController, animated: true)
     }
     
@@ -108,20 +117,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
-            cell.categoryTableViewCellVM = self.viewModel.getMensCollectionList()
-           // cell.reloadCollectionView = true
+            cell.reloadCollectionView = true
+            cell.categoryTableViewCellVM = self.viewModel.getCategoryTableViewCellVM(index: indexPath.section)
             cell.vieewAllLabel.tag = indexPath.section
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewAllTapped(tapGestureRecognizer:)))
             cell.vieewAllLabel.isUserInteractionEnabled = true
             cell.vieewAllLabel.addGestureRecognizer(tapGestureRecognizer)
-            cell.didSelectDelegate = { [weak self] in
+            cell.didSelectDelegate = { [weak self] id in
                 guard let self = self else {return}
-                let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
-                self.navigationController?.pushViewController(itemDetailViewController, animated: true)
+                self.viewModel.getProductDetails(id: id)
             }
             return cell
         }
     }
-    
     
 }

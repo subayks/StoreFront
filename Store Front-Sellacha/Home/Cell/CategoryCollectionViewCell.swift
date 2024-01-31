@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageWebPCoder
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
@@ -34,37 +35,29 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.stylistImage.layer.borderColor = UIColor.clear.cgColor
         stylistImage.layer.cornerRadius = 10
         self.ogPriceLabel.addStrikethrough(.thick, strikethroughColor: UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 255/255))
-//        if self.categoryCollectionViewCellVM?.isStylistCell() == true {
-//            self.stylistImage.image = UIImage(systemName: "person.fill")
-//            self.stylistImage.tintColor = UIColor(red: 102/255, green: 74/255, blue: 151/255, alpha: 1)
-//            self.stylistImage.backgroundColor = UIColor(red: 249/255, green: 246/255, blue: 255/255, alpha: 1)
-//        } else {
-//            self.stylistImage.image = UIImage(named: "person.fill")
-//        }
-        self.nameLabel.text = self.categoryCollectionViewCellVM?.getPrice()
+        if self.categoryCollectionViewCellVM?.getPrice() != 0 {
+            self.nameLabel.text = "\(self.categoryCollectionViewCellVM?.getPrice() ?? 0)"
+        } else {
+            self.nameLabel.text = "\(self.categoryCollectionViewCellVM?.getOgPrice() ?? 0)"
+            self.ogPriceLabel.text = ""
+        }
+        if self.categoryCollectionViewCellVM?.getOgPrice() != 0 &&  self.categoryCollectionViewCellVM?.getPrice() != 0 {
+            self.ogPriceLabel.text = "\(self.categoryCollectionViewCellVM?.getOgPrice() ?? 0)"
+        }
         self.addressLabel.text = self.categoryCollectionViewCellVM?.getDescription()
-//        if self.categoryCollectionViewCellVM?.getRating() == "0.0" {
-//            self.rating.image = UIImage()
-//            self.ratingCountLabel.text = ""
-//        } else {
-//            self.rating.image = UIImage(named: "One Star")
-//            self.ratingCountLabel.text = self.categoryCollectionViewCellVM?.getRating()
-//        }
         self.ratingCountLabel.text = self.categoryCollectionViewCellVM?.getRating()
-
-    
-    //    self.stylistImage.loadImageUsingURL(self.categoryCollectionViewCellVM?.getImageURL() ?? "")
-//        if (self.categoryCollectionViewCellVM?.isSelected() ?? false) && !(isFromDetailScreen ?? false) {
-//            self.overView.backgroundColor = UIColor(red: 102/255, green: 74/255, blue: 151/255, alpha: 1)
-//            self.nameLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-//            self.ratingCountLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-//            self.addressLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-//        } else {
-//            self.overView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-//            self.nameLabel.textColor = UIColor(red: 45/255, green: 41/255, blue: 51/255, alpha: 1)
-//            self.ratingCountLabel.textColor = UIColor(red: 45/255, green: 41/255, blue: 51/255, alpha: 1)
-//            self.addressLabel.textColor = UIColor(red: 45/255, green: 41/255, blue: 51/255, alpha: 1)
-//        }
+        
+        
+        let webPCoder = SDImageWebPCoder.shared
+        SDImageCodersManager.shared.addCoder(webPCoder)
+        let urlString = "https://\(String(describing: self.categoryCollectionViewCellVM?.getImageURL().dropFirst(2) ?? ""))"
+        if let webpURL = URL(string: urlString)  {
+            DispatchQueue.main.async {
+                self.stylistImage.sd_setImage(with: webpURL)
+            }
+        } else {
+            self.stylistImage.image = UIImage(named: "Sample Image")
+        }
     }
     
     override func prepareForReuse() {

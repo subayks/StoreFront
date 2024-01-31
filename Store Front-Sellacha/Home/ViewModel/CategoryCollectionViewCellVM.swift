@@ -7,35 +7,35 @@
 
 import Foundation
 class CategoryCollectionViewCellVM {
-    var dressCellObject: DressCellObject?
+    var dressCellObject: PostsItem?
     var title: String?
     
-    init(dressCellObject: DressCellObject, title: String) {
+    init(dressCellObject: PostsItem, title: String) {
         self.dressCellObject = dressCellObject
         self.title = title
     }
     
-    func getPrice() ->String {
-        return dressCellObject?.price ?? ""
+    func getPrice() ->Int {
+        return dressCellObject?.price?.specialPrice == nil ? dressCellObject?.price?.price ?? 0:  dressCellObject?.price?.specialPrice ?? 0
     }
     
-    func isSelected() ->Bool {
-        return dressCellObject?.isSelected ?? false
+    func getOgPrice() ->Int {
+        return dressCellObject?.price?.specialPrice == nil ? 0: dressCellObject?.price?.price ?? 0
     }
     
     func getDescription() ->String {
-        return dressCellObject?.description ?? ""
+        return "Not Coming From Api"
     }
     
     func getRating() ->String {
-        return dressCellObject?.rating ?? ""
-    }
-    
-    func getAddress() ->String {
-        return self.dressCellObject?.description ?? ""
+        return "0"
     }
     
     func getImageURL() ->String {
-        return self.dressCellObject?.image ?? ""
+        if self.dressCellObject?.medias?.count ?? 0 > 0 {
+            return self.dressCellObject?.medias?[0].url ?? ""
+        } else {
+            return self.dressCellObject?.preview?.url ?? ""
+        }
     }
 }

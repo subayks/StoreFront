@@ -13,9 +13,9 @@ struct Offers {
 
 class WelcomeTableViewCellVM {
     
-    var posts: [Posts]?
+    var posts: [SliderPost]?
     
-    init(posts: [Posts]) {
+    init(posts: [SliderPost]) {
         self.posts = posts
     }
     
@@ -24,7 +24,7 @@ class WelcomeTableViewCellVM {
     }
     
     func getOffersCollectionViewCellVM(index: Int) ->OffersCollectionViewCellVM {
-        return OffersCollectionViewCellVM(posts: posts?[index] ?? Posts())
+        return OffersCollectionViewCellVM(posts: posts?[index] ?? SliderPost())
     }
     
 }

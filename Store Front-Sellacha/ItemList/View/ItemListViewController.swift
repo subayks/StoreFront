@@ -41,7 +41,60 @@ class ItemListViewController: UIViewController {
         
         let button1 = UIBarButtonItem(image: UIImage(named: "Search"), style: .plain, target: self, action: #selector(searchClicked(tapGestureRecognizer:)))
         self.navigationItem.rightBarButtonItem  = button1
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.vm?.errorClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if error != "" {
+                    let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
         
+        self.vm?.alertClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        self.vm?.showLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.showSpinner(onView: self.view)
+            }
+        }
+        
+        self.vm?.hideLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.removeSpinner()
+            }
+        }
+        
+        self.vm?.reloadCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.itemListCollectionView.reloadData()
+            }
+        }
+        
+        self.vm?.navigationClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
+                itemDetailViewController.vm = self.vm?.getItemDetailViewModel()
+                self.navigationController?.pushViewController(itemDetailViewController, animated: true)
+            }
+        }
     }
     
     func setupNavigationBar() {
@@ -157,9 +210,7 @@ extension ItemListViewController: UICollectionViewDelegate, UICollectionViewData
         self.brandPicker.isHidden = true
         self.sortPicker.isHidden = true
         self.filterPicker.isHidden = true
-        
-        let itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailViewController") as! ItemDetailViewController
-        self.navigationController?.pushViewController(itemDetailViewController, animated: true)
+        self.vm?.getProductDetails(id: String(self.vm?.sortList()[indexPath.row].id ?? 0))
     }
     
 }

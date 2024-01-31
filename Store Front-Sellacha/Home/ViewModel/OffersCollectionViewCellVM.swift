@@ -7,9 +7,9 @@
 
 import Foundation
 class OffersCollectionViewCellVM {
-    var posts: Posts?
+    var posts: SliderPost?
     
-    init(posts: Posts) {
+    init(posts: SliderPost) {
         self.posts = posts
     }
     

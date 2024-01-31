@@ -8,7 +8,7 @@
 import Foundation
 struct SliderModel: Codable {
 
-  var posts : [Posts]? = []
+  var posts : [SliderPost]? = []
 
   enum CodingKeys: String, CodingKey {
 
@@ -19,7 +19,7 @@ struct SliderModel: Codable {
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
 
-    posts = try values.decodeIfPresent([Posts].self , forKey: .posts )
+    posts = try values.decodeIfPresent([SliderPost].self , forKey: .posts )
  
   }
 
@@ -29,7 +29,7 @@ struct SliderModel: Codable {
 
 }
 
-struct Posts: Codable {
+struct SliderPost: Codable {
 
   var id         : Int?    = nil
   var name       : String? = nil
