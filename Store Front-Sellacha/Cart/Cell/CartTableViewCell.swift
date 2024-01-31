@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageWebPCoder
 
 class CartTableViewCell: UITableViewCell {
 
@@ -50,7 +51,21 @@ class CartTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        
+        self.labelTitle.text = self.cartTableViewCellVM?.productInfo?.termTitle ?? ""
+        self.countLabel.text = self.cartTableViewCellVM?.productInfo?.qty ?? ""
+        self.offerPrice.text = ""
+        self.finalPrice.text =  "₹" + (self.cartTableViewCellVM?.productInfo?.price ?? "")
+        self.ProductImage.layer.cornerRadius = 10
+        let webPCoder = SDImageWebPCoder.shared
+        SDImageCodersManager.shared.addCoder(webPCoder)
+        let urlString = "https://\(String(describing: self.cartTableViewCellVM?.productInfo?.preview?.dropFirst(2) ?? ""))"
+        if let webpURL = URL(string: urlString)  {
+            DispatchQueue.main.async {
+                self.ProductImage.sd_setImage(with: webpURL)
+            }
+        } else {
+            self.ProductImage.image = UIImage(named: "Sample Image")
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {

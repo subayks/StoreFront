@@ -113,6 +113,6 @@ class ItemDetailViewModel: BaseViewModel {
         } else {
             image = self.productDetailsModel?.info?.preview?.url ?? ""
         }
-        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: "No Desc from Api",ratingCount: "0", itemName: self.productDetailsModel?.info?.title ?? "", itemImage: image))
+        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: "No Desc from Api",ratingCount: "0", itemName: ("₹\(self.productDetailsModel?.info?.price?.price ?? 0)"), itemImage: image))
     }
 }

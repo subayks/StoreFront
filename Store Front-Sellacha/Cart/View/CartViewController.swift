@@ -9,13 +9,14 @@ import UIKit
 
 class CartViewController: UIViewController {
     
+    @IBOutlet weak var imageBin: UIImageView!
     @IBOutlet weak var goToCartButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var itemCount: UILabel!
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var logoImage: UIImageView!
     
-    var vm = CartViewModel()
+    var viewModel = CartViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.logoImage.image = CommonConfig.colors.appSmallLogo
@@ -26,16 +27,71 @@ class CartViewController: UIViewController {
         
         self.goToCartButton.backgroundColor = CommonConfig.colors.themeColor
         self.priceLabel.textColor = CommonConfig.colors.themeColor
-        guard let  mainTabbarController = UIApplication.shared.keyWindow?.rootViewController as? HomeTabbarController else { return }
-        mainTabbarController.tabBar.items?[3].badgeValue = "3"
-        mainTabbarController.tabBar.items?[3].title = "₹2,000"
+        self.viewModel.getCart()
         
-        mainTabbarController.tabBar.items?[3].badgeColor = CommonConfig.colors.themeColor
+        let addTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(deleteClicked(tapGestureRecognizer:)))
+        imageBin.isUserInteractionEnabled = true
+        imageBin.addGestureRecognizer(addTapGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+
+        self.viewModel.errorClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if error != "" {
+                    let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        self.viewModel.alertClosure = { [weak self] (error) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        self.viewModel.showLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.showSpinner(onView: self.view)
+            }
+        }
+        
+        self.viewModel.hideLoadingIndicatorClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.removeSpinner()
+            }
+        }
+        
+        self.viewModel.reloadTableView = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                guard let  mainTabbarController = UIApplication.shared.keyWindow?.rootViewController as? HomeTabbarController else { return }
+                mainTabbarController.tabBar.items?[3].badgeColor = CommonConfig.colors.themeColor
+                mainTabbarController.tabBar.items?[3].badgeValue = "\(self.viewModel.cartModel?.items?.count ?? 0)"
+                self.itemCount.text = "\(self.viewModel.cartModel?.items?.count ?? 0) Items"
+                mainTabbarController.tabBar.items?[3].title = "₹" + self.viewModel.totalBill()
+                self.priceLabel.text = "₹" + self.viewModel.totalBill()
+                
+                self.cartTableView.reloadData()
+            }
+        }
+        
+        self.viewModel.navigationClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                
+            }
+        }
     }
     
     @IBAction func actiongoToCart(_ sender: Any) {
@@ -73,29 +129,19 @@ class CartViewController: UIViewController {
             let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
             self.navigationController?.pushViewController(checkoutViewController, animated: true)}
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    @objc func deleteClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("deleye")
+    }
 }
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 2
-        } else {
-            return 1
-        }
+        return self.viewModel.cartModel?.items?.count ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -103,11 +149,9 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         let label = UILabel()
         label.frame = CGRect.init(x: 15, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-        if section == 0 {
-            label.text = "Men"
-        } else {
-            label.text = "Women"
-        }
+        
+        label.text = "Men"
+        
         label.font = UIFont(name: "Roboto-Medium", size: 14)
         label.textColor = .black
         headerView.addSubview(label)
@@ -123,7 +167,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as! CartTableViewCell
         cell.overView.layer.cornerRadius = 10
         cell.countBackGround.layer.cornerRadius = 10
-        cell.cartTableViewCellVM = CartTableViewCellVM(currentCount: 1)
+        cell.cartTableViewCellVM = self.viewModel.getCartTableViewCellVM(index: indexPath.row)
         cell.countClosure = { [weak self] (count) in
             guard let self = self else {return}
             cell.countLabel.text = String(count)

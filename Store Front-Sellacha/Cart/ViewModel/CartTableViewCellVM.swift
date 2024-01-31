@@ -19,15 +19,11 @@ struct ProductInfo {
 
 class CartTableViewCellVM {
     
-    var productInfo: [ProductInfo]?
+    var productInfo: CartItems?
     var currentCount: Int?
     
-//    init(productInfo: [ProductInfo]) {
-//        self.productInfo = productInfo
-//    }
-    
-    init(currentCount: Int) {
-        self.currentCount = currentCount
+    init(productInfo: CartItems) {
+        self.productInfo = productInfo
     }
 
     

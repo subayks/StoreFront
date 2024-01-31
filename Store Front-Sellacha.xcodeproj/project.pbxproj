@@ -87,6 +87,9 @@
 		599924AE2B55B595002E0DCB /* SettingsTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924AD2B55B595002E0DCB /* SettingsTableViewCellVM.swift */; };
 		599C9E122B6A957C004ADAFA /* ItemImageTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9E112B6A957C004ADAFA /* ItemImageTableViewCellVM.swift */; };
 		599C9E162B6AA9C6004ADAFA /* WishListeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9E152B6AA9C6004ADAFA /* WishListeResponseModel.swift */; };
+		599C9E192B6ABA3C004ADAFA /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9E182B6ABA3C004ADAFA /* CartModel.swift */; };
+		599C9E1B2B6ABDFC004ADAFA /* CartApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9E1A2B6ABDFC004ADAFA /* CartApiService.swift */; };
+		599C9E1D2B6ACBA8004ADAFA /* DestroyCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9E1C2B6ACBA8004ADAFA /* DestroyCartModel.swift */; };
 		59A3036A2B4DB0C2003E2225 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */; };
 		59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */; };
 		59A3036E2B4DB27B003E2225 /* BillInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */; };
@@ -229,6 +232,9 @@
 		599924AD2B55B595002E0DCB /* SettingsTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellVM.swift; sourceTree = "<group>"; };
 		599C9E112B6A957C004ADAFA /* ItemImageTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageTableViewCellVM.swift; sourceTree = "<group>"; };
 		599C9E152B6AA9C6004ADAFA /* WishListeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListeResponseModel.swift; sourceTree = "<group>"; };
+		599C9E182B6ABA3C004ADAFA /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		599C9E1A2B6ABDFC004ADAFA /* CartApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApiService.swift; sourceTree = "<group>"; };
+		599C9E1C2B6ACBA8004ADAFA /* DestroyCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyCartModel.swift; sourceTree = "<group>"; };
 		59A303692B4DB0C2003E2225 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		59A3036B2B4DB22B003E2225 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		59A3036D2B4DB27B003E2225 /* BillInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -306,8 +312,8 @@
 		59292BDF2B4996AE0021C4D1 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				599C9E172B6ABA1B004ADAFA /* Model */,
 				59292BE32B4998360021C4D1 /* Cell */,
-				59292BE22B4998260021C4D1 /* Model */,
 				59292BE12B4998180021C4D1 /* ViewModel */,
 				59292BE02B4998120021C4D1 /* View */,
 			);
@@ -343,13 +349,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		59292BE22B4998260021C4D1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		59292BE32B4998360021C4D1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +368,7 @@
 				5954E84E2B67F61C0039E537 /* HomeApiService.swift */,
 				5954E84C2B67F60C0039E537 /* BaseResponse.swift */,
 				595A75922B6998D000B57D76 /* AccountsApiService.swift */,
+				599C9E1A2B6ABDFC004ADAFA /* CartApiService.swift */,
 			);
 			path = ApiServices;
 			sourceTree = "<group>";
@@ -454,7 +454,6 @@
 			isa = PBXGroup;
 			children = (
 				596A86462B486A4F00DA4949 /* Cell */,
-				596A86452B486A4700DA4949 /* Model */,
 				596A86442B486A4000DA4949 /* ViewModel */,
 				596A86432B486A3A00DA4949 /* View */,
 			);
@@ -477,19 +476,21 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		596A86452B486A4700DA4949 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		596A86462B486A4F00DA4949 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				596A864B2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		599C9E172B6ABA1B004ADAFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				599C9E182B6ABA3C004ADAFA /* CartModel.swift */,
+				599C9E1C2B6ACBA8004ADAFA /* DestroyCartModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		59ABD8AA2B45A612004AA88C = {
@@ -939,6 +940,7 @@
 				599924AE2B55B595002E0DCB /* SettingsTableViewCellVM.swift in Sources */,
 				596A861E2B4848E100DA4949 /* UIImageView + Extension.swift in Sources */,
 				59D1B7A92B4DD7E4000CAAAD /* CardsViewModel.swift in Sources */,
+				599C9E1B2B6ABDFC004ADAFA /* CartApiService.swift in Sources */,
 				59DF3B2F2B62E56C00719EEF /* SignInViewModel.swift in Sources */,
 				59BE8D3D2B488E2800697464 /* AccountsViewController.swift in Sources */,
 				598136152B63AE0F00F60220 /* ItemImageTableViewCell.swift in Sources */,
@@ -955,6 +957,7 @@
 				596A861A2B48485400DA4949 /* OffersCollectionViewCellVM.swift in Sources */,
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
+				599C9E192B6ABA3C004ADAFA /* CartModel.swift in Sources */,
 				599924942B52EDCF002E0DCB /* OrderDetailsViewController.swift in Sources */,
 				5954E84D2B67F60C0039E537 /* BaseResponse.swift in Sources */,
 				599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */,
@@ -1012,6 +1015,7 @@
 				5954E8592B6806370039E537 /* SliderModel.swift in Sources */,
 				599C9E162B6AA9C6004ADAFA /* WishListeResponseModel.swift in Sources */,
 				59F69D6D2B67F31A00838F5E /* NetworkAdapter.swift in Sources */,
+				599C9E1D2B6ACBA8004ADAFA /* DestroyCartModel.swift in Sources */,
 				5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */,
 				59292BED2B49DA6F0021C4D1 /* CommonConfig.swift in Sources */,
 				596A86222B484A9B00DA4949 /* CategoryTableViewCell.swift in Sources */,

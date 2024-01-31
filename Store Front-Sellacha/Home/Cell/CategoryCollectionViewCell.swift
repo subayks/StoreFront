@@ -36,13 +36,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         stylistImage.layer.cornerRadius = 10
         self.ogPriceLabel.addStrikethrough(.thick, strikethroughColor: UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 255/255))
         if self.categoryCollectionViewCellVM?.getPrice() != 0 {
-            self.nameLabel.text = "\(self.categoryCollectionViewCellVM?.getPrice() ?? 0)"
+            self.nameLabel.text = "₹" + "\(self.categoryCollectionViewCellVM?.getPrice() ?? 0)"
         } else {
-            self.nameLabel.text = "\(self.categoryCollectionViewCellVM?.getOgPrice() ?? 0)"
+            self.nameLabel.text = "₹" + "\(self.categoryCollectionViewCellVM?.getOgPrice() ?? 0)"
             self.ogPriceLabel.text = ""
         }
         if self.categoryCollectionViewCellVM?.getOgPrice() != 0 &&  self.categoryCollectionViewCellVM?.getPrice() != 0 {
-            self.ogPriceLabel.text = "\(self.categoryCollectionViewCellVM?.getOgPrice() ?? 0)"
+            self.ogPriceLabel.text = "₹" + "\(self.categoryCollectionViewCellVM?.getOgPrice() ?? 0)"
         }
         self.addressLabel.text = self.categoryCollectionViewCellVM?.getDescription()
         self.ratingCountLabel.text = self.categoryCollectionViewCellVM?.getRating()

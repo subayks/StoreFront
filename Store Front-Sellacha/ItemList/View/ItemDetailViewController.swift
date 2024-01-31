@@ -118,7 +118,7 @@ class ItemDetailViewController: UIViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.isHidden = false
         if self.vm?.productDetailsModel?.info?.categories?.count ?? 0 > 0 {
-            self.navigationItem.title = self.vm?.productDetailsModel?.info?.categories?[0].name
+            self.navigationItem.title = self.vm?.productDetailsModel?.info?.title ?? ""
         } else {
             self.navigationItem.title = self.vm?.productDetailsModel?.info?.title
         }

@@ -1810,9 +1810,10 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i48-tP-u4X">
                                                     <rect key="frame" x="15" y="5" width="363" height="120"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="vKk-TU-ocn">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="vKk-TU-ocn">
                                                             <rect key="frame" x="12" y="12" width="64" height="96"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="96" id="UA0-gR-kg6"/>
                                                                 <constraint firstAttribute="width" constant="64" id="xNE-9L-FqB"/>
                                                             </constraints>
                                                         </imageView>
@@ -1879,6 +1880,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="vKk-TU-ocn" secondAttribute="bottom" constant="12" id="7dG-gr-Htk"/>
+                                                        <constraint firstItem="p12-Ea-c0x" firstAttribute="top" secondItem="gbN-va-2Xl" secondAttribute="bottom" constant="25.670000000000002" id="9Fz-BW-fPA"/>
                                                         <constraint firstAttribute="trailing" secondItem="K7n-dM-BA9" secondAttribute="trailing" constant="25" id="ARe-jf-d8F"/>
                                                         <constraint firstItem="p12-Ea-c0x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Qt-3j-Ycl" secondAttribute="trailing" constant="35" id="DMQ-uK-hB9"/>
                                                         <constraint firstItem="K7n-dM-BA9" firstAttribute="centerY" secondItem="cKJ-eG-06y" secondAttribute="centerY" id="MTO-Bw-qh6"/>
@@ -1898,7 +1900,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="dHQ-X5-kDh" secondAttribute="trailing" constant="12" id="vvy-Yv-iys"/>
                                                         <constraint firstItem="vKk-TU-ocn" firstAttribute="leading" secondItem="i48-tP-u4X" secondAttribute="leading" constant="12" id="w4U-Lt-cil"/>
                                                         <constraint firstItem="wuO-by-H3I" firstAttribute="top" secondItem="i48-tP-u4X" secondAttribute="top" constant="12" id="w5m-Lc-e4R"/>
-                                                        <constraint firstAttribute="bottom" secondItem="p12-Ea-c0x" secondAttribute="bottom" constant="12" id="yzB-qF-nro"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p12-Ea-c0x" secondAttribute="bottom" constant="10" id="yzB-qF-nro"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1994,6 +1996,7 @@
                     <connections>
                         <outlet property="cartTableView" destination="ccr-Ai-cgy" id="Xd1-ti-Z9F"/>
                         <outlet property="goToCartButton" destination="TEf-Os-IBY" id="leg-Es-1xP"/>
+                        <outlet property="imageBin" destination="cYK-nI-DYQ" id="Nen-3V-Xqo"/>
                         <outlet property="itemCount" destination="HdR-pH-JNh" id="Pdy-V5-IUt"/>
                         <outlet property="logoImage" destination="QOP-r5-1Ha" id="zHn-ZS-LE1"/>
                         <outlet property="priceLabel" destination="jDV-RX-aXW" id="9dL-Gz-13H"/>
