@@ -15,6 +15,8 @@
 		59292BF12B49DE070021C4D1 /* HomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59292BF02B49DE070021C4D1 /* HomeTabbarController.swift */; };
 		59292BF52B49E1330021C4D1 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */; };
 		593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593BE3182B4A88470053CB62 /* UILabel + Extension.swift */; };
+		594A03292B6C1A3B0083FEC6 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A03282B6C1A3B0083FEC6 /* OrdersModel.swift */; };
+		594A032B2B6C1C730083FEC6 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A032A2B6C1C730083FEC6 /* UserInfoModel.swift */; };
 		5954E84D2B67F60C0039E537 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E84C2B67F60C0039E537 /* BaseResponse.swift */; };
 		5954E84F2B67F61C0039E537 /* HomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E84E2B67F61C0039E537 /* HomeApiService.swift */; };
 		5954E8512B67F8210039E537 /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954E8502B67F8200039E537 /* LoginApiService.swift */; };
@@ -160,6 +162,8 @@
 		59292BF02B49DE070021C4D1 /* HomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarController.swift; sourceTree = "<group>"; };
 		59292BF42B49E1330021C4D1 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		593BE3182B4A88470053CB62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		594A03282B6C1A3B0083FEC6 /* OrdersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
+		594A032A2B6C1C730083FEC6 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		5954E84C2B67F60C0039E537 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		5954E84E2B67F61C0039E537 /* HomeApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApiService.swift; sourceTree = "<group>"; };
 		5954E8502B67F8200039E537 /* LoginApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 			children = (
 				595A75952B6999D800B57D76 /* WishListModel.swift */,
 				599C9E152B6AA9C6004ADAFA /* WishListeResponseModel.swift */,
+				594A03282B6C1A3B0083FEC6 /* OrdersModel.swift */,
+				594A032A2B6C1C730083FEC6 /* UserInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -994,6 +1000,7 @@
 				5954E84F2B67F61C0039E537 /* HomeApiService.swift in Sources */,
 				596A860D2B48446400DA4949 /* HomeViewController.swift in Sources */,
 				593BE3192B4A88470053CB62 /* UILabel + Extension.swift in Sources */,
+				594A03292B6C1A3B0083FEC6 /* OrdersModel.swift in Sources */,
 				599924902B52AD9C002E0DCB /* OrdersTableViewCellVM.swift in Sources */,
 				596A864A2B486AE100DA4949 /* CategoriesViewModel.swift in Sources */,
 				599924882B52AB65002E0DCB /* OrdersViewController.swift in Sources */,
@@ -1016,6 +1023,7 @@
 				599C9E162B6AA9C6004ADAFA /* WishListeResponseModel.swift in Sources */,
 				59F69D6D2B67F31A00838F5E /* NetworkAdapter.swift in Sources */,
 				599C9E1D2B6ACBA8004ADAFA /* DestroyCartModel.swift in Sources */,
+				594A032B2B6C1C730083FEC6 /* UserInfoModel.swift in Sources */,
 				5958B9452B585DB8009B7719 /* FAQTableViewCell.swift in Sources */,
 				59292BED2B49DA6F0021C4D1 /* CommonConfig.swift in Sources */,
 				596A86222B484A9B00DA4949 /* CategoryTableViewCell.swift in Sources */,
