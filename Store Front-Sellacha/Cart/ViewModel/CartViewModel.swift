@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 class CartViewModel: BaseViewModel {
     var apiServices: CartApiServiceProtocol?
     var cartModel: CartModel?
@@ -18,8 +19,9 @@ class CartViewModel: BaseViewModel {
     func getCart() {
         if Reachability.isConnectedToNetwork() {
          //   self.showLoadingIndicatorClosure?()
-            
-            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=c62700640ddcd2e2", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=\(deviceId)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {

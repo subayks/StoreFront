@@ -151,9 +151,42 @@ class ItemDetailViewController: UIViewController {
    
     @objc func addFav(tapGestureRecognizer: UITapGestureRecognizer) {
         if self.vm?.isFromWishList ?? false {
-            self.vm?.removeWishList(id: "\(self.vm?.productDetailsModel?.info?.id ?? 0)")
+            if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+                self.vm?.removeWishList(id: "\(self.vm?.productDetailsModel?.info?.id ?? 0)")
+            }
         } else {
-            self.vm?.addToWishList(id: "\(self.vm?.productDetailsModel?.info?.id ?? 0)")
+            if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+                self.vm?.addToWishList(id: "\(self.vm?.productDetailsModel?.info?.id ?? 0)")
+            } else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+                viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                    if isSignInClicked {
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+                            self?.navigationController?.pushViewController(checkoutViewController, animated: true)
+                        }
+                        self?.present(signInViewController, animated: true)
+                    } else {
+                        let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                        signupViewController.isSignUpClicked = { [weak self] in
+                            let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                            signInViewController.isSignInClicked = { [weak self] in
+                                self?.vm?.addToWishList(id: "\(self?.vm?.productDetailsModel?.info?.id ?? 0)")
+                            }
+                            self?.present(signInViewController, animated: true)
+                        }
+                        self?.present(signupViewController, animated: true)
+                    }
+                }
+                if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                    presentationController.detents = [.medium(), .large()]
+                    presentationController.preferredCornerRadius = 20
+                    
+                }
+                self.present(viewController, animated: true)
+            }
         }
     }
 }

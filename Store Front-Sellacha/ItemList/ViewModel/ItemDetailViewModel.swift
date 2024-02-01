@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 class ItemDetailViewModel: BaseViewModel {
     var apiServices: HomeApiServicesProtocol?
     var productDetailsModel: ProductDetailsModel?
@@ -51,8 +52,10 @@ class ItemDetailViewModel: BaseViewModel {
     func addToWishList(id: String) {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
+            let email = (UserDefaults.standard.string(forKey: "email") ?? "")
+            let deviceId = UIDevice.current.identifierForVendor!.uuidString
             
-            self.apiServices?.addToWishList(finalURL: "\(CommonConfig.url.finalURL)/add_to_wishlist?email=alauddinansari7379@gmail.com&term_id=\(id)&device_id=c62700640ddcd2e2", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.addToWishList(finalURL: "\(CommonConfig.url.finalURL)/add_to_wishlist?email=\(email)&term_id=\(id)&device_id=\(deviceId)", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
