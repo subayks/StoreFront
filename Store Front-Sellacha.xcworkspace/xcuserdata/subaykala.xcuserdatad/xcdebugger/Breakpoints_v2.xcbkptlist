@@ -81,6 +81,36 @@
                   endingLineNumber = "26"
                   offsetFromSymbolStart = "852">
                </Location>
+               <Location
+                  uuid = "4E31814D-78E3-4201-8EEE-B8D0D7A4C026 - 5910c764c32f3c75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.HomeApiService.removeWishList(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "4E31814D-78E3-4201-8EEE-B8D0D7A4C026 - 7f32c451890148de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.removeWishList(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "336">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -98,6 +128,53 @@
             endingLineNumber = "63"
             landmarkName = "addToWishList(finalURL:httpHeaders:withParameters:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "74DA52C2-2014-4CFD-8496-3976AF432916 - f884dfdac91cb759"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.addToWishList(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "74DA52C2-2014-4CFD-8496-3976AF432916 - 42f65519bc3e809e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.HomeApiService.addToWishList(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "74DA52C2-2014-4CFD-8496-3976AF432916 - f884dfdac91cb69b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.addToWishList(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "336">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,6 +221,84 @@
                   startingLineNumber = "102"
                   endingLineNumber = "102"
                   offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "C0F58CBB-32CA-4C47-B116-F714EA41C6BA - 21c99e8f9c5fd71d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.HomeApiService.getWishList(finalURL: Swift.String, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "896">
+               </Location>
+               <Location
+                  uuid = "C0F58CBB-32CA-4C47-B116-F714EA41C6BA - 149ad04c0b80d455"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getWishList(finalURL: Swift.String, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "336">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "637736AC-1DF7-490F-9A00-A0AFF7A7C239"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store Front-Sellacha/ApiServices/AccountsApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getWishList(finalURL:withParameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "637736AC-1DF7-490F-9A00-A0AFF7A7C239 - 4b094f9606d01f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.AccountsApiService.getWishList(finalURL: Swift.String, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/AccountsApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "896">
+               </Location>
+               <Location
+                  uuid = "637736AC-1DF7-490F-9A00-A0AFF7A7C239 - b61edbb39b52650b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.AccountsApiService.getWishList(finalURL: Swift.String, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/AccountsApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "336">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -10,12 +10,12 @@ import Photos
 import UIKit
 
 class AccountsViewModel: BaseViewModel {
-    var apiServices: HomeApiServicesProtocol?
+    var apiServices: AccountsApiServiceProtocol?
     var wishListModel: WishListModel?
     var productDetailsModel: ProductDetailsModel?
     var navigationToWishListClosure:(()->())?
 
-    init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
+    init(apiServices: AccountsApiServiceProtocol = AccountsApiService()) {
         self.apiServices = apiServices
     }
     

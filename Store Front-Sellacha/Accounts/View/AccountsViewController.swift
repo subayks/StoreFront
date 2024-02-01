@@ -139,7 +139,37 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionWishlist(_ sender: Any) {
-        self.vm.getWishList()
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            self.vm.getWishList()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+            viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                if isSignInClicked {
+                    let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                    signInViewController.isSignInClicked = { [weak self] in
+                        self?.vm.getWishList()
+                    }
+                    self?.present(signInViewController, animated: true)
+                } else {
+                    let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                    signupViewController.isSignUpClicked = { [weak self] in
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            self?.vm.getWishList()
+                        }
+                        self?.present(signInViewController, animated: true)
+                    }
+                    self?.present(signupViewController, animated: true)
+                }
+            }
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                presentationController.detents = [.medium(), .large()]
+                presentationController.preferredCornerRadius = 20
+                
+            }
+            self.present(viewController, animated: true)
+        }
     }
     
     @IBAction func actionOrderView(_ sender: Any) {

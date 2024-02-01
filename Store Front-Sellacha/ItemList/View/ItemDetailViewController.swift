@@ -164,8 +164,7 @@ class ItemDetailViewController: UIViewController {
                     if isSignInClicked {
                         let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
                         signInViewController.isSignInClicked = { [weak self] in
-                            let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
-                            self?.navigationController?.pushViewController(checkoutViewController, animated: true)
+                            self?.vm?.addToWishList(id: "\(self?.vm?.productDetailsModel?.info?.id ?? 0)")
                         }
                         self?.present(signInViewController, animated: true)
                     } else {
