@@ -14,7 +14,19 @@ struct SettingsModel {
 }
 
 class SettingsViewControllerVM: BaseViewModel {
+    var userInfoModel: UserInfoModel?
     var settingsArray: [SettingsModel]?
+    var apiServices: AccountsApiServiceProtocol?
+
+    init(apiServices: AccountsApiServiceProtocol = AccountsApiService()) {
+        self.apiServices = apiServices
+    }
+    
+    init(userInfoModel: UserInfoModel,apiServices: AccountsApiServiceProtocol = AccountsApiService()) {
+        self.userInfoModel = userInfoModel
+        self.apiServices = apiServices
+    }
+    
     
     func createDataStructure() {
         var settingsArray = [SettingsModel]()
@@ -22,19 +34,19 @@ class SettingsViewControllerVM: BaseViewModel {
         var settingsModel = SettingsModel()
         settingsModel.image = UIImage(named: "Male Profile")
         settingsModel.title = "Full Name"
-        settingsModel.subTitle = "Sana Khan"
+        settingsModel.subTitle = self.userInfoModel?.check?.name ?? ""
         
         settingsArray.append(settingsModel)
         
         settingsModel.image = UIImage(named: "Email")
         settingsModel.title = "Email"
-        settingsModel.subTitle = "Sana@gmail.com"
+        settingsModel.subTitle = self.userInfoModel?.check?.email ?? ""
         
         settingsArray.append(settingsModel)
         
         settingsModel.image = UIImage(named: "Phone")
         settingsModel.title = "Phone Number"
-        settingsModel.subTitle = "+91 9489588595"
+        settingsModel.subTitle = self.userInfoModel?.check?.mobile ?? ""
         
         settingsArray.append(settingsModel)
         

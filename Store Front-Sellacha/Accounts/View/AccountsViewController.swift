@@ -24,8 +24,11 @@ class AccountsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showLoginView()
+        
         self.logoImage.image = CommonConfig.colors.appSmallLogo
-
+        
+        self.nameLabel.text = UserDefaults.standard.string(forKey: "userName") ?? ""
         self.orderView.layer.cornerRadius = 10
         self.wishListView.layer.cornerRadius = 10
         self.cardsView.layer.cornerRadius = 10
@@ -39,6 +42,38 @@ class AccountsViewController: UIViewController {
         profileImage.clipsToBounds = true
         
         self.buttonEdit.backgroundColor = CommonConfig.colors.themeColor
+    }
+    
+    func showLoginView() {
+        if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+            viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                if isSignInClicked {
+                    let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                    signInViewController.isSignInClicked = { [weak self] in
+                        self?.vm.getUserInfo()
+                    }
+                    self?.present(signInViewController, animated: true)
+                } else {
+                    let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                    signupViewController.isSignUpClicked = { [weak self] in
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            self?.vm.getUserInfo()
+                        }
+                        self?.present(signInViewController, animated: true)
+                    }
+                    self?.present(signupViewController, animated: true)
+                }
+            }
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                presentationController.detents = [.medium(), .large()]
+                presentationController.preferredCornerRadius = 20
+                
+            }
+            self.present(viewController, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,25 +123,30 @@ class AccountsViewController: UIViewController {
             }
         }
         
-        self.vm.reloadCollectionView = { [weak self] in
-            DispatchQueue.main.async {
-                guard let self = self else {return}
-            }
-        }
-        
-        self.vm.navigationClosure = { [weak self] in
-            DispatchQueue.main.async {
-                guard let self = self else {return}
-               
-            }
-        }
-        
         self.vm.navigationToWishListClosure = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
                 let wishListViewController = self.storyboard?.instantiateViewController(withIdentifier: "WishListViewController") as! WishListViewController
                 wishListViewController.vm = self.vm.getWishListViewControllerVM()
                 self.navigationController?.pushViewController(wishListViewController, animated: true)
+            }
+        }
+        
+        self.vm.navigationToOrdersClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let ordersViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
+                ordersViewController.vm = self.vm.getOrdersViewControllerVM()
+                self.navigationController?.pushViewController(ordersViewController, animated: true)
+            }
+        }
+        
+        self.vm.navigationToUserInfoClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+                settingsViewController.vm = self.vm.getSettingsViewControllerVM()
+                self.navigationController?.pushViewController(settingsViewController, animated: true)
             }
         }
     }
@@ -129,13 +169,74 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionSettings(_ sender: Any) {
-        let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-        self.navigationController?.pushViewController(settingsViewController, animated: true)
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            self.vm.getUserInfo()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+            viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                if isSignInClicked {
+                    let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                    signInViewController.isSignInClicked = { [weak self] in
+                        self?.vm.getUserInfo()
+                    }
+                    self?.present(signInViewController, animated: true)
+                } else {
+                    let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                    signupViewController.isSignUpClicked = { [weak self] in
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            self?.vm.getUserInfo()
+                        }
+                        self?.present(signInViewController, animated: true)
+                    }
+                    self?.present(signupViewController, animated: true)
+                }
+            }
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                presentationController.detents = [.medium(), .large()]
+                presentationController.preferredCornerRadius = 20
+                
+            }
+            self.present(viewController, animated: true)
+        }
     }
     
     @IBAction func actionCards(_ sender: Any) {
-        let cardListViewController = self.storyboard?.instantiateViewController(withIdentifier: "CardListViewController") as! CardListViewController
-        self.navigationController?.pushViewController(cardListViewController, animated: true)
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            let cardListViewController = self.storyboard?.instantiateViewController(withIdentifier: "CardListViewController") as! CardListViewController
+            self.navigationController?.pushViewController(cardListViewController, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+            viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                if isSignInClicked {
+                    let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                    signInViewController.isSignInClicked = { [weak self] in
+                        let cardListViewController = self?.storyboard?.instantiateViewController(withIdentifier: "CardListViewController") as! CardListViewController
+                        self?.navigationController?.pushViewController(cardListViewController, animated: true)
+                    }
+                    self?.present(signInViewController, animated: true)
+                } else {
+                    let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                    signupViewController.isSignUpClicked = { [weak self] in
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            let cardListViewController = self?.storyboard?.instantiateViewController(withIdentifier: "CardListViewController") as! CardListViewController
+                            self?.navigationController?.pushViewController(cardListViewController, animated: true)
+                        }
+                        self?.present(signInViewController, animated: true)
+                    }
+                    self?.present(signupViewController, animated: true)
+                }
+            }
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                presentationController.detents = [.medium(), .large()]
+                presentationController.preferredCornerRadius = 20
+                
+            }
+            self.present(viewController, animated: true)
+        }
     }
     
     @IBAction func actionWishlist(_ sender: Any) {
@@ -173,12 +274,71 @@ class AccountsViewController: UIViewController {
     }
     
     @IBAction func actionOrderView(_ sender: Any) {
-        let ordersViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
-        self.navigationController?.pushViewController(ordersViewController, animated: true)
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            self.vm.gerOrdersList()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+            viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                if isSignInClicked {
+                    let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                    signInViewController.isSignInClicked = { [weak self] in
+                        self?.vm.gerOrdersList()
+                    }
+                    self?.present(signInViewController, animated: true)
+                } else {
+                    let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                    signupViewController.isSignUpClicked = { [weak self] in
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            self?.vm.gerOrdersList()
+                        }
+                        self?.present(signInViewController, animated: true)
+                    }
+                    self?.present(signupViewController, animated: true)
+                }
+            }
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                presentationController.detents = [.medium(), .large()]
+                presentationController.preferredCornerRadius = 20
+                
+            }
+            self.present(viewController, animated: true)
+        }
     }
     
     @IBAction func actionEdit(_ sender: Any) {
-        self.vm.requestPhotoAccess()
+            if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+                self.vm.requestPhotoAccess()
+            } else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "LoginOrSignUpViewController") as! LoginOrSignUpViewController
+                viewController.isSignInClicked = { [weak self] (isSignInClicked) in
+                    if isSignInClicked {
+                        let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                        signInViewController.isSignInClicked = { [weak self] in
+                            self?.vm.requestPhotoAccess()
+                        }
+                        self?.present(signInViewController, animated: true)
+                    } else {
+                        let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                        signupViewController.isSignUpClicked = { [weak self] in
+                            let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                            signInViewController.isSignInClicked = { [weak self] in
+                                self?.vm.requestPhotoAccess()
+                            }
+                            self?.present(signInViewController, animated: true)
+                        }
+                        self?.present(signupViewController, animated: true)
+                    }
+                }
+                if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                    presentationController.detents = [.medium(), .large()]
+                    presentationController.preferredCornerRadius = 20
+                    
+                }
+                self.present(viewController, animated: true)
+            }
     }
 }
 

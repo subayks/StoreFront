@@ -10,11 +10,11 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var settingsTableView: UITableView!
-    var vm = SettingsViewControllerVM()
+    var vm: SettingsViewControllerVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vm.createDataStructure()
+        self.vm?.createDataStructure()
         setupNavigationBar()
     }
     
@@ -39,12 +39,12 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return self.vm.settingsArray?.count ?? 0
+        return self.vm?.settingsArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as! SettingsTableViewCell
-        cell.vm = self.vm.getSettingsTableViewCellVM(index: indexPath.row)
+        cell.vm = self.vm?.getSettingsTableViewCellVM(index: indexPath.row)
         return cell
     }
     
@@ -65,7 +65,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.vm.settingsArray?[indexPath.row].title == "Terms Policy" {
+        if self.vm?.settingsArray?[indexPath.row].title == "Terms Policy" {
             let termsAndConditionViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsAndConditionViewController") as! TermsAndConditionViewController
             self.navigationController?.pushViewController(termsAndConditionViewController, animated: true)
         }

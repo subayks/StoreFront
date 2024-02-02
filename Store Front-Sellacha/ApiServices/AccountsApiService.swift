@@ -38,7 +38,7 @@ class AccountsApiService: AccountsApiServiceProtocol {
                         completion(false,errorCode,nil,"Unhandled Error")
                         return
                     }
-                    let values = try decoder.decode(BaseResponse<WishListModel>.self, from: result!)
+                    let values = try decoder.decode(BaseResponse<OrdersModel>.self, from: result!)
                     completion(true,errorCode,values as AnyObject?,error)
                     
                 } catch let error as NSError {
@@ -60,12 +60,11 @@ class AccountsApiService: AccountsApiServiceProtocol {
         //            "Authorization": "Bearer 1465|uY3O2qgAAOn0Fu4VIx58vXN8ORp4J8XeKYNsldKB",
         //        ]
         
-        NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
+        NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters: "", withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
                 completion(false,errorCode,nil,error)
-                
-                return
+               return
             }
             DispatchQueue.main.async {
                 
@@ -75,7 +74,7 @@ class AccountsApiService: AccountsApiServiceProtocol {
                         completion(false,errorCode,nil,"Unhandled Error")
                         return
                     }
-                    let values = try decoder.decode(BaseResponse<WishListModel>.self, from: result!)
+                    let values = try decoder.decode(BaseResponse<UserInfoModel>.self, from: result!)
                     completion(true,errorCode,values as AnyObject?,error)
                     
                 } catch let error as NSError {

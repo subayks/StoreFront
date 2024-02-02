@@ -9,26 +9,26 @@ import Foundation
 
 class OrderDetailsViewControllerVM: BaseViewModel {
     
-    var ordersInfo: OrdersInfo?
+    var ordersInfo: OrdersData?
     
-    init(ordersInfo: OrdersInfo?) {
+    init(ordersInfo: OrdersData?) {
         self.ordersInfo = ordersInfo
     }
     
     
     func getAddressFilledTableViewCellVM() ->AddressFilledTableViewCellVM {
-        AddressFilledTableViewCellVM(addressInfo: self.ordersInfo?.addressInfo ?? AddressInfo())
+        AddressFilledTableViewCellVM(addressInfo: AddressInfo(streetName: "No Info",city: "No Info",state: "No Info", mob: "No Info"))
     }
     
     func getCardFilledTableViewCellVm() ->CardFilledTableViewCellVm {
-        CardFilledTableViewCellVm(cardInfo: self.ordersInfo?.cardInfo ?? CardInfo())
+        CardFilledTableViewCellVm(cardInfo: CardInfo())
     }
     
     func getBillInfoTableViewCellVM() ->BillInfoTableViewCellVM {
-        BillInfoTableViewCellVM(billInfo: self.ordersInfo?.billInfo ?? BillInfo())
+        BillInfoTableViewCellVM(billInfo: BillInfo(subtotal: "₹0",deliveryFee: "₹\(self.ordersInfo?.shipping ?? 0)",discount: "₹0",gst: "₹\(self.ordersInfo?.tax ?? 0)",total: "₹\(self.ordersInfo?.total ?? 0)"))
     }
     
     func getOrderInfoTableViewCellVM(index: Int) ->OrderInfoTableViewCellVM {
-        OrderInfoTableViewCellVM(dressInfo: self.ordersInfo?.dresses[index] ?? DressCellObject())
+        OrderInfoTableViewCellVM(dressInfo: DressCellObject(price: "",isSelected: false, description: "",rating: "0", image: "", id: self.ordersInfo?.orderNo ?? "",quantity: "1", productName: "No info"))
     }
 }

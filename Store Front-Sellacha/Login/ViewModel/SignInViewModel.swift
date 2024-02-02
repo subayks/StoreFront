@@ -24,15 +24,20 @@ class SignInViewModel: BaseViewModel {
             self.apiServices?.makeLogin(finalURL: "\(CommonConfig.url.finalURL)/login-user", httpHeaders: [String:String](), withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
-                    if status == true {
+                    if status == true  {
                         let model  = result as? BaseResponse<LoginModel>
                         self.loginModel = model?.data
-                        let token = "Bearer " + (self.loginModel?.token ?? "")
-                       print(token)
-                       UserDefaults.standard.setValue(token, forKey: "AuthToken")
-                        UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
-
-                        self.navigationClosure?()
+                        if  self.loginModel?.email != "" {
+                            let token = "Bearer " + (self.loginModel?.token ?? "")
+                            print(token)
+                            UserDefaults.standard.setValue(token, forKey: "AuthToken")
+                            UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                            UserDefaults.standard.setValue(self.loginModel?.email ?? "", forKey: "email")
+                            UserDefaults.standard.setValue(self.loginModel?.name ?? "", forKey: "userName")
+                            self.navigationClosure?()
+                        } else {
+                            self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                        }
                     }
                     else{
                         self.alertClosure?(errorMessage ?? "Some Technical Problem")

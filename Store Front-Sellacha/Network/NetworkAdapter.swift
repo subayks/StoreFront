@@ -124,7 +124,7 @@ class NetworkAdapter {
         session .configuration.httpShouldSetCookies = true
         
         // Check the http method and pass the URL and Paramaters.
-        
+        print("parameters:  \(parameters)")
         if httpMethod == "GET" {
             
             let urlString = baseURL + parameters

@@ -35,16 +35,16 @@ class OrdersTableViewCell: UITableViewCell {
     }
     
     func setupValues() {
-        self.itemCountLabel.text = "\(self.vm?.ordersInfo?.dresses.count ?? 0)" + "Items"
-        self.itemPrice.text = self.vm?.ordersInfo?.total ?? ""
-        self.statusButton.setTitle(self.vm?.ordersInfo?.status.rawValue ?? "", for: .normal)
-        self.dateLabel.text = self.vm?.ordersInfo?.date ?? ""
+        self.itemCountLabel.text = "No" + "Items"
+        self.itemPrice.text = String(self.vm?.ordersInfo?.total ?? 0)
+        self.statusButton.setTitle(self.vm?.ordersInfo?.status?.lowercased() == "pending" ? "In Process": self.vm?.ordersInfo?.status?.lowercased() == "completed" ? "Delivered": "Cancelled", for: .normal)
+        self.dateLabel.text = self.vm?.ordersInfo?.sDate ?? ""
         
 
-        if self.vm?.ordersInfo?.status == .InProcess {
+        if self.vm?.ordersInfo?.status?.lowercased() == "pending" {
             self.statusButton.tintColor = CommonConfig.colors.themeColor
             self.statusButton.backgroundColor = CommonConfig.colors.themeLightColor
-        } else if self.vm?.ordersInfo?.status == .Delivered {
+        } else if self.vm?.ordersInfo?.status?.lowercased() == "completed" {
             self.statusButton.tintColor = UIColor.black
             self.statusButton.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
         } else {
@@ -57,7 +57,7 @@ class OrdersTableViewCell: UITableViewCell {
 
 extension OrdersTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.vm?.ordersInfo?.dresses.count ?? 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

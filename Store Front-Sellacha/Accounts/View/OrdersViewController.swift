@@ -11,11 +11,10 @@ class OrdersViewController: UIViewController {
 
     @IBOutlet weak var ordersTableView: UITableView!
     @IBOutlet weak var ordersSegmentView: UISegmentedControl!
-    var vm = OrdersViewControllerVM()
+    var vm: OrdersViewControllerVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vm.setupDataModel()
         // Do any additional setup after loading the view.
         self.ordersSegmentView.layer.cornerRadius = 10
         
@@ -32,12 +31,12 @@ class OrdersViewController: UIViewController {
     }
     
     @IBAction func actionSegment(_ sender: UISegmentedControl) {
-        self.vm.selectedIndex = sender.selectedSegmentIndex
+        self.vm?.selectedIndex = sender.selectedSegmentIndex
         self.ordersTableView.reloadData()
     }
     
     @objc func indexChanged(_ sender: UISegmentedControl) {
-        self.vm.selectedIndex = sender.selectedSegmentIndex
+        self.vm?.selectedIndex = sender.selectedSegmentIndex
         self.ordersTableView.reloadData()
     }
     
@@ -61,22 +60,22 @@ class OrdersViewController: UIViewController {
 
 extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.vm.selectedIndex == 0 {
-            return self.vm.getActiveList().count
+        if self.vm?.selectedIndex == 0 {
+            return self.vm?.getActiveList().count ?? 0
         } else {
-            return self.vm.getPastList().count
+            return self.vm?.getPastList().count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ordersTableView.dequeueReusableCell(withIdentifier: "OrdersTableViewCell") as! OrdersTableViewCell
-        cell.vm = self.vm.getOrdersTableViewCellVM(index: indexPath.row)
+        cell.vm = self.vm?.getOrdersTableViewCellVM(index: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let orderDetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
-        orderDetailsViewController.vm = self.vm.getOrderDetailsViewControllerVM(index: indexPath.row)
+        orderDetailsViewController.vm = self.vm?.getOrderDetailsViewControllerVM(index: indexPath.row)
         self.navigationController?.pushViewController(orderDetailsViewController, animated: true)
     }
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 class OrdersTableViewCellVM: BaseViewModel {
-    var ordersInfo: OrdersInfo?
+    var ordersInfo: OrdersData?
     
-    init(ordersInfo: OrdersInfo) {
+    init(ordersInfo: OrdersData) {
         self.ordersInfo = ordersInfo
     }
     
     func getOrdersCollectionViewCellVM(index: Int) ->OrdersCollectionViewCellVM {
-        return OrdersCollectionViewCellVM(dressCellObject: self.ordersInfo?.dresses[index] ?? DressCellObject())
+        return OrdersCollectionViewCellVM(dressCellObject: DressCellObject(price: "",isSelected: false, description: "",rating: "0", image: "", id: self.ordersInfo?.orderNo ?? "",quantity: "1", productName: "No info"))
     }
 }

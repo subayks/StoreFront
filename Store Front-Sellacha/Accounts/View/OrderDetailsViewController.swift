@@ -32,11 +32,12 @@ class OrderDetailsViewController: UIViewController {
         self.orderReceivedButton.layer.borderColor = UIColor.white.cgColor
         
         self.setupNavigationBar()
-        self.statusLabel.text = self.vm?.ordersInfo?.status.rawValue
+        self.orderIDValueLAbel.text = self.vm?.ordersInfo?.orderNo ?? ""
+        self.statusLabel.text = self.vm?.ordersInfo?.status?.lowercased() == "pending" ? "In Process": self.vm?.ordersInfo?.status?.lowercased() == "completed" ? "Delivered": "Cancelled"
         
-        if self.vm?.ordersInfo?.status == .InProcess {
+        if self.vm?.ordersInfo?.status?.lowercased() == "pending" {
             self.statusLabel.textColor = CommonConfig.colors.themeColor
-        } else if self.vm?.ordersInfo?.status == .Delivered {
+        } else if self.vm?.ordersInfo?.status?.lowercased() == "completed" {
             self.statusLabel.textColor = UIColor.black
             self.orderDescLabel.text = ""
             self.helpButton.isHidden = true
@@ -81,7 +82,7 @@ class OrderDetailsViewController: UIViewController {
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return self.vm?.ordersInfo?.dresses.count ?? 0
+            return 1
         } else {
             return 1
         }

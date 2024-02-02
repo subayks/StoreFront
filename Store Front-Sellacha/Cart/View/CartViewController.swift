@@ -19,6 +19,7 @@ class CartViewController: UIViewController {
     var viewModel = CartViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel.getCart()
         self.logoImage.image = CommonConfig.colors.appSmallLogo
        
         self.goToCartButton.layer.cornerRadius = 25
@@ -27,7 +28,6 @@ class CartViewController: UIViewController {
         
         self.goToCartButton.backgroundColor = CommonConfig.colors.themeColor
         self.priceLabel.textColor = CommonConfig.colors.themeColor
-        self.viewModel.getCart()
         
         let addTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(deleteClicked(tapGestureRecognizer:)))
         imageBin.isUserInteractionEnabled = true
@@ -75,12 +75,18 @@ class CartViewController: UIViewController {
         self.viewModel.reloadTableView = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
-                guard let  mainTabbarController = UIApplication.shared.keyWindow?.rootViewController as? HomeTabbarController else { return }
-                mainTabbarController.tabBar.items?[3].badgeColor = CommonConfig.colors.themeColor
-                mainTabbarController.tabBar.items?[3].badgeValue = "\(self.viewModel.cartModel?.items?.count ?? 0)"
-                self.itemCount.text = "\(self.viewModel.cartModel?.items?.count ?? 0) Items"
-                mainTabbarController.tabBar.items?[3].title = "₹" + self.viewModel.totalBill()
-                self.priceLabel.text = "₹" + self.viewModel.totalBill()
+                if self.viewModel.cartModel?.items?.count != 0 {
+                    guard let  mainTabbarController = UIApplication.shared.keyWindow?.rootViewController as? HomeTabbarController else { return }
+                    mainTabbarController.tabBar.items?[3].badgeColor = CommonConfig.colors.themeColor
+                    mainTabbarController.tabBar.items?[3].badgeValue = "\(self.viewModel.cartModel?.items?.count ?? 0)"
+                    self.itemCount.text = "\(self.viewModel.cartModel?.items?.count ?? 0) Items"
+                    mainTabbarController.tabBar.items?[3].title = "₹" + self.viewModel.totalBill()
+                    self.priceLabel.text = "₹" + self.viewModel.totalBill()
+                } else {
+                    self.itemCount.text = ""
+                    self.priceLabel.text = ""
+                    self.goToCartButton.isHidden = true
+                }
                 
                 self.cartTableView.reloadData()
             }
@@ -141,7 +147,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.viewModel.cartModel?.items?.count == 0 ? 0:1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

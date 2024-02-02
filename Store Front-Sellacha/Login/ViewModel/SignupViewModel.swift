@@ -26,7 +26,7 @@ class SignupViewModel: BaseViewModel {
                     if status == true {
                         let model  = result as? BaseResponse<LoginModel>
                         self.loginModel = model?.data
-                        UserDefaults.standard.setValue(phoneNumber, forKey: "phoneNumber")
+                         UserDefaults.standard.setValue(phoneNumber, forKey: "phoneNumber")
                          UserDefaults.standard.setValue(email, forKey: "email")
                          UserDefaults.standard.setValue(name, forKey: "userName")
 
