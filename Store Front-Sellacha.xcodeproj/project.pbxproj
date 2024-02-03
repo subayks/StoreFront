@@ -64,6 +64,7 @@
 		5981361B2B63B0AC00F60220 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981361A2B63B0AC00F60220 /* DescriptionTableViewCell.swift */; };
 		5981361D2B63B0DD00F60220 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981361C2B63B0DD00F60220 /* ReviewTableViewCell.swift */; };
 		5981361F2B63B26F00F60220 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981361E2B63B26F00F60220 /* ItemDetailViewModel.swift */; };
+		59861F272B6E567A005E21CF /* AddItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59861F262B6E567A005E21CF /* AddItemModel.swift */; };
 		599924822B5293D1002E0DCB /* UIString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924812B5293D1002E0DCB /* UIString + Extension.swift */; };
 		599924842B5293FF002E0DCB /* CardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924832B5293FF002E0DCB /* CardFormatter.swift */; };
 		599924862B5296FF002E0DCB /* UItextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599924852B5296FF002E0DCB /* UItextField + Extension.swift */; };
@@ -211,6 +212,7 @@
 		5981361A2B63B0AC00F60220 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		5981361C2B63B0DD00F60220 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5981361E2B63B26F00F60220 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
+		59861F262B6E567A005E21CF /* AddItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemModel.swift; sourceTree = "<group>"; };
 		599924812B5293D1002E0DCB /* UIString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIString + Extension.swift"; sourceTree = "<group>"; };
 		599924832B5293FF002E0DCB /* CardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatter.swift; sourceTree = "<group>"; };
 		599924852B5296FF002E0DCB /* UItextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UItextField + Extension.swift"; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				595A75902B698F4B00B57D76 /* ProductDetailsModel.swift */,
+				59861F262B6E567A005E21CF /* AddItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -962,6 +965,7 @@
 				59A8C2182B63CCAF00841FDA /* ItemSearchViewModel.swift in Sources */,
 				596A861A2B48485400DA4949 /* OffersCollectionViewCellVM.swift in Sources */,
 				596A86202B484A8400DA4949 /* CategoryCollectionViewCell.swift in Sources */,
+				59861F272B6E567A005E21CF /* AddItemModel.swift in Sources */,
 				59D1B79B2B4DCC12000CAAAD /* CardFilledTableViewCell.swift in Sources */,
 				599C9E192B6ABA3C004ADAFA /* CartModel.swift in Sources */,
 				599924942B52EDCF002E0DCB /* OrderDetailsViewController.swift in Sources */,

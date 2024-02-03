@@ -11,10 +11,13 @@ class ItemDetailViewModel: BaseViewModel {
     var apiServices: HomeApiServicesProtocol?
     var productDetailsModel: ProductDetailsModel?
     var wishListResponseModel: WishListeResponseModel?
+    var addItemModel: AddItemModel?
+    
     var title: String?
     var reloadHeartImage:(()->())?
     var isFromWishList: Bool?
-    
+    var count = 0
+
     init(productDetails: ProductDetailsModel, apiServices: HomeApiServicesProtocol = HomeApiService(), isFromWishList: Bool = false) {
         self.productDetailsModel = productDetails
         self.title = productDetails.info?.title
@@ -95,6 +98,38 @@ class ItemDetailViewModel: BaseViewModel {
         else {
             self.alertClosure?("No Internet Availabe")
         }
+    }
+    
+    func makeOrder() {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            
+            let param =  self.getCartParam()
+            
+            self.apiServices?.addItemToCart(finalURL: "\(CommonConfig.url.finalURL)/add_to_cart", httpHeaders: [String:String](), withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true  {
+                        let model  = result as? BaseResponse<AddItemModel>
+                        self.addItemModel = model?.data
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getCartParam() ->String {
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+        let jsonToReturn: NSDictionary = ["term_id": "\(self.productDetailsModel?.info?.id ?? 0)",
+                                          "qty": "\(count)","device_id": deviceId]
+    return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func getMensCollectionList() ->CategoryTableViewCellVM {

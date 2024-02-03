@@ -21,7 +21,7 @@ class CartViewModel: BaseViewModel {
          //   self.showLoadingIndicatorClosure?()
             let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
-            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=\(deviceId)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=c62700640ddcd2e2", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -50,6 +50,7 @@ class CartViewModel: BaseViewModel {
                     if status == true {
                         let model  = result as? BaseResponse<DestroyCartModel>
                         self.destroyCartModel = model?.data
+                        self.getCart()
                     }
                     else{
                         self.alertClosure?(errorMessage ?? "Some Technical Problem")
@@ -60,6 +61,37 @@ class CartViewModel: BaseViewModel {
         else {
             self.alertClosure?("No Internet Availabe")
         }
+    }
+    
+    func deleteCart() {
+        if Reachability.isConnectedToNetwork() {
+            self.showLoadingIndicatorClosure?()
+            let param =  self.getCartParam()
+            
+            self.apiServices?.destroyCart(finalURL: "\(CommonConfig.url.finalURL)/cart_remove", httpHeaders: [String:String](), withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true {
+                        let model  = result as? BaseResponse<DestroyCartModel>
+                        self.destroyCartModel = model?.data
+                        self.reloadTableView?()
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getCartParam() ->String {
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+        let jsonToReturn: NSDictionary = ["device_id": deviceId,"id": "107"]
+    return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func getCartTableViewCellVM(index: Int) ->CartTableViewCellVM {
@@ -75,5 +107,9 @@ class CartViewModel: BaseViewModel {
         }
         let total = amountArray.reduce(0, { $0 + $1 })
         return String(total)
+    }
+    
+    func getCheckoutViewControllerVM() ->CheckoutViewControllerVM {
+        return CheckoutViewControllerVM(cartModel: self.cartModel ?? CartModel())
     }
 }

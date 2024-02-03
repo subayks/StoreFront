@@ -15,7 +15,6 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var imagePlus: UIImageView!
     @IBOutlet weak var imageDelete: UIImageView!
     @IBOutlet weak var itemDetailsTableView: UITableView!
-    var count = 0
     var vm: ItemDetailViewModel?
     
     override func viewDidLoad() {
@@ -25,7 +24,7 @@ class ItemDetailViewController: UIViewController {
         
         self.countOverView.backgroundColor = CommonConfig.colors.themeColor
         self.countOverView.layer.cornerRadius = 10
-        self.countLabel.text = "\(count)"
+        self.countLabel.text = "\(self.vm?.count ?? 0)"
         
         let addTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imagePlus.isUserInteractionEnabled = true
@@ -136,17 +135,25 @@ class ItemDetailViewController: UIViewController {
     }
     
     @IBAction func actionAddToCart(_ sender: Any) {
-        
+        if self.vm?.count ?? 0 > 0 {
+            self.vm?.makeOrder()
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "Please Add one or more quantity", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        count = count + 1
-        self.countLabel.text = "\(count)"
+        self.vm?.count = (self.vm?.count ?? 0) + 1
+        self.countLabel.text = "\(self.vm?.count ?? 0)"
     }
     
     @objc func deleteImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        count = count - 1
-        self.countLabel.text = "\(count)"
+        if self.vm?.count ?? 0 > 0 {
+            self.vm?.count = (self.vm?.count ?? 0) - 1
+            self.countLabel.text = "\(self.vm?.count ?? 0)"
+        }
     }
    
     @objc func addFav(tapGestureRecognizer: UITapGestureRecognizer) {

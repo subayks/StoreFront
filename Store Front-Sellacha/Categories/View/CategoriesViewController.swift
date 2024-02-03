@@ -70,48 +70,51 @@ class CategoriesViewController: UIViewController {
         self.vm.navigationClosure = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
+                let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+                itemListViewController.vm = self.vm.getItemListViewModel()
+                self.navigationController?.pushViewController(itemListViewController, animated: true)
                 
             }
         }
     }
 
     @IBAction func actionWinter(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Winter")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = ""
+        self.vm.title = "Winter"
+        self.vm.getProductsList()
     }
     
     @IBAction func actionFormals(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Formals")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = ""
+        self.vm.title = "Formals"
+        self.vm.getProductsList()
     }
     
     @IBAction func actionSports(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Sports")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = ""
+        self.vm.title = "Sports"
+        self.vm.getProductsList()
     }
     @IBAction func actionBride(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Bride")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = "women"
+        self.vm.title = "Bridal"
+        self.vm.getProductsList()
     }
     @IBAction func actionMen(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Men")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = "men"
+        self.vm.title = "Men"
+        self.vm.getProductsList()
     }
     @IBAction func actionKids(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Kids")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = "kids"
+        self.vm.title = "Kids"
+        self.vm.getProductsList()
     }
     
     @IBAction func actionWomen(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
-        itemListViewController.vm = self.vm.getItemListViewModel(title: "Women")
-        self.navigationController?.pushViewController(itemListViewController, animated: true)
+        self.vm.selectedType = "women"
+        self.vm.title = "Women"
+        self.vm.getProductsList()
     }
     
     @objc func searchTapped(tapGestureRecognizer: UITapGestureRecognizer) {

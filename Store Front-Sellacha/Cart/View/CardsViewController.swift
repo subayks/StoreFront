@@ -47,8 +47,14 @@ class CardsViewController: UIViewController {
     }
     
     @IBAction func actionContinue(_ sender: Any) {
-        self.cardClosure?(CardInfo(image: UIImage(named: "Card"),title: "****410"))
-        self.navigationController?.popViewController(animated: true)
+        if securityField.text != "" && expiryTextField.text != "" && numberTextField.text != "" && NameTextField.text != "" {
+            self.cardClosure?(CardInfo(image: UIImage(named: "Card"),title: "****410"))
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "Please Fill All Mandatory Fields", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -34,8 +34,15 @@ class AddressViewController: UIViewController {
     }
 
     @IBAction func actionSave(_ sender: Any) {
-        self.addressClosure?(AddressInfo(streetName: self.addressField.text ?? "",city: self.cityNameField.text ?? "", state: self.stateNameField.text ?? "", mob: "+91 9489588595"))
-        self.navigationController?.popViewController(animated: true)
+        let mobileNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? ""
+        if self.addressField.text != "" && self.cityNameField.text != "" && self.stateNameField.text != "" {
+            self.addressClosure?(AddressInfo(streetName: self.addressField.text ?? "",city: self.cityNameField.text ?? "", state: self.stateNameField.text ?? "", mob: mobileNumber))
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "Please Fill All Mandatory Fields", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -19,7 +19,7 @@ class CartViewController: UIViewController {
     var viewModel = CartViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getCart()
+       
         self.logoImage.image = CommonConfig.colors.appSmallLogo
        
         self.goToCartButton.layer.cornerRadius = 25
@@ -36,6 +36,7 @@ class CartViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewModel.getCart()
         self.navigationController?.navigationBar.isHidden = true
 
         self.viewModel.errorClosure = { [weak self] (error) in
@@ -87,7 +88,6 @@ class CartViewController: UIViewController {
                     self.priceLabel.text = ""
                     self.goToCartButton.isHidden = true
                 }
-                
                 self.cartTableView.reloadData()
             }
         }
@@ -109,6 +109,7 @@ class CartViewController: UIViewController {
                     let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
                     signInViewController.isSignInClicked = { [weak self] in
                         let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+                        checkoutViewController.vm = self?.viewModel.getCheckoutViewControllerVM()
                         self?.navigationController?.pushViewController(checkoutViewController, animated: true)
                     }
                     self?.present(signInViewController, animated: true)
@@ -118,6 +119,7 @@ class CartViewController: UIViewController {
                         let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
                         signInViewController.isSignInClicked = { [weak self] in
                             let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+                            checkoutViewController.vm = self?.viewModel.getCheckoutViewControllerVM()
                             self?.navigationController?.pushViewController(checkoutViewController, animated: true)
                         }
                         self?.present(signInViewController, animated: true)
@@ -133,11 +135,12 @@ class CartViewController: UIViewController {
             self.present(viewController, animated: true)
         } else {
             let checkoutViewController = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as! CheckoutViewController
+            checkoutViewController.vm = self.viewModel.getCheckoutViewControllerVM()
             self.navigationController?.pushViewController(checkoutViewController, animated: true)}
     }
     
     @objc func deleteClicked(tapGestureRecognizer: UITapGestureRecognizer) {
-        print("deleye")
+        self.viewModel.deleteCart()
     }
 }
 
@@ -177,6 +180,9 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         cell.countClosure = { [weak self] (count) in
             guard let self = self else {return}
             cell.countLabel.text = String(count)
+            if count == 0 {
+                self.viewModel.removeCart(id: self.viewModel.cartModel?.items?[indexPath.row].termId ?? "")
+            }
         }
         return cell
     }

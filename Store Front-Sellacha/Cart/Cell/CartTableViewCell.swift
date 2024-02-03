@@ -51,6 +51,7 @@ class CartTableViewCell: UITableViewCell {
     }
     
     func setupView() {
+        self.cartTableViewCellVM?.currentCount = Int(self.cartTableViewCellVM?.productInfo?.qty ?? "")
         self.labelTitle.text = self.cartTableViewCellVM?.productInfo?.termTitle ?? ""
         self.countLabel.text = self.cartTableViewCellVM?.productInfo?.qty ?? ""
         self.offerPrice.text = ""
@@ -74,8 +75,10 @@ class CartTableViewCell: UITableViewCell {
     }
     
     @objc func deleteImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        self.cartTableViewCellVM?.currentCount = (self.cartTableViewCellVM?.currentCount ?? 0) - 1
-        self.countClosure?(self.cartTableViewCellVM?.currentCount ?? 0)
+        if self.cartTableViewCellVM?.currentCount ?? 0 > 0 {
+            self.cartTableViewCellVM?.currentCount = (self.cartTableViewCellVM?.currentCount ?? 0) - 1
+            self.countClosure?(self.cartTableViewCellVM?.currentCount ?? 0)
+        }
     }
 
 }

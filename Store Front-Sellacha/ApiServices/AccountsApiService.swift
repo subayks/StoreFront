@@ -52,13 +52,13 @@ class AccountsApiService: AccountsApiServiceProtocol {
     }
     
     func getAddress(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-        let headers = [
-            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-        ]
+//        let headers = [
+//            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
+//        ]
         
-        //        let headers = [
-        //            "Authorization": "Bearer 1465|uY3O2qgAAOn0Fu4VIx58vXN8ORp4J8XeKYNsldKB",
-        //        ]
+                let headers = [
+                    "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
+                ]
         
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters: "", withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             

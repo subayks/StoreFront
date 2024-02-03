@@ -276,6 +276,10 @@ extension ItemListViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 2:
             return self.sortedShown = false
         case 3:
+            self.vm?.selectedType = self.vm?.filterArray[row].lowercased()
+            self.vm?.title = self.vm?.filterArray[row]
+            self.navigationItem.title = self.vm?.title ?? ""
+            self.vm?.getProductsList()
             return self.filterShown = false
         default:
             return

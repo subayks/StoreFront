@@ -9,7 +9,9 @@ import Foundation
 class CategoriesViewModel: BaseViewModel {
     var apiServices: HomeApiServicesProtocol?
     var productsModel: ProductsModel?
-
+    var selectedType: String?
+    var title: String?
+    
     init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
         self.apiServices = apiServices
     }
@@ -24,7 +26,7 @@ class CategoriesViewModel: BaseViewModel {
                     if status == true {
                         let model  = result as? BaseResponse<ProductsModel>
                         self.productsModel = model?.data
-                        self.reloadCollectionView?()
+                        self.navigationClosure?()
                     }
                     else{
                         self.alertClosure?(errorMessage ?? "Some Technical Problem")
@@ -37,8 +39,8 @@ class CategoriesViewModel: BaseViewModel {
         }
     }
     
-    func getItemListViewModel(title: String) ->ItemListViewModel {
-        return ItemListViewModel(postsModel: self.productsModel?.posts ?? Posts(), title: title)
+    func getItemListViewModel() ->ItemListViewModel {
+        return ItemListViewModel(postsModel: self.productsModel?.posts ?? Posts(), title: title ?? "", selectedType: selectedType ?? "")
     }
-
+    
 }
