@@ -60,8 +60,8 @@ class ItemListViewModel: BaseViewModel {
     func getCategorySearch(index: Int) {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
-            let searchTitle = self.getCategoryListTitle()[index]
-            self.apiServices?.searchproduct(finalURL: "\(CommonConfig.url.finalURL)/all_product?type=product&term=\(searchTitle)", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let searchTitle = self.categoryModel?.data?[index].id
+            self.apiServices?.searchproduct(finalURL: "\(CommonConfig.url.finalURL)/all_product?categories=\(searchTitle ?? 0)&type=product", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
