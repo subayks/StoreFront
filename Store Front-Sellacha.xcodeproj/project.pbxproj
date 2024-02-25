@@ -58,6 +58,9 @@
 		596A86482B486A7700DA4949 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A86472B486A7700DA4949 /* CategoriesViewController.swift */; };
 		596A864A2B486AE100DA4949 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A86492B486AE100DA4949 /* CategoriesViewModel.swift */; };
 		596A864C2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A864B2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift */; };
+		597C44FA2B8B359F00BD4710 /* LogoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C44F92B8B359F00BD4710 /* LogoModel.swift */; };
+		597C44FC2B8B43B800BD4710 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C44FB2B8B43B800BD4710 /* SearchModel.swift */; };
+		597C44FE2B8B49A000BD4710 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C44FD2B8B49A000BD4710 /* CategoryModel.swift */; };
 		598136152B63AE0F00F60220 /* ItemImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598136142B63AE0F00F60220 /* ItemImageTableViewCell.swift */; };
 		598136172B63AEB400F60220 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598136162B63AEB400F60220 /* ColorTableViewCell.swift */; };
 		598136192B63AF6F00F60220 /* SizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598136182B63AF6F00F60220 /* SizeTableViewCell.swift */; };
@@ -206,6 +209,9 @@
 		596A86472B486A7700DA4949 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		596A86492B486AE100DA4949 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		596A864B2B486B3B00DA4949 /* CategoriesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListCollectionViewCell.swift; sourceTree = "<group>"; };
+		597C44F92B8B359F00BD4710 /* LogoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoModel.swift; sourceTree = "<group>"; };
+		597C44FB2B8B43B800BD4710 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		597C44FD2B8B49A000BD4710 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		598136142B63AE0F00F60220 /* ItemImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageTableViewCell.swift; sourceTree = "<group>"; };
 		598136162B63AEB400F60220 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		598136182B63AF6F00F60220 /* SizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTableViewCell.swift; sourceTree = "<group>"; };
@@ -392,6 +398,8 @@
 			children = (
 				5954E8582B6806370039E537 /* SliderModel.swift */,
 				595A758D2B696DAB00B57D76 /* ProductsModel.swift */,
+				597C44F92B8B359F00BD4710 /* LogoModel.swift */,
+				597C44FB2B8B43B800BD4710 /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 			children = (
 				595A75902B698F4B00B57D76 /* ProductDetailsModel.swift */,
 				59861F262B6E567A005E21CF /* AddItemModel.swift */,
+				597C44FD2B8B49A000BD4710 /* CategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -982,6 +991,7 @@
 				59A303722B4DB4CA003E2225 /* BillInfoTableViewCellVM.swift in Sources */,
 				5958B9472B586024009B7719 /* TermsAndConditionViewController.swift in Sources */,
 				5954E8542B67F8950039E537 /* LoginModel.swift in Sources */,
+				597C44FA2B8B359F00BD4710 /* LogoModel.swift in Sources */,
 				59DF3B2D2B62E18300719EEF /* SignInViewController.swift in Sources */,
 				59ABD8B92B45A612004AA88C /* SceneDelegate.swift in Sources */,
 				5999248C2B52AC48002E0DCB /* OrdersCollectionViewCell.swift in Sources */,
@@ -998,6 +1008,7 @@
 				5954E8562B67FC0C0039E537 /* UIviewController + Extension.swift in Sources */,
 				59F69D6B2B67F31600838F5E /* HTTPClass.swift in Sources */,
 				59A3036C2B4DB22B003E2225 /* CardTableViewCell.swift in Sources */,
+				597C44FC2B8B43B800BD4710 /* SearchModel.swift in Sources */,
 				599924922B52C4E1002E0DCB /* OrdersCollectionViewCellVM.swift in Sources */,
 				5999249A2B52F226002E0DCB /* OrderInfoTableViewCellVM.swift in Sources */,
 				59DF3B3E2B62F5B100719EEF /* ItemListViewModel.swift in Sources */,
@@ -1009,6 +1020,7 @@
 				596A864A2B486AE100DA4949 /* CategoriesViewModel.swift in Sources */,
 				599924882B52AB65002E0DCB /* OrdersViewController.swift in Sources */,
 				599924982B52F06B002E0DCB /* OrderDetailsViewControllerVM.swift in Sources */,
+				597C44FE2B8B49A000BD4710 /* CategoryModel.swift in Sources */,
 				599924A42B55A05F002E0DCB /* AddCardTableViewCell.swift in Sources */,
 				599924A82B55B13C002E0DCB /* SettingsViewController.swift in Sources */,
 				59292BE52B4998460021C4D1 /* CartViewController.swift in Sources */,

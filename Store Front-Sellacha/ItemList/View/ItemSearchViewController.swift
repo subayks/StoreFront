@@ -90,7 +90,7 @@ class ItemSearchViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.suggestionTableView.isHidden = true
         searchBar.resignFirstResponder()
-        self.vm.getSearchList()
+        self.vm.getSearchList(title:  searchBar.text ?? "")
     }
     
     func setupNavigationBar() {
@@ -112,7 +112,7 @@ class ItemSearchViewController: UIViewController, UISearchBarDelegate {
 
 extension ItemSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.vm.productsModel?.posts?.data?.count ?? 0
+        return self.vm.productsModel?.data?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -122,7 +122,7 @@ extension ItemSearchViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.vm.getProductDetails(id: String(self.vm.productsModel?.posts?.data?[indexPath.row].id ?? 0))
+        self.vm.getProductDetails(id: String(self.vm.productsModel?.data?[indexPath.row].id ?? 0))
     }
     
 }
@@ -171,7 +171,7 @@ extension ItemSearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.suggestionTableView.isHidden = true
-        self.vm.getSearchList()
+        self.vm.getSearchList(title: "")
     }
 
 }

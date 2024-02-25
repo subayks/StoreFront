@@ -40,7 +40,7 @@ class CategoriesViewModel: BaseViewModel {
     }
     
     func getItemListViewModel() ->ItemListViewModel {
-        return ItemListViewModel(postsModel: self.productsModel?.posts ?? Posts(), title: title ?? "", selectedType: selectedType ?? "")
+        return ItemListViewModel(postsModel: self.productsModel?.getTrendingProducts ?? [PostsItem](), title: title ?? "", selectedType: selectedType ?? "")
     }
     
 }

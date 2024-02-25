@@ -78,3 +78,26 @@ class LoginApiService: LoginApiServiceprotocol {
     
     
 }
+
+class ApiManager {
+    static let shared  = ApiManager()
+    
+    init() {
+        
+    }
+    
+    func fetchData(url: String, completion: @escaping (Result<BaseResponse<LoginModel>, Error>)->Void) {
+        let url = URL(string: "www.google.com")!
+        
+        URLSession.shared.dataTask(with: url) { (data, res, error) in
+            if let dataItem = data {
+                do {
+                    let response = try JSONDecoder().decode(BaseResponse<LoginModel>.self, from: dataItem)
+                    completion(.success(response))
+                } catch {
+                    completion(.failure(NSError()))
+                }
+            }
+        }
+    }
+}

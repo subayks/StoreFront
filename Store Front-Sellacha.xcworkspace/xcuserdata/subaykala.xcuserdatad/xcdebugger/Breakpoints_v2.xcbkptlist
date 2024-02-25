@@ -7,47 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C9F02F7-5CCA-456A-BCC4-2F8374EFE15B"
+            uuid = "B0EF1B87-DA67-43C2-A949-3CFCBA6523F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+            filePath = "Store Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "makeCart()"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "getLogo()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0C9F02F7-5CCA-456A-BCC4-2F8374EFE15B - abe80e2a08250b58"
+                  uuid = "B0EF1B87-DA67-43C2-A949-3CFCBA6523F8 - 4e8cb44a764cdad2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Store_Front_Sellacha.CheckoutViewControllerVM.makeCart() -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "1460">
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1852">
                </Location>
                <Location
-                  uuid = "0C9F02F7-5CCA-456A-BCC4-2F8374EFE15B - f2459b96068fb96c"
+                  uuid = "B0EF1B87-DA67-43C2-A949-3CFCBA6523F8 - 4e8cb44a764cdab3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CheckoutViewControllerVM.makeCart() -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "252">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1232">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,46 +55,205 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A570B655-086A-42D4-ADCB-6C33B35FDE7C"
+            uuid = "63068625-E4AF-404F-ABFA-6CFB97029719"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/ApiServices/CartApiService.swift"
+            filePath = "Store Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "makeOrder(finalURL:httpHeaders:withParameters:completion:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getLogo()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A570B655-086A-42D4-ADCB-6C33B35FDE7C - e074c605df6288a1"
+                  uuid = "63068625-E4AF-404F-ABFA-6CFB97029719 - 4e8cb44a764cdab3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "192"
-                  endingLineNumber = "192"
-                  offsetFromSymbolStart = "460">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1976">
                </Location>
                <Location
-                  uuid = "A570B655-086A-42D4-ADCB-6C33B35FDE7C - e074c605df62837d"
+                  uuid = "63068625-E4AF-404F-ABFA-6CFB97029719 - 4e8cb44a764cda9c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "260"
-                  endingLineNumber = "260"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1404">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2298707-6A74-4D44-89D8-0D1857F004C5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "getLogo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C2298707-6A74-4D44-89D8-0D1857F004C5 - 4e8cb44a764cda37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "C2298707-6A74-4D44-89D8-0D1857F004C5 - 4e8cb44a764cda10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "736">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59920559-C23D-4A9D-83C1-1C8637DE40C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getLogo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "59920559-C23D-4A9D-83C1-1C8637DE40C9 - 463ab30d0ac368e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "59920559-C23D-4A9D-83C1-1C8637DE40C9 - a67f726293f7df3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "59920559-C23D-4A9D-83C1-1C8637DE40C9 - 463ab30d0ac368e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store_Front_Sellacha.HomeViewModel.getLogo() -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25FB0F8A-DB26-4A82-90EB-B9B29DC1BFBF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store Front-Sellacha/ApiServices/HomeApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "getLogo(finalURL:httpHeaders:withParameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25FB0F8A-DB26-4A82-90EB-B9B29DC1BFBF - 3ba7167b203aa0bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getLogo(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "25FB0F8A-DB26-4A82-90EB-B9B29DC1BFBF - 3ba7167b203aa43e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getLogo(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Store Front-Sellacha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
                   offsetFromSymbolStart = "472">
                </Location>
             </Locations>
@@ -103,46 +262,46 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "701782CB-386C-4DF2-A82F-422B11AABBBB"
+            uuid = "A2E5267E-51AB-47F4-A229-6ED4AFA7CBB5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/ApiServices/CartApiService.swift"
+            filePath = "Store Front-Sellacha/ApiServices/HomeApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "makeOrder(finalURL:httpHeaders:withParameters:completion:)"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "getLogo(finalURL:httpHeaders:withParameters:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "701782CB-386C-4DF2-A82F-422B11AABBBB - e074c605df6288de"
+                  uuid = "A2E5267E-51AB-47F4-A229-6ED4AFA7CBB5 - 3ba7167b203aa05c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getLogo(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "760">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "728">
                </Location>
                <Location
-                  uuid = "701782CB-386C-4DF2-A82F-422B11AABBBB - e074c605df62839a"
+                  uuid = "A2E5267E-51AB-47F4-A229-6ED4AFA7CBB5 - 3ba7167b203aa5df"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getLogo(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "261"
-                  endingLineNumber = "261"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
                   offsetFromSymbolStart = "728">
                </Location>
             </Locations>
@@ -151,47 +310,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "182C71C5-63CE-4A1D-AB96-964463D8898E"
+            uuid = "B876329E-07F3-46EA-B187-90F69A026A48"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+            filePath = "Store Front-Sellacha/ApiServices/HomeApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "makeCart()"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "getLogo(finalURL:httpHeaders:withParameters:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "182C71C5-63CE-4A1D-AB96-964463D8898E - 6f241676a27a9f2"
+                  uuid = "B876329E-07F3-46EA-B187-90F69A026A48 - 3ba7167b203abf16"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CheckoutViewControllerVM.makeCart() -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getLogo(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "960">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "224">
                </Location>
                <Location
-                  uuid = "182C71C5-63CE-4A1D-AB96-964463D8898E - 6f241676a27a9d3"
+                  uuid = "B876329E-07F3-46EA-B187-90F69A026A48 - 3ba7167b203aa499"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CheckoutViewControllerVM.makeCart() -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.HomeApiService.getLogo(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Store Front-Sellacha"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/HomeApiService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1100">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "224">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -199,128 +358,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "82DC689B-2480-4A27-A4D5-64FD3114C5EE"
+            uuid = "1FFFB496-713A-4589-B280-CE6902B74016"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/Cart/ViewModel/CheckoutViewControllerVM.swift"
+            filePath = "Store Front-Sellacha/ItemList/View/ItemSearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "makeCart()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "776736CF-F720-4B94-8BB4-65B0377F775C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/ApiServices/CartApiService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "makeOrder(finalURL:httpHeaders:withParameters:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "776736CF-F720-4B94-8BB4-65B0377F775C - e074c605df628825"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "188"
-                  endingLineNumber = "188"
-                  offsetFromSymbolStart = "244">
-               </Location>
-               <Location
-                  uuid = "776736CF-F720-4B94-8BB4-65B0377F775C - e074c605df6280e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
-                  offsetFromSymbolStart = "256">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D6FFEBBD-5AD4-4EB6-B81A-39FD7E87E6F2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/ApiServices/CartApiService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "makeOrder(finalURL:httpHeaders:withParameters:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D6FFEBBD-5AD4-4EB6-B81A-39FD7E87E6F2 - e074c605df628842"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "352">
-               </Location>
-               <Location
-                  uuid = "D6FFEBBD-5AD4-4EB6-B81A-39FD7E87E6F2 - e074c605df62831e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in Store_Front_Sellacha.CartApiService.makeOrder(finalURL: Swift.String, httpHeaders: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, withParameters: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Store Front-Sellacha"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subaykala/Documents/Store_Front/Untitled/Store%20Front-Sellacha/ApiServices/CartApiService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "257"
-                  endingLineNumber = "257"
-                  offsetFromSymbolStart = "364">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3303FF30-8157-409B-8920-057B4668607E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Store Front-Sellacha/ItemList/View/ItemListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,22 +8,22 @@
 import Foundation
 class ItemSearchViewModel: BaseViewModel {
     var apiServices: HomeApiServicesProtocol?
-    var productsModel: ProductsModel?
+    var productsModel: SearchModel?
     var productDetailsModel: ProductDetailsModel?
 
     init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
         self.apiServices = apiServices
     }
     
-    func getSearchList() {
+    func getSearchList(title: String) {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
             
-            self.apiServices?.getProductsList(finalURL: "\(CommonConfig.url.finalURL)/product?src=PAK&type=title", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.searchproduct(finalURL: "\(CommonConfig.url.finalURL)/all_product?type=product&term=\(title)", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
-                        let model  = result as? BaseResponse<ProductsModel>
+                        let model  = result as? BaseResponse<SearchModel>
                         self.productsModel = model?.data
                         self.reloadCollectionView?()
                     }
@@ -62,7 +62,7 @@ class ItemSearchViewModel: BaseViewModel {
     }
     
     func getCategoryCollectionViewCell(index: Int) ->CategoryCollectionViewCellVM {
-        return CategoryCollectionViewCellVM(dressCellObject: self.productsModel?.posts?.data?[index] ?? PostsItem(), title: "")
+        return CategoryCollectionViewCellVM(dressCellObject: self.productsModel?.data?[index] ?? PostsItem(), title: "")
     }
     
     func getItemDetailViewModel() ->ItemDetailViewModel {

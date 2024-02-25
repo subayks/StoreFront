@@ -17,16 +17,28 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.logoImage.image = CommonConfig.colors.appSmallLogo
+        let imageUrl = UserDefaults.standard.string(forKey: "logo") ?? ""
+        if let webpURL = URL(string: imageUrl)  {
+            DispatchQueue.main.async {
+                self.logoImage.sd_setImage(with: webpURL)
+            }
+        } else {
+            self.logoImage.image = UIImage(named: "Sample Image")
+        }
         
         let addTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(searchTapped(tapGestureRecognizer:)))
         searchButton.isUserInteractionEnabled = true
         searchButton.addGestureRecognizer(addTapGestureRecognizer)
-        self.viewModel.getSliderInfo()
+        if UserDefaults.standard.string(forKey: "ShopAuthToken") != "" &&  UserDefaults.standard.string(forKey: "ShopAuthToken") != nil {
+            self.viewModel.getSliderInfo()
+        } else {
+            self.viewModel.makeAuthCall()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print(UserDefaults.standard.string(forKey: "ShopAuthToken"))
         self.navigationController?.navigationBar.isHidden = true
 
         self.viewModel.errorClosure = { [weak self] (error) in
@@ -85,6 +97,20 @@ class HomeViewController: UIViewController {
                 self.navigationController?.pushViewController(itemDetailViewController, animated: true)
             }
         }
+        
+        self.viewModel.setImageClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                let imageUrl = UserDefaults.standard.string(forKey: "logo") ?? ""
+                if let webpURL = URL(string: imageUrl)  {
+                    DispatchQueue.main.async {
+                        self.logoImage.sd_setImage(with: webpURL)
+                    }
+                } else {
+                    self.logoImage.image = UIImage(named: "Sample Image")
+                }
+            }
+        }
     }
     
     @objc func viewAllTapped(tapGestureRecognizer: UITapGestureRecognizer){
@@ -106,7 +132,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return self.viewModel.titles.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,8 +144,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = HomeTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
             cell.reloadCollectionView = true
-            cell.categoryTableViewCellVM = self.viewModel.getCategoryTableViewCellVM(index: indexPath.section)
-            cell.vieewAllLabel.tag = indexPath.section
+            cell.categoryTableViewCellVM = self.viewModel.getCategoryTableViewCellVM(index: indexPath.section - 1)
+            cell.vieewAllLabel.tag = indexPath.section - 1
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewAllTapped(tapGestureRecognizer:)))
             cell.vieewAllLabel.isUserInteractionEnabled = true
             cell.vieewAllLabel.addGestureRecognizer(tapGestureRecognizer)

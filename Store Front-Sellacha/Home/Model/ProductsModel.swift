@@ -9,39 +9,24 @@ import Foundation
 
 struct ProductsModel: Codable {
 
-  var posts      : Posts?   = Posts()
-  var src        : String?  = nil
-  var type       : Int?     = nil
-  var actives    : Int?     = nil
-  var drafts     : Int?     = nil
-  var incomplete : Int?     = nil
-  var trash      : Int?     = nil
-  var request    : Request? = Request()
+  var getRandomProducts     : [PostsItem]?     = []
+  var getTrendingProducts   : [PostsItem]?   = []
+  var getBestSellingProduct : [PostsItem]? = []
 
   enum CodingKeys: String, CodingKey {
 
-    case posts      = "posts"
-    case src        = "src"
-    case type       = "type"
-    case actives    = "active"
-    case drafts     = "drafts"
-    case incomplete = "incomplete"
-    case trash      = "trash"
-    case request    = "requests"
+    case getRandomProducts     = "get_random_products"
+    case getTrendingProducts   = "get_trending_products"
+    case getBestSellingProduct = "get_best_selling_product"
   
   }
 
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
 
-    posts      = try values.decodeIfPresent(Posts.self   , forKey: .posts      )
-    src        = try values.decodeIfPresent(String.self  , forKey: .src        )
-    type       = try values.decodeIfPresent(Int.self     , forKey: .type       )
-    actives    = try values.decodeIfPresent(Int.self     , forKey: .actives    )
-    drafts     = try values.decodeIfPresent(Int.self     , forKey: .drafts     )
-    incomplete = try values.decodeIfPresent(Int.self     , forKey: .incomplete )
-    trash      = try values.decodeIfPresent(Int.self     , forKey: .trash      )
-    request    = try values.decodeIfPresent(Request.self , forKey: .request    )
+    getRandomProducts     = try values.decodeIfPresent([PostsItem].self     , forKey: .getRandomProducts     )
+    getTrendingProducts   = try values.decodeIfPresent([PostsItem].self   , forKey: .getTrendingProducts   )
+    getBestSellingProduct = try values.decodeIfPresent([PostsItem].self , forKey: .getBestSellingProduct )
  
   }
 
@@ -51,64 +36,109 @@ struct ProductsModel: Codable {
 
 }
 
-struct Posts: Codable {
 
-  var currentPage  : Int?     = nil
-  var data         : [PostsItem]?  = []
-  var firstPageUrl : String?  = nil
-  var from         : Int?     = nil
-  var lastPage     : Int?     = nil
-  var lastPageUrl  : String?  = nil
-  var links        : [Links]? = []
-  var nextPageUrl  : String?  = nil
-  var path         : String?  = nil
-  var perPage      : Int?     = nil
-  var prevPageUrl  : String?  = nil
-  var to           : Int?     = nil
-  var total        : Int?     = nil
+//struct ProductsModel: Codable {
+//
+//  var posts      : Posts?   = Posts()
+//  var src        : String?  = nil
+//  var type       : Int?     = nil
+//  var actives    : Int?     = nil
+//  var drafts     : Int?     = nil
+//  var incomplete : Int?     = nil
+//  var trash      : Int?     = nil
+//  var request    : Request? = Request()
+//
+//  enum CodingKeys: String, CodingKey {
+//
+//    case posts      = "posts"
+//    case src        = "src"
+//    case type       = "type"
+//    case actives    = "active"
+//    case drafts     = "drafts"
+//    case incomplete = "incomplete"
+//    case trash      = "trash"
+//    case request    = "requests"
+//  
+//  }
+//
+//  init(from decoder: Decoder) throws {
+//    let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//    posts      = try values.decodeIfPresent(Posts.self   , forKey: .posts      )
+//    src        = try values.decodeIfPresent(String.self  , forKey: .src        )
+//    type       = try values.decodeIfPresent(Int.self     , forKey: .type       )
+//    actives    = try values.decodeIfPresent(Int.self     , forKey: .actives    )
+//    drafts     = try values.decodeIfPresent(Int.self     , forKey: .drafts     )
+//    incomplete = try values.decodeIfPresent(Int.self     , forKey: .incomplete )
+//    trash      = try values.decodeIfPresent(Int.self     , forKey: .trash      )
+//    request    = try values.decodeIfPresent(Request.self , forKey: .request    )
+// 
+//  }
+//
+//  init() {
+//
+//  }
+//
+//}
 
-  enum CodingKeys: String, CodingKey {
-
-    case currentPage  = "current_page"
-    case data         = "data"
-    case firstPageUrl = "first_page_url"
-    case from         = "from"
-    case lastPage     = "last_page"
-    case lastPageUrl  = "last_page_url"
-    case links        = "links"
-    case nextPageUrl  = "next_page_url"
-    case path         = "path"
-    case perPage      = "per_page"
-    case prevPageUrl  = "prev_page_url"
-    case to           = "to"
-    case total        = "total"
-  
-  }
-
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-
-    currentPage  = try values.decodeIfPresent(Int.self     , forKey: .currentPage  )
-    data         = try values.decodeIfPresent([PostsItem].self  , forKey: .data         )
-    firstPageUrl = try values.decodeIfPresent(String.self  , forKey: .firstPageUrl )
-    from         = try values.decodeIfPresent(Int.self     , forKey: .from         )
-    lastPage     = try values.decodeIfPresent(Int.self     , forKey: .lastPage     )
-    lastPageUrl  = try values.decodeIfPresent(String.self  , forKey: .lastPageUrl  )
-    links        = try values.decodeIfPresent([Links].self , forKey: .links        )
-    nextPageUrl  = try values.decodeIfPresent(String.self  , forKey: .nextPageUrl  )
-    path         = try values.decodeIfPresent(String.self  , forKey: .path         )
-    perPage      = try values.decodeIfPresent(Int.self     , forKey: .perPage      )
-    prevPageUrl  = try values.decodeIfPresent(String.self  , forKey: .prevPageUrl  )
-    to           = try values.decodeIfPresent(Int.self     , forKey: .to           )
-    total        = try values.decodeIfPresent(Int.self     , forKey: .total        )
- 
-  }
-
-  init() {
-
-  }
-
-}
+//struct Posts: Codable {
+//
+//  var currentPage  : Int?     = nil
+//  var data         : [PostsItem]?  = []
+//  var firstPageUrl : String?  = nil
+//  var from         : Int?     = nil
+//  var lastPage     : Int?     = nil
+//  var lastPageUrl  : String?  = nil
+//  var links        : [Links]? = []
+//  var nextPageUrl  : String?  = nil
+//  var path         : String?  = nil
+//  var perPage      : Int?     = nil
+//  var prevPageUrl  : String?  = nil
+//  var to           : Int?     = nil
+//  var total        : Int?     = nil
+//
+//  enum CodingKeys: String, CodingKey {
+//
+//    case currentPage  = "current_page"
+//    case data         = "data"
+//    case firstPageUrl = "first_page_url"
+//    case from         = "from"
+//    case lastPage     = "last_page"
+//    case lastPageUrl  = "last_page_url"
+//    case links        = "links"
+//    case nextPageUrl  = "next_page_url"
+//    case path         = "path"
+//    case perPage      = "per_page"
+//    case prevPageUrl  = "prev_page_url"
+//    case to           = "to"
+//    case total        = "total"
+//  
+//  }
+//
+//  init(from decoder: Decoder) throws {
+//    let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//    currentPage  = try values.decodeIfPresent(Int.self     , forKey: .currentPage  )
+//    data         = try values.decodeIfPresent([PostsItem].self  , forKey: .data         )
+//    firstPageUrl = try values.decodeIfPresent(String.self  , forKey: .firstPageUrl )
+//    from         = try values.decodeIfPresent(Int.self     , forKey: .from         )
+//    lastPage     = try values.decodeIfPresent(Int.self     , forKey: .lastPage     )
+//    lastPageUrl  = try values.decodeIfPresent(String.self  , forKey: .lastPageUrl  )
+//    links        = try values.decodeIfPresent([Links].self , forKey: .links        )
+//    nextPageUrl  = try values.decodeIfPresent(String.self  , forKey: .nextPageUrl  )
+//    path         = try values.decodeIfPresent(String.self  , forKey: .path         )
+//    perPage      = try values.decodeIfPresent(Int.self     , forKey: .perPage      )
+//    prevPageUrl  = try values.decodeIfPresent(String.self  , forKey: .prevPageUrl  )
+//    to           = try values.decodeIfPresent(Int.self     , forKey: .to           )
+//    total        = try values.decodeIfPresent(Int.self     , forKey: .total        )
+// 
+//  }
+//
+//  init() {
+//
+//  }
+//
+//}
 
 struct PostsItem: Codable {
 

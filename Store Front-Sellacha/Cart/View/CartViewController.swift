@@ -20,8 +20,15 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        self.logoImage.image = CommonConfig.colors.appSmallLogo
-       
+        let imageUrl = UserDefaults.standard.string(forKey: "logo") ?? ""
+        if let webpURL = URL(string: imageUrl)  {
+            DispatchQueue.main.async {
+                self.logoImage.sd_setImage(with: webpURL)
+            }
+        } else {
+            self.logoImage.image = UIImage(named: "Sample Image")
+        }
+        
         self.goToCartButton.layer.cornerRadius = 25
         self.goToCartButton.layer.borderWidth = 2
         self.goToCartButton.layer.borderColor = UIColor.white.cgColor

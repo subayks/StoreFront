@@ -95,6 +95,29 @@ class ItemListViewController: UIViewController {
                 self.navigationController?.pushViewController(itemDetailViewController, animated: true)
             }
         }
+        
+        self.vm?.categoryClosure = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                if !self.filterShown {
+                    self.filterShown = true
+                    self.sortedShown = false
+                    self.brandShown = false
+                    self.brandPicker.isHidden = !self.brandShown
+                    self.sortPicker.isHidden = !self.sortedShown
+                    self.filterPicker = UIPickerView.init()
+                    self.filterPicker.delegate = self
+                    self.filterPicker.dataSource = self
+                    self.filterPicker.tag = 3
+                    self.filterPicker.backgroundColor = UIColor.white
+                    self.filterPicker.setValue(UIColor.black, forKey: "textColor")
+                    self.filterPicker.autoresizingMask = .flexibleWidth
+                    self.filterPicker.contentMode = .center
+                    self.filterPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+                    self.view.addSubview(self.filterPicker)
+                }
+            }
+        }
     }
     
     func setupNavigationBar() {
@@ -114,22 +137,26 @@ class ItemListViewController: UIViewController {
     }
 
     @IBAction func actionFilter(_ sender: Any) {
-        if !filterShown {
-            self.filterShown = true
-            self.sortedShown = false
-            self.brandShown = false
-            self.brandPicker.isHidden = !self.brandShown
-            self.sortPicker.isHidden = !self.sortedShown
-            filterPicker = UIPickerView.init()
-            filterPicker.delegate = self
-            filterPicker.dataSource = self
-            self.filterPicker.tag = 3
-            filterPicker.backgroundColor = UIColor.white
-            filterPicker.setValue(UIColor.black, forKey: "textColor")
-            filterPicker.autoresizingMask = .flexibleWidth
-            filterPicker.contentMode = .center
-            filterPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-            self.view.addSubview(filterPicker)
+        if self.vm?.categoryModel != nil {
+            if !self.filterShown {
+                self.filterShown = true
+                self.sortedShown = false
+                self.brandShown = false
+                self.brandPicker.isHidden = !self.brandShown
+                self.sortPicker.isHidden = !self.sortedShown
+                self.filterPicker = UIPickerView.init()
+                self.filterPicker.delegate = self
+                self.filterPicker.dataSource = self
+                self.filterPicker.tag = 3
+                self.filterPicker.backgroundColor = UIColor.white
+                self.filterPicker.setValue(UIColor.black, forKey: "textColor")
+                self.filterPicker.autoresizingMask = .flexibleWidth
+                self.filterPicker.contentMode = .center
+                self.filterPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+                self.view.addSubview(self.filterPicker)
+            }
+        } else {
+            self.vm?.getCategoryList()
         }
     }
     
@@ -210,7 +237,7 @@ extension ItemListViewController: UICollectionViewDelegate, UICollectionViewData
         self.brandPicker.isHidden = true
         self.sortPicker.isHidden = true
         self.filterPicker.isHidden = true
-        self.vm?.getProductDetails(id: String(self.vm?.sortList()[indexPath.row].id ?? 0))
+        self.vm?.getProductDetails(id: String(self.vm?.postsModel?[indexPath.row].id ?? 0))
     }
     
 }
@@ -246,7 +273,7 @@ extension ItemListViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 2:
             return self.vm?.sortArray.count ?? 0
         case 3:
-            return self.vm?.filterArray.count ?? 0
+            return self.vm?.getCategoryListTitle().count ?? 0
         default:
             return 1
         }
@@ -260,7 +287,7 @@ extension ItemListViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 2:
             return self.vm?.sortArray[row]
         case 3:
-            return self.vm?.filterArray[row]
+            return self.vm?.getCategoryListTitle()[row]
         default:
             return "Data not found"
         }
@@ -274,12 +301,13 @@ extension ItemListViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 1:
             return self.brandShown = false
         case 2:
+            self.vm?.sortByPrice(index: row)
             return self.sortedShown = false
         case 3:
-            self.vm?.selectedType = self.vm?.filterArray[row].lowercased()
-            self.vm?.title = self.vm?.filterArray[row]
+            self.vm?.selectedType = self.vm?.getCategoryListTitle()[row].lowercased()
+            self.vm?.title = self.vm?.getCategoryListTitle()[row]
             self.navigationItem.title = self.vm?.title ?? ""
-            self.vm?.getProductsList()
+            self.vm?.getCategorySearch(index: row)
             return self.filterShown = false
         default:
             return

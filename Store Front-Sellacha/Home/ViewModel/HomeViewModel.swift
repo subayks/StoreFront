@@ -13,14 +13,87 @@ class HomeViewModel: BaseViewModel {
     var productsModel: ProductsModel?
     var productDetailsModel: ProductDetailsModel?
     var reloadSliderCollectionView:(()->())?
-    var titles = ["Men's Fashion", "Women's Fashion", "Kid's Fashion", "Special Deal"]
+    var loginModel: LoginModel?
+    var setImageClosure: (()->())?
+    var logoModel: LogoModel?
+    
+    var titles = ["Trending Products", "Best Selling Products", "New Arrival Products"]
     init(apiServices: HomeApiServicesProtocol = HomeApiService()) {
         self.apiServices = apiServices
     }
     
+    func makeAuthCall() {
+        if Reachability.isConnectedToNetwork() {
+            // self.showLoadingIndicatorClosure?()
+            
+            let param =  self.getLoginParam(email: "storef@gmail.com", password: "12345678")
+            
+            self.apiServices?.makeAuthCall(finalURL: "\(CommonConfig.url.finalURL)/login", httpHeaders: [String:String](), withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true  {
+                        let model  = result as? BaseResponse<LoginModel>
+                        self.loginModel = model?.data
+                        if  self.loginModel?.email != "" {
+                            let token = "Bearer " + (self.loginModel?.token ?? "")
+                            print(token)
+                            UserDefaults.standard.setValue(token, forKey: "ShopAuthToken")
+                            if UserDefaults.standard.string(forKey: "logo") != "" &&  UserDefaults.standard.string(forKey: "logo") != nil {
+                                self.getSliderInfo()
+                            } else {
+                                self.getLogo()
+                            }
+                        } else {
+                            self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                        }
+                    }
+                    else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getLogo() {
+        if Reachability.isConnectedToNetwork() {
+            // self.showLoadingIndicatorClosure?()
+            
+            
+            self.apiServices?.getLogo(finalURL: "\(CommonConfig.url.finalURL)/logos", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+                DispatchQueue.main.async {
+                    self.hideLoadingIndicatorClosure?()
+                    if status == true  {
+                        let model  = result as? LogoModel
+                        self.logoModel = model
+                        let logo = (self.logoModel?.dataItem?.logo ?? "")
+                        print(logo)
+                        UserDefaults.standard.setValue(logo, forKey: "logo")
+                        self.setImageClosure?()
+                        self.getSliderInfo()
+                    } else{
+                        self.alertClosure?(errorMessage ?? "Some Technical Problem")
+                    }
+                }
+            })
+        }
+        else {
+            self.alertClosure?("No Internet Availabe")
+        }
+    }
+    
+    func getLoginParam(email: String, password: String) ->String {
+        let jsonToReturn: NSDictionary = ["email": "\(email)",
+                                          "password": "\(password)"]
+        return self.convertDictionaryToJsonString(dict: jsonToReturn)!
+    }
+    
     func getSliderInfo() {
         if Reachability.isConnectedToNetwork() {
-            self.showLoadingIndicatorClosure?()
+            //  self.showLoadingIndicatorClosure?()
             
             self.apiServices?.getSliderData(finalURL: "\(CommonConfig.url.finalURL)/get_slider", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
@@ -29,8 +102,8 @@ class HomeViewModel: BaseViewModel {
                         let model  = result as? BaseResponse<SliderModel>
                         self.sliderModel = model?.data
                         self.getProductsList()
-
-                      //  self.reloadSliderCollectionView?()
+                        
+                        //  self.reloadSliderCollectionView?()
                     }
                     else{
                         self.alertClosure?(errorMessage ?? "Some Technical Problem")
@@ -45,9 +118,9 @@ class HomeViewModel: BaseViewModel {
     
     func getProductsList() {
         if Reachability.isConnectedToNetwork() {
-         //   self.showLoadingIndicatorClosure?()
+            //   self.showLoadingIndicatorClosure?()
             
-            self.apiServices?.getProductsList(finalURL: "\(CommonConfig.url.finalURL)/product", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.getProductsList(finalURL: "\(CommonConfig.url.finalURL)/home_page_products?latest_product=0&latest_product2=0&get_offerable_products=0&get_offerable_products2=0&trending_products2=0&best_selling_product=1&best_selling_product2=0&menu_category=0&menu_category2=0&bump_adds=0&banner_adds=0&featured_category=0&featured_category2=0&featured_brand=0&category_with_product=0&brand_with_product=0&random_product=1&trending_products=1", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -94,22 +167,22 @@ class HomeViewModel: BaseViewModel {
     }
     
     func getCategoryTableViewCellVM(index: Int) ->CategoryTableViewCellVM {
-        return CategoryTableViewCellVM(dressCellObject: self.sortList(index: index), title: titles[index-1])
+        if index == 0 {
+            return CategoryTableViewCellVM(dressCellObject:  self.productsModel?.getTrendingProducts  ?? [PostsItem](), title: titles[index])
+        } else if index == 1 {
+            return CategoryTableViewCellVM(dressCellObject:  self.productsModel?.getBestSellingProduct  ?? [PostsItem](), title: titles[index])
+        } else {
+            return CategoryTableViewCellVM(dressCellObject:  self.productsModel?.getRandomProducts  ?? [PostsItem](), title: titles[index])
+        }
     }
     
     func getItemListViewModel(index: Int) ->ItemListViewModel {
-        return ItemListViewModel(postsModel: self.productsModel?.posts ?? Posts(),title: titles[index-1], index: index)
-    }
-    
-    func sortList(index: Int)->[PostsItem] {
-        if index == 1 {
-            return self.productsModel?.posts?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "men" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
-        } else if index == 2 {
-            return self.productsModel?.posts?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "women" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
-        } else if index == 3 {
-            return self.productsModel?.posts?.data?.filter{$0.categories!.contains(where: { $0.slug?.lowercased() == "kids" }) && $0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+        if index == 0 {
+            return ItemListViewModel(postsModel: self.productsModel?.getTrendingProducts ?? [PostsItem](),title: titles[index], index: index)
+        } else if index == 1 {
+            return ItemListViewModel(postsModel: self.productsModel?.getBestSellingProduct ?? [PostsItem](),title: titles[index], index: index)
         } else {
-            return self.productsModel?.posts?.data?.filter{$0.stock?.stockQty ?? 0 > 0} ?? [PostsItem]()
+            return ItemListViewModel(postsModel: self.productsModel?.getRandomProducts ?? [PostsItem](),title: titles[index], index: index)
         }
     }
     
