@@ -29,6 +29,6 @@ class OrderDetailsViewControllerVM: BaseViewModel {
     }
     
     func getOrderInfoTableViewCellVM(index: Int) ->OrderInfoTableViewCellVM {
-        OrderInfoTableViewCellVM(dressInfo: DressCellObject(price: "",isSelected: false, description: "",rating: "0", image: "", id: self.ordersInfo?.orderNo ?? "",quantity: "1", productName: "No info"))
+        OrderInfoTableViewCellVM(dressInfo: DressCellObject(price: String(self.ordersInfo?.order_item_with_file?[index].amount ?? 0),isSelected: false, description: "",rating: "0", image: "", id: self.ordersInfo?.orderNo ?? "",quantity: String(self.ordersInfo?.order_item_with_file?[index].qty ?? 0), productName: self.ordersInfo?.order_item_with_file?[index].term?.title ?? ""))
     }
 }

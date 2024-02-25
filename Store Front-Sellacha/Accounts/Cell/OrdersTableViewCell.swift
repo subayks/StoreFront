@@ -35,8 +35,8 @@ class OrdersTableViewCell: UITableViewCell {
     }
     
     func setupValues() {
-        self.itemCountLabel.text = "No" + "Items"
-        self.itemPrice.text = String(self.vm?.ordersInfo?.total ?? 0)
+        self.itemCountLabel.text = "\(self.vm?.ordersInfo?.order_item_with_file?.count ?? 0)" + "Items"
+        self.itemPrice.text = "₹" + String(self.vm?.ordersInfo?.total ?? 0)
         self.statusButton.setTitle(self.vm?.ordersInfo?.status?.lowercased() == "pending" ? "In Process": self.vm?.ordersInfo?.status?.lowercased() == "completed" ? "Delivered": "Cancelled", for: .normal)
         self.dateLabel.text = self.vm?.ordersInfo?.sDate ?? ""
         

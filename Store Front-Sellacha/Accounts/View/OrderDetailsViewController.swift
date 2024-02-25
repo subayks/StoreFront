@@ -82,7 +82,7 @@ class OrderDetailsViewController: UIViewController {
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return self.vm?.ordersInfo?.order_item_with_file?.count ?? 0
         } else {
             return 1
         }

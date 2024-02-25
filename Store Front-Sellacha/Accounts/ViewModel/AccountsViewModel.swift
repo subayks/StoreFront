@@ -55,8 +55,8 @@ class AccountsViewModel: BaseViewModel {
     func gerOrdersList() {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
-            
-            self.apiServices?.getOrders(finalURL: "\(CommonConfig.url.finalURL)/uorders?email=alauddinansari7379@gmail.com", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let param = getOrdersParam()
+            self.apiServices?.getOrders(finalURL: "\(CommonConfig.url.finalURL)/uorders?email=alauddinansari7379@gmail.com", withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -73,6 +73,12 @@ class AccountsViewModel: BaseViewModel {
         else {
             self.alertClosure?("No Internet Availabe")
         }
+    }
+    
+    func getOrdersParam() ->String {
+
+        let jsonToReturn: NSDictionary = ["email": "mynewgmail@gmail.com", "type": "all"]
+    return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func getUserInfo() {
