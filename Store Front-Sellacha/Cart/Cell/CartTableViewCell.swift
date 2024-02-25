@@ -7,6 +7,10 @@
 
 import UIKit
 import SDWebImageWebPCoder
+enum OperationType {
+    case add
+    case minus
+}
 
 class CartTableViewCell: UITableViewCell {
 
@@ -21,7 +25,7 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var finalPrice: UILabel!
     @IBOutlet weak var labelColorInfo: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
-    var countClosure:((Int)->())?
+    var countClosure:((Int, OperationType)->())?
     
     var cartTableViewCellVM: CartTableViewCellVM? {
         didSet {
@@ -71,13 +75,13 @@ class CartTableViewCell: UITableViewCell {
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         self.cartTableViewCellVM?.currentCount = (self.cartTableViewCellVM?.currentCount ?? 0) + 1
-        self.countClosure?(self.cartTableViewCellVM?.currentCount ?? 0)
+        self.countClosure?(self.cartTableViewCellVM?.currentCount ?? 0, .add)
     }
     
     @objc func deleteImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if self.cartTableViewCellVM?.currentCount ?? 0 > 0 {
             self.cartTableViewCellVM?.currentCount = (self.cartTableViewCellVM?.currentCount ?? 0) - 1
-            self.countClosure?(self.cartTableViewCellVM?.currentCount ?? 0)
+            self.countClosure?(self.cartTableViewCellVM?.currentCount ?? 0, .minus)
         }
     }
 

@@ -94,6 +94,9 @@ class CartViewController: UIViewController {
                     self.itemCount.text = ""
                     self.priceLabel.text = ""
                     self.goToCartButton.isHidden = true
+                    guard let  mainTabbarController = UIApplication.shared.keyWindow?.rootViewController as? HomeTabbarController else { return }
+                    mainTabbarController.tabBar.items?[3].badgeColor = UIColor.clear
+                    mainTabbarController.tabBar.items?[3].badgeValue = ""
                 }
                 self.cartTableView.reloadData()
             }
@@ -147,7 +150,7 @@ class CartViewController: UIViewController {
     }
     
     @objc func deleteClicked(tapGestureRecognizer: UITapGestureRecognizer) {
-        self.viewModel.deleteCart()
+        self.viewModel.destroyFullCart()
     }
 }
 
@@ -184,11 +187,12 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         cell.overView.layer.cornerRadius = 10
         cell.countBackGround.layer.cornerRadius = 10
         cell.cartTableViewCellVM = self.viewModel.getCartTableViewCellVM(index: indexPath.row)
-        cell.countClosure = { [weak self] (count) in
+        cell.countClosure = { [weak self] (count, operationType) in
             guard let self = self else {return}
             cell.countLabel.text = String(count)
-            if count == 0 {
-                self.viewModel.removeCart(id: self.viewModel.cartModel?.items?[indexPath.row].termId ?? "")
+            switch operationType {
+            case .add: self.viewModel.addToCart(termId: self.viewModel.cartModel?.items?[indexPath.row].termId ?? "", qty: self.viewModel.cartModel?.items?[indexPath.row].qty ?? "")
+            case .minus:  self.viewModel.updateCart(id: String(self.viewModel.cartModel?.items?[indexPath.row].id ?? 0))
             }
         }
         return cell

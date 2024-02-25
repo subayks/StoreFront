@@ -26,8 +26,8 @@ class AccountsViewModel: BaseViewModel {
     func getWishList() {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
-            
-            self.apiServices?.getWishList(finalURL: "\(CommonConfig.url.finalURL)/get_wishlistsa", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let param = getWishListParam()
+            self.apiServices?.getWishList(finalURL: "\(CommonConfig.url.finalURL)/get_wishlistsa", withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -44,6 +44,12 @@ class AccountsViewModel: BaseViewModel {
         else {
             self.alertClosure?("No Internet Availabe")
         }
+    }
+    
+    func getWishListParam() ->String {
+
+        let jsonToReturn: NSDictionary = ["device_id": "535345345354"]
+    return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func gerOrdersList() {

@@ -57,8 +57,8 @@ class ItemDetailViewModel: BaseViewModel {
             self.showLoadingIndicatorClosure?()
             let email = (UserDefaults.standard.string(forKey: "email") ?? "")
             let deviceId = UIDevice.current.identifierForVendor!.uuidString
-            
-            self.apiServices?.addToWishList(finalURL: "\(CommonConfig.url.finalURL)/add_to_wishlist?email=\(email)&term_id=\(id)&device_id=\(deviceId)", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let param =  self.getWishListParam()
+            self.apiServices?.addToWishList(finalURL: "\(CommonConfig.url.finalURL)/add_to_wishlist", httpHeaders: [String:String](), withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -75,6 +75,14 @@ class ItemDetailViewModel: BaseViewModel {
         else {
             self.alertClosure?("No Internet Availabe")
         }
+    }
+    
+    func getWishListParam() ->String {
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+        let jsonToReturn: NSDictionary = ["term_id": "\(self.productDetailsModel?.info?.id ?? 0)",
+                                          "qty": "1","device_id": "535345345354"]
+    return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func removeWishList(id: String) {
@@ -128,7 +136,7 @@ class ItemDetailViewModel: BaseViewModel {
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
         let jsonToReturn: NSDictionary = ["term_id": "\(self.productDetailsModel?.info?.id ?? 0)",
-                                          "qty": "\(count)","device_id": deviceId]
+                                          "qty": "\(count)","device_id": "535345345354"]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     

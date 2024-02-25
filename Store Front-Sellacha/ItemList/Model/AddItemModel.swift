@@ -21,7 +21,6 @@ struct AddItemModel: Codable {
   var subtotal   : String? = nil
   var priceTotal : String? = nil
   var tax        : String? = nil
-  var items      : Items?  = Items()
 
   enum CodingKeys: String, CodingKey {
 
@@ -38,7 +37,6 @@ struct AddItemModel: Codable {
     case subtotal   = "subtotal"
     case priceTotal = "priceTotal"
     case tax        = "tax"
-    case items      = "items"
   
   }
 
@@ -58,7 +56,6 @@ struct AddItemModel: Codable {
     subtotal   = try values.decodeIfPresent(String.self , forKey: .subtotal   )
     priceTotal = try values.decodeIfPresent(String.self , forKey: .priceTotal )
     tax        = try values.decodeIfPresent(String.self , forKey: .tax        )
-    items      = try values.decodeIfPresent(Items.self  , forKey: .items      )
  
   }
 
@@ -68,105 +65,102 @@ struct AddItemModel: Codable {
 
 }
 
-struct Items: Codable {
+//struct Items: Codable {
+//
+//  var c042c05751ee6df2a7b107212ae6211c : ShopKey? = ShopKey()
+//
+//  enum CodingKeys: String, CodingKey {
+//
+//    case c042c05751ee6df2a7b107212ae6211c = "c042c05751ee6df2a7b107212ae6211c"
+//  
+//  }
+//
+//  init(from decoder: Decoder) throws {
+//    let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//    c042c05751ee6df2a7b107212ae6211c = try values.decodeIfPresent(ShopKey.self , forKey: .c042c05751ee6df2a7b107212ae6211c )
+// 
+//  }
+//
+//  init() {
+//
+//  }
+//
+//}
 
-  var c042c05751ee6df2a7b107212ae6211c : ShopKey? = ShopKey()
+//struct ShopKey: Codable {
+//
+//  var rowId    : String?  = nil
+//  var id       : Int?     = nil
+//  var name     : String?  = nil
+//  var qty      : String?  = nil
+//  var price    : Int?     = nil
+//  var weight   : Int?     = nil
+//  var discount : Int?     = nil
+//  var tax      : Int?     = nil
+//  var subtotal : Int?     = nil
+//
+//  enum CodingKeys: String, CodingKey {
+//
+//    case rowId    = "rowId"
+//    case id       = "id"
+//    case name     = "name"
+//    case qty      = "qty"
+//    case price    = "price"
+//    case weight   = "weight"
+//    case discount = "discount"
+//    case tax      = "tax"
+//    case subtotal = "subtotal"
+//  
+//  }
+//
+//  init(from decoder: Decoder) throws {
+//    let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//    rowId    = try values.decodeIfPresent(String.self  , forKey: .rowId    )
+//    id       = try values.decodeIfPresent(Int.self     , forKey: .id       )
+//    name     = try values.decodeIfPresent(String.self  , forKey: .name     )
+//    qty      = try values.decodeIfPresent(String.self  , forKey: .qty      )
+//    price    = try values.decodeIfPresent(Int.self     , forKey: .price    )
+//    weight   = try values.decodeIfPresent(Int.self     , forKey: .weight   )
+//    discount = try values.decodeIfPresent(Int.self     , forKey: .discount )
+//    tax      = try values.decodeIfPresent(Int.self     , forKey: .tax      )
+//    subtotal = try values.decodeIfPresent(Int.self     , forKey: .subtotal )
+// 
+//  }
+//
+//  init() {
+//
+//  }
+//
+//}
 
-  enum CodingKeys: String, CodingKey {
-
-    case c042c05751ee6df2a7b107212ae6211c = "c042c05751ee6df2a7b107212ae6211c"
-  
-  }
-
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-
-    c042c05751ee6df2a7b107212ae6211c = try values.decodeIfPresent(ShopKey.self , forKey: .c042c05751ee6df2a7b107212ae6211c )
- 
-  }
-
-  init() {
-
-  }
-
-}
-
-struct ShopKey: Codable {
-
-  var rowId    : String?  = nil
-  var id       : Int?     = nil
-  var name     : String?  = nil
-  var qty      : String?  = nil
-  var price    : Int?     = nil
-  var weight   : Int?     = nil
-  var options  : Options? = Options()
-  var discount : Int?     = nil
-  var tax      : Int?     = nil
-  var subtotal : Int?     = nil
-
-  enum CodingKeys: String, CodingKey {
-
-    case rowId    = "rowId"
-    case id       = "id"
-    case name     = "name"
-    case qty      = "qty"
-    case price    = "price"
-    case weight   = "weight"
-    case options  = "options"
-    case discount = "discount"
-    case tax      = "tax"
-    case subtotal = "subtotal"
-  
-  }
-
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-
-    rowId    = try values.decodeIfPresent(String.self  , forKey: .rowId    )
-    id       = try values.decodeIfPresent(Int.self     , forKey: .id       )
-    name     = try values.decodeIfPresent(String.self  , forKey: .name     )
-    qty      = try values.decodeIfPresent(String.self  , forKey: .qty      )
-    price    = try values.decodeIfPresent(Int.self     , forKey: .price    )
-    weight   = try values.decodeIfPresent(Int.self     , forKey: .weight   )
-    options  = try values.decodeIfPresent(Options.self , forKey: .options  )
-    discount = try values.decodeIfPresent(Int.self     , forKey: .discount )
-    tax      = try values.decodeIfPresent(Int.self     , forKey: .tax      )
-    subtotal = try values.decodeIfPresent(Int.self     , forKey: .subtotal )
- 
-  }
-
-  init() {
-
-  }
-
-}
-
-struct Options: Codable {
-
-  var attribute : [String]? = []
-  var options   : [String]? = []
-  var preview   : String?   = nil
-
-  enum CodingKeys: String, CodingKey {
-
-    case attribute = "attribute"
-    case options   = "options"
-    case preview   = "preview"
-  
-  }
-
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-
-    attribute = try values.decodeIfPresent([String].self , forKey: .attribute )
-    options   = try values.decodeIfPresent([String].self , forKey: .options   )
-    preview   = try values.decodeIfPresent(String.self   , forKey: .preview   )
- 
-  }
-
-  init() {
-
-  }
-
-}
+//struct Options: Codable {
+//
+//  var attribute : [String]? = []
+//  var options   : [String]? = []
+//  var preview   : String?   = nil
+//
+//  enum CodingKeys: String, CodingKey {
+//
+//    case attribute = "attribute"
+//    case options   = "options"
+//    case preview   = "preview"
+//  
+//  }
+//
+//  init(from decoder: Decoder) throws {
+//    let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//    attribute = try values.decodeIfPresent([String].self , forKey: .attribute )
+//    options   = try values.decodeIfPresent([String].self , forKey: .options   )
+//    preview   = try values.decodeIfPresent(String.self   , forKey: .preview   )
+// 
+//  }
+//
+//  init() {
+//
+//  }
+//
+//}
 
