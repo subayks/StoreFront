@@ -11,7 +11,8 @@ class CategoriesListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var offerImage: UIImageView!
     
-    var offersCollectionViewCellVM: OffersCollectionViewCellVM? {
+    @IBOutlet weak var titleLabel: UILabel!
+    var vm: CategoriesListCollectionViewCellVM? {
         didSet {
             self.setupView()
         }
@@ -22,21 +23,15 @@ class CategoriesListCollectionViewCell: UICollectionViewCell {
         self.offerImage.layer.borderWidth = 1
         self.offerImage.layer.cornerRadius = 10
         self.offerImage.layer.borderColor = UIColor.clear.cgColor
-//        if self.offersCollectionViewCellVM?.offer?.id == "111" {
-//            self.offerImage.image = UIImage(named: self.offersCollectionViewCellVM?.getImage() ?? "")
-//        } else {
-//        self.offerImage.loadImageUsingURL(self.offersCollectionViewCellVM?.getImage() ?? "")
-//        }
-
-//        if let url = URL(string: self.offersCollectionViewCellVM?.getImage() ?? "") {
-//
-//        DispatchQueue.global().async {
-//            let data = try? Data(contentsOf: url)
-//            DispatchQueue.main.async {
-//                self.offerImage.image = UIImage(data: data!)
-//            }
-//        }
-//    }
+        self.titleLabel.text = self.vm?.categoryData?.name ?? ""
+        let urlString = "\(CommonConfig.url.imageBaseUrl)\(self.vm?.categoryData?.preview?.content ?? "")"
+        if let webpURL = URL(string: urlString)  {
+            DispatchQueue.main.async {
+                self.offerImage.sd_setImage(with: webpURL)
+            }
+        } else {
+            self.offerImage.image = UIImage(named: "Sample Image")
+        }
     }
     
     override func prepareForReuse() {

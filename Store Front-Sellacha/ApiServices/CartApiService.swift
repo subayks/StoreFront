@@ -309,8 +309,8 @@ class CartApiService: CartApiServiceProtocol {
         //            ]
         
         let headers = [
-            "Authorization": "Bearer 1465|uY3O2qgAAOn0Fu4VIx58vXN8ORp4J8XeKYNsldKB",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "GET", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             

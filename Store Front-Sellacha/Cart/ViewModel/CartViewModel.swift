@@ -20,8 +20,7 @@ class CartViewModel: BaseViewModel {
         if Reachability.isConnectedToNetwork() {
          //   self.showLoadingIndicatorClosure?()
             let deviceId = UIDevice.current.identifierForVendor!.uuidString
-
-            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=c62700640ddcd2e2", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=\(deviceId)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {

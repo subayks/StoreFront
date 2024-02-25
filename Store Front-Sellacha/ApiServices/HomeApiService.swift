@@ -224,8 +224,8 @@ class HomeApiService: HomeApiServicesProtocol {
     
     func addItemToCart(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
