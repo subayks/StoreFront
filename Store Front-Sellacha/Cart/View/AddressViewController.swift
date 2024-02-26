@@ -9,6 +9,9 @@ import UIKit
 
 class AddressViewController: UIViewController {
 
+    @IBOutlet weak var zipcodeField: UITextField!
+    @IBOutlet weak var zipcodeLabel: UILabel!
+    @IBOutlet weak var zipcodeView: UIView!
     @IBOutlet weak var addressScrollView: UIScrollView!
     @IBOutlet weak var buttonSave: UIButton!
     @IBOutlet weak var stateNameField: UITextField!
@@ -35,8 +38,8 @@ class AddressViewController: UIViewController {
 
     @IBAction func actionSave(_ sender: Any) {
         let mobileNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? ""
-        if self.addressField.text != "" && self.cityNameField.text != "" && self.stateNameField.text != "" {
-            self.addressClosure?(AddressInfo(streetName: self.addressField.text ?? "",city: self.cityNameField.text ?? "", state: self.stateNameField.text ?? "", mob: mobileNumber))
+        if self.addressField.text != "" && self.cityNameField.text != "" && self.stateNameField.text != "" && self.zipcodeField.text != "" {
+            self.addressClosure?(AddressInfo(streetName: self.addressField.text ?? "",city: self.cityNameField.text ?? "", state: self.stateNameField.text ?? "", mob: mobileNumber, zipCode: self.zipcodeField.text ?? ""))
             self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(title: "Alert", message: "Please Fill All Mandatory Fields", preferredStyle: UIAlertController.Style.alert)

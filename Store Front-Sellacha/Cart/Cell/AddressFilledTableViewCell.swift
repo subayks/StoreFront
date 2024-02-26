@@ -34,7 +34,7 @@ class AddressFilledTableViewCell: UITableViewCell {
     func setupView() {
         self.mobileNumber.text = self.addressFilledTableViewCellVM?.addressInfo?.mob
         self.address2Label.text = self.addressFilledTableViewCellVM?.addressInfo?.state
-        self.address1Label.text = "\(self.addressFilledTableViewCellVM?.addressInfo?.city ?? ""), \(self.addressFilledTableViewCellVM?.addressInfo?.city ?? "")"
+        self.address1Label.text = "\(self.addressFilledTableViewCellVM?.addressInfo?.city ?? ""), \(self.addressFilledTableViewCellVM?.addressInfo?.city ?? "") \(self.addressFilledTableViewCellVM?.addressInfo?.zipCode ?? "")"
     }
 
 }

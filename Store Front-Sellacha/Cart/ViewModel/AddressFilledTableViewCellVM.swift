@@ -11,6 +11,7 @@ struct AddressInfo {
     var city: String?
     var state: String?
     var mob: String?
+    var zipCode: String?
 }
 class AddressFilledTableViewCellVM {
     var addressInfo: AddressInfo?

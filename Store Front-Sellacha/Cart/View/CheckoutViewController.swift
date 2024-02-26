@@ -143,7 +143,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             let cell = checkoutTableView.dequeueReusableCell(withIdentifier: "BillInfoTableViewCell") as! BillInfoTableViewCell
-         //   cell.cardTableViewCellVM = self.vm.getAddressCardTableViewCellVM()
+            cell.billInfoTableViewCellVM = self.vm?.getBillInfoTableViewCellVM()
             return cell
         }
     }

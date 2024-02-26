@@ -47,8 +47,9 @@ class AccountsViewModel: BaseViewModel {
     }
     
     func getWishListParam() ->String {
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
-        let jsonToReturn: NSDictionary = ["device_id": "535345345354"]
+        let jsonToReturn: NSDictionary = ["device_id": deviceId]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
@@ -56,7 +57,7 @@ class AccountsViewModel: BaseViewModel {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
             let param = getOrdersParam()
-            self.apiServices?.getOrders(finalURL: "\(CommonConfig.url.finalURL)/uorders?email=alauddinansari7379@gmail.com", withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.getOrders(finalURL: "\(CommonConfig.url.finalURL)/uorders", withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -76,8 +77,9 @@ class AccountsViewModel: BaseViewModel {
     }
     
     func getOrdersParam() ->String {
+        let email = UserDefaults.standard.string(forKey: "email") ?? ""
 
-        let jsonToReturn: NSDictionary = ["email": "mynewgmail@gmail.com", "type": "all"]
+        let jsonToReturn: NSDictionary = ["email": email, "type": "all"]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
@@ -85,7 +87,7 @@ class AccountsViewModel: BaseViewModel {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
             let email = (UserDefaults.standard.string(forKey: "email") ?? "")
-            self.apiServices?.getAddress(finalURL: "\(CommonConfig.url.finalURL)/usettings?email=\(email)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.getAddress(finalURL: "\(CommonConfig.url.finalURL)/get_customer_profile?email=\(email)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {

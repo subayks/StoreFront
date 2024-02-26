@@ -151,6 +151,7 @@ class AccountsViewController: UIViewController {
         self.vm.navigationToUserInfoClosure = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
+                self.nameLabel.text = UserDefaults.standard.string(forKey: "userName") ?? ""
                 let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
                 settingsViewController.vm = self.vm.getSettingsViewControllerVM()
                 self.navigationController?.pushViewController(settingsViewController, animated: true)

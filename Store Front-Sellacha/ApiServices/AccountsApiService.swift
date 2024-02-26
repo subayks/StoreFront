@@ -15,13 +15,9 @@ protocol AccountsApiServiceProtocol {
 
 class AccountsApiService: AccountsApiServiceProtocol {
     func getOrders(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-//        let headers = [
-//            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-//        ]
-        
-                let headers = [
-                    "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-                ]
+      let headers = [
+        "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+        ]
         
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters: withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
@@ -52,15 +48,12 @@ class AccountsApiService: AccountsApiServiceProtocol {
     }
     
     func getAddress(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-//        let headers = [
-//            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-//        ]
         
                 let headers = [
-                    "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-                ]
+        "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+        ]
         
-        NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters: "", withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
+        NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters: "", withHttpMethod: "GET", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
                 completion(false,errorCode,nil,error)
@@ -88,12 +81,9 @@ class AccountsApiService: AccountsApiServiceProtocol {
     }
     
     func removeWishList(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-        //        let headers = [
-        //            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-        //            ]
-                let headers = [
-                    "Authorization": "Bearer 1465|uY3O2qgAAOn0Fu4VIx58vXN8ORp4J8XeKYNsldKB",
-                ]
+        let headers = [
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
                 NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
                     
                     if let error = error {
@@ -124,13 +114,9 @@ class AccountsApiService: AccountsApiServiceProtocol {
             }
     
     func getWishList(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-//        let headers = [
-//            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-//        ]
-        
-                let headers = [
-                    "Authorization": "Bearer 1632|SpwNZ8fQMZNS2rv89Xb5Nw1i6NKVgoANvo2InERo",
-                ]
+       let headers = [
+        "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+        ]
         
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters , withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             

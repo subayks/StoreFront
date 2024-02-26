@@ -34,7 +34,7 @@ class OrderDetailsViewController: UIViewController {
         self.setupNavigationBar()
         self.orderIDValueLAbel.text = self.vm?.ordersInfo?.orderNo ?? ""
         self.statusLabel.text = self.vm?.ordersInfo?.status?.lowercased() == "pending" ? "In Process": self.vm?.ordersInfo?.status?.lowercased() == "completed" ? "Delivered": "Cancelled"
-        
+        self.dateLabel.text = self.vm?.convertDateFormat(inputDate: self.vm?.ordersInfo?.createdAt ?? "") ?? ""
         if self.vm?.ordersInfo?.status?.lowercased() == "pending" {
             self.statusLabel.textColor = CommonConfig.colors.themeColor
         } else if self.vm?.ordersInfo?.status?.lowercased() == "completed" {

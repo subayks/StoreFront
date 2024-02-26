@@ -90,6 +90,7 @@ class CartViewController: UIViewController {
                     self.itemCount.text = "\(self.viewModel.cartModel?.items?.count ?? 0) Items"
                     mainTabbarController.tabBar.items?[3].title = "₹" + self.viewModel.totalBill()
                     self.priceLabel.text = "₹" + self.viewModel.totalBill()
+                    self.goToCartButton.isHidden = false
                 } else {
                     self.itemCount.text = ""
                     self.priceLabel.text = ""

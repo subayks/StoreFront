@@ -34,19 +34,19 @@ class SettingsViewControllerVM: BaseViewModel {
         var settingsModel = SettingsModel()
         settingsModel.image = UIImage(named: "Male Profile")
         settingsModel.title = "Full Name"
-        settingsModel.subTitle = self.userInfoModel?.check?.name ?? ""
+        settingsModel.subTitle = self.userInfoModel?.name ?? ""
         
         settingsArray.append(settingsModel)
         
         settingsModel.image = UIImage(named: "Email")
         settingsModel.title = "Email"
-        settingsModel.subTitle = self.userInfoModel?.check?.email ?? ""
+        settingsModel.subTitle = self.userInfoModel?.email ?? ""
         
         settingsArray.append(settingsModel)
         
         settingsModel.image = UIImage(named: "Phone")
         settingsModel.title = "Phone Number"
-        settingsModel.subTitle = self.userInfoModel?.check?.mobile ?? ""
+        settingsModel.subTitle = self.userInfoModel?.mobile ?? ""
         
         settingsArray.append(settingsModel)
         

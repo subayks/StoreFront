@@ -32,8 +32,9 @@ class ItemDetailViewModel: BaseViewModel {
     func getProductDetails(id: String) {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
-            
-            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_pro_detail?id=\(id)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_product_detail?id=\(id)&device_id=\(deviceId)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -56,7 +57,6 @@ class ItemDetailViewModel: BaseViewModel {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
             let email = (UserDefaults.standard.string(forKey: "email") ?? "")
-            let deviceId = UIDevice.current.identifierForVendor!.uuidString
             let param =  self.getWishListParam()
             self.apiServices?.addToWishList(finalURL: "\(CommonConfig.url.finalURL)/add_to_wishlist", httpHeaders: [String:String](), withParameters: param, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
@@ -81,15 +81,15 @@ class ItemDetailViewModel: BaseViewModel {
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
         let jsonToReturn: NSDictionary = ["term_id": "\(self.productDetailsModel?.info?.id ?? 0)",
-                                          "qty": "1","device_id": "535345345354"]
+                                          "qty": "1","device_id": deviceId]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func removeWishList(id: String) {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
-            
-            self.apiServices?.removeWishList(finalURL: "\(CommonConfig.url.finalURL)/remove_wishlist?id=\(id)", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            var postParam = self.removeWishListParam(id: id)
+            self.apiServices?.removeWishList(finalURL: "\(CommonConfig.url.finalURL)/remove_wishlist", httpHeaders: [String:String](), withParameters: postParam, completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -106,6 +106,13 @@ class ItemDetailViewModel: BaseViewModel {
         else {
             self.alertClosure?("No Internet Availabe")
         }
+    }
+    
+    func removeWishListParam(id: String) ->String {
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+        let jsonToReturn: NSDictionary = ["id": id]
+    return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func makeOrder() {
@@ -136,7 +143,7 @@ class ItemDetailViewModel: BaseViewModel {
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
         let jsonToReturn: NSDictionary = ["term_id": "\(self.productDetailsModel?.info?.id ?? 0)",
-                                          "qty": "\(count)","device_id": "535345345354"]
+                                          "qty": "\(count)","device_id": deviceId]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     

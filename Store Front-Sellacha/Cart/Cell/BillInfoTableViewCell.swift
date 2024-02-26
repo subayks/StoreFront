@@ -45,10 +45,10 @@ class BillInfoTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        self.subTotalValue.text = self.billInfoTableViewCellVM?.billInfo?.subtotal ?? ""
-        self.discountValue.text = self.billInfoTableViewCellVM?.billInfo?.discount ?? ""
-        self.deliveryFeeValue.text = self.billInfoTableViewCellVM?.billInfo?.deliveryFee ?? ""
-        self.totalvalue.text = self.billInfoTableViewCellVM?.billInfo?.total ?? ""
-        self.GStValue.text = self.billInfoTableViewCellVM?.billInfo?.gst ?? ""
+        self.subTotalValue.text = "₹" + (self.billInfoTableViewCellVM?.billInfo?.subtotal ?? "")
+        self.discountValue.text = "₹" + (self.billInfoTableViewCellVM?.billInfo?.discount ?? "")
+        self.deliveryFeeValue.text = "₹" + (self.billInfoTableViewCellVM?.billInfo?.deliveryFee ?? "")
+        self.totalvalue.text = "₹" + (self.billInfoTableViewCellVM?.billInfo?.total ?? "")
+        self.GStValue.text = "₹" + (self.billInfoTableViewCellVM?.billInfo?.gst ?? "")
     }
 }

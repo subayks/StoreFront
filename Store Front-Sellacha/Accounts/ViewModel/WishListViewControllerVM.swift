@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 class WishListViewControllerVM: BaseViewModel {
     var dressArray: [WishListItems]?
     var productDetailsModel: ProductDetailsModel?
@@ -23,8 +24,9 @@ class WishListViewControllerVM: BaseViewModel {
     func getProductDetails(id: String) {
         if Reachability.isConnectedToNetwork() {
             self.showLoadingIndicatorClosure?()
-            
-            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_pro_detail?id=\(id)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let deviceId = UIDevice.current.identifierForVendor!.uuidString
+
+            self.apiServices?.getProductsDetails(finalURL: "\(CommonConfig.url.finalURL)/get_product_detail?id=\(id)&device_id=\(deviceId)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {

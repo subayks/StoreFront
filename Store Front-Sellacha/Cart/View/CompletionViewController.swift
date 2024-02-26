@@ -28,6 +28,7 @@ class CompletionViewController: UIViewController {
         if let viewControllers = self.navigationController?.viewControllers {
             for viewController in viewControllers {
                 if viewController is CartViewController {
+                    (viewController as! CartViewController).viewModel.getCart()
                     self.navigationController?.popToViewController(viewController, animated: true)
                     self.tabBarController?.selectedIndex = 3
                     return

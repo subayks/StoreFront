@@ -15,7 +15,7 @@ struct ProductDetailsModel: Codable {
   var previous   : PostsItem? = PostsItem()
   var variations : [String]? = []
   var content    : Content?  = Content()
-
+    var wishlist: String? = nil
   enum CodingKeys: String, CodingKey {
 
     case info       = "info"
@@ -24,7 +24,7 @@ struct ProductDetailsModel: Codable {
     case previous   = "previous"
     case variations = "variations"
     case content    = "content"
-  
+  case wishlist = "wishlist"
   }
 
   init(from decoder: Decoder) throws {
@@ -36,7 +36,7 @@ struct ProductDetailsModel: Codable {
     previous   = try values.decodeIfPresent(PostsItem.self , forKey: .previous   )
     variations = try values.decodeIfPresent([String].self , forKey: .variations )
     content    = try values.decodeIfPresent(Content.self  , forKey: .content    )
- 
+      wishlist = try values.decodeIfPresent(String.self  , forKey: .wishlist    )
   }
 
   init() {

@@ -22,8 +22,8 @@ protocol CartApiServiceProtocol {
 class CartApiService: CartApiServiceProtocol {
     func destroyCart(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -55,8 +55,8 @@ class CartApiService: CartApiServiceProtocol {
     
     func updateCart(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -88,8 +88,8 @@ class CartApiService: CartApiServiceProtocol {
     
     func addItemToCart(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -123,10 +123,6 @@ class CartApiService: CartApiServiceProtocol {
         let headers = [
                    "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
                    ]
-       
-//           let headers = [
-//               "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-//           ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -160,10 +156,6 @@ class CartApiService: CartApiServiceProtocol {
            let headers = [
                       "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
                       ]
-          
-//           let headers = [
-//               "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-//           ]
            NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
                
                if let error = error {
@@ -198,10 +190,6 @@ class CartApiService: CartApiServiceProtocol {
                     "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
                     ]
         
-//        let headers = [
-//            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-//        ]
-        
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "GET", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -231,13 +219,10 @@ class CartApiService: CartApiServiceProtocol {
     }
     
     func getOrders(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-        //        let headers = [
-        //            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-        //            ]
         
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "GET", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
@@ -268,13 +253,10 @@ class CartApiService: CartApiServiceProtocol {
     }
     
     func makeOrder(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-     //   let headers = [
-       //            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-       //            ]
        
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -306,8 +288,8 @@ class CartApiService: CartApiServiceProtocol {
     
     func removeCart(finalURL: String, httpHeaders: [String : String], withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
         let headers = [
-            "Authorization": "Bearer 1469|yeMIF3WMX41EcKCE4nSucFB6p015P6r4VLrFH8cM",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:  withParameters, withHttpMethod: "POST", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             
             if let error = error {
@@ -338,16 +320,10 @@ class CartApiService: CartApiServiceProtocol {
     }
     
     func getCart(finalURL: String, withParameters: String, completion: @escaping (Bool?, String?, AnyObject?, String?) -> Void) {
-        //        let headers = [
-        //            "Authorization": "\(((UserDefaults.standard.string(forKey: "AuthToken") ?? "") as String))",
-        //            ]
         
-//        let headers = [
-//            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
-//            ]
         let headers = [
-            "Authorization": "Bearer 1632|SpwNZ8fQMZNS2rv89Xb5Nw1i6NKVgoANvo2InERo",
-        ]
+            "Authorization": "\(((UserDefaults.standard.string(forKey: "ShopAuthToken") ?? "") as String))",
+            ]
         
         NetworkAdapter.clientNetworkRequestCodable(withBaseURL: finalURL, withParameters:   "", withHttpMethod: "GET", withContentType: "Application/json", withHeaders: headers, completionHandler: { (result: Data?, showPopUp: Bool?, error: String?, errorCode: String?)  -> Void in
             

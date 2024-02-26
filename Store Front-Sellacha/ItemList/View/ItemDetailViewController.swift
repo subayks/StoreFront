@@ -34,7 +34,7 @@ class ItemDetailViewController: UIViewController {
         imageDelete.isUserInteractionEnabled = true
         imageDelete.addGestureRecognizer(deleteTapGestureRecognizer)
 
-        if self.vm?.isFromWishList ?? false {
+        if self.vm?.isFromWishList ?? false || self.vm?.productDetailsModel?.wishlist == "1" {
             let button1 = UIBarButtonItem(image: UIImage(named: "Heart 1"), style: .plain, target: self, action: #selector(addFav(tapGestureRecognizer:)))
             button1.tintColor = CommonConfig.colors.themeColor
             self.navigationItem.rightBarButtonItem  = button1
@@ -101,7 +101,7 @@ class ItemDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let self = self else {return}
                 self.navigationItem.rightBarButtonItem = nil
-                if self.vm?.isFromWishList ?? false {
+                if self.vm?.isFromWishList ?? false || self.vm?.productDetailsModel?.wishlist == "1" {
                     let button1 = UIBarButtonItem(image: UIImage(named: "Heart"), style: .plain, target: self, action: #selector(self.addFav(tapGestureRecognizer:)))
                     self.navigationItem.rightBarButtonItem  = button1
                 } else {
@@ -157,7 +157,7 @@ class ItemDetailViewController: UIViewController {
     }
    
     @objc func addFav(tapGestureRecognizer: UITapGestureRecognizer) {
-        if self.vm?.isFromWishList ?? false {
+        if self.vm?.isFromWishList ?? false || self.vm?.productDetailsModel?.wishlist == "1" {
             if UserDefaults.standard.bool(forKey: "isLoggedIn") {
                 self.vm?.removeWishList(id: "\(self.vm?.productDetailsModel?.info?.id ?? 0)")
             }

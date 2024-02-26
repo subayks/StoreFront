@@ -125,6 +125,7 @@ class NetworkAdapter {
         
         // Check the http method and pass the URL and Paramaters.
         print("parameters:  \(parameters)")
+        print("Header: \(httpHeaders)")
         if httpMethod == "GET" {
             
             let urlString = baseURL + parameters

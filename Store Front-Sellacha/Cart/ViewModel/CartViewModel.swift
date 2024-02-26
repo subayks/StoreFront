@@ -22,7 +22,7 @@ class CartViewModel: BaseViewModel {
         if Reachability.isConnectedToNetwork() {
          //   self.showLoadingIndicatorClosure?()
             let deviceId = UIDevice.current.identifierForVendor!.uuidString
-            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=\(535345345354)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            self.apiServices?.getCart(finalURL: "\(CommonConfig.url.finalURL)/get_cart?device_id=\(deviceId)", withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -140,14 +140,14 @@ class CartViewModel: BaseViewModel {
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
         let jsonToReturn: NSDictionary = ["term_id": termId,
-                                          "qty": 1,"device_id": "535345345354"]
+                                          "qty": 1,"device_id": deviceId]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
     func getCartParam(id: String) ->String {
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
-        let jsonToReturn: NSDictionary = ["device_id": 535345345354,"id": id]
+        let jsonToReturn: NSDictionary = ["device_id": deviceId,"id": id]
     return self.convertDictionaryToJsonString(dict: jsonToReturn)!
     }
     
@@ -159,7 +159,7 @@ class CartViewModel: BaseViewModel {
         var amountArray = [Int]()
         if let cartItems  = self.cartModel?.items {
             for item in cartItems {
-                amountArray.append(Int(item.price ?? "") ?? 0)
+                amountArray.append(item.finalTotal ?? 0)
             }
         }
         let total = amountArray.reduce(0, { $0 + $1 })

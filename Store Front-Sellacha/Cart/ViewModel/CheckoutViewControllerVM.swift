@@ -39,7 +39,9 @@ class CheckoutViewControllerVM: BaseViewModel {
             let name = UserDefaults.standard.string(forKey: "userName") ?? ""
             let email = UserDefaults.standard.string(forKey: "email") ?? ""
             let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? ""
-            self.apiServices?.makeOrder(finalURL: "\(CommonConfig.url.finalURL)/make_order?customer_type=1&delivery_type=1&shipping_method=&payment_id=&payment_method=1&payment_status=2&name=Alauddin Ansari&email=alauddinansari7379@gmail.com&phone=7379452259&comment=&address=New Market Hyderabad&zip_code=500082&location=Hyderabad&device_id=c62700640ddcd2e2&total=3000&discount=00&tax=00", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
+            let deviceId = UIDevice.current.identifierForVendor!.uuidString
+            var address = "\(self.addressInfo?.streetName ?? "") \(self.addressInfo?.city ?? "") \(self.addressInfo?.state ?? "")"
+            self.apiServices?.makeOrder(finalURL: "\(CommonConfig.url.finalURL)/make_order?customer_type=1&delivery_type=1&shipping_method&payment_id=7897&payment_method=2&tax=0&total=\(self.totalBill())&name=\(name)&email=\(email)&phone=\(phoneNumber)&comment=test comment&address=\(address)&zip_code=\(self.addressInfo?.zipCode ?? "")&location=India&device_id=\(deviceId)&trans_id=\(self.cartModel?.items?[0].termId ?? "")", httpHeaders: [String:String](), withParameters: "", completion: { (status: Bool? , errorCode: String?,result: AnyObject?, errorMessage: String?) -> Void in
                 DispatchQueue.main.async {
                     self.hideLoadingIndicatorClosure?()
                     if status == true {
@@ -58,6 +60,16 @@ class CheckoutViewControllerVM: BaseViewModel {
         }
     }
     
+    func totalBill() ->String{
+        var amountArray = [Int]()
+        if let cartItems  = self.cartModel?.items {
+            for item in cartItems {
+                amountArray.append(item.finalTotal ?? 0)
+            }
+        }
+        let total = amountArray.reduce(0, { $0 + $1 })
+        return String(total)
+    }
     
     func getAddressCardTableViewCellVM() ->CardTableViewCellVM {
         return CardTableViewCellVM(cardInfo: CardInfo(image: UIImage(named: "Location"),title: "Add Address"))
@@ -73,5 +85,20 @@ class CheckoutViewControllerVM: BaseViewModel {
     
     func getCardFilledTableViewCellVm() ->CardFilledTableViewCellVm {
         return CardFilledTableViewCellVm(cardInfo: self.cardInfo ?? CardInfo())
+    }
+    
+    func getBillInfoTableViewCellVM() ->BillInfoTableViewCellVM {
+        return BillInfoTableViewCellVM(billInfo: BillInfo(subtotal: self.totalSubTotalBill(), deliveryFee: "0", discount: "0", gst: "0" , total: self.totalBill()))
+    }
+    
+    func totalSubTotalBill() ->String{
+        var amountArray = [Int]()
+        if let cartItems  = self.cartModel?.items {
+            for item in cartItems {
+                amountArray.append(Int(item.price ?? "") ?? 0)
+            }
+        }
+        let total = amountArray.reduce(0, { $0 + $1 })
+        return String(total)
     }
 }
