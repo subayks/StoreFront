@@ -24,7 +24,7 @@ class CategoryCollectionViewCellVM {
     }
     
     func getDescription() ->String {
-        return "Not Coming From Api"
+        return self.dressCellObject?.title ?? ""
     }
     
     func getRating() ->String {

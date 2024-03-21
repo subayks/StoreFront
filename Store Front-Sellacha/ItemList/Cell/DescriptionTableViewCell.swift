@@ -10,6 +10,11 @@ import UIKit
 class DescriptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelDescription: UILabel!
+    var descriptionTableViewCellVM: DescriptionTableViewCellVM? {
+        didSet {
+            self.setValues()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +26,7 @@ class DescriptionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setValues() {
+        self.labelDescription.text = self.descriptionTableViewCellVM?.descModel?.desc ?? ""
+    }
 }

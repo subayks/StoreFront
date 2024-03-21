@@ -152,7 +152,7 @@ class ItemDetailViewModel: BaseViewModel {
     }
     
     func makeMoreSection() ->[PostsItem] {
-        return [self.productDetailsModel?.previous ?? PostsItem(),  self.productDetailsModel?.next ?? PostsItem()]
+        return self.productDetailsModel?.related_pro ?? [PostsItem()]
     }
     
     func getItemDetailViewModel() ->ItemDetailViewModel {
@@ -166,6 +166,10 @@ class ItemDetailViewModel: BaseViewModel {
         } else {
             image = self.productDetailsModel?.info?.preview?.url ?? ""
         }
-        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: "No Desc from Api",ratingCount: "0", itemName: ("₹\(self.productDetailsModel?.info?.price?.price ?? 0)"), itemImage: image))
+        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: self.productDetailsModel?.content?.excerpt ?? "",ratingCount: "0", itemName: ("₹\(self.productDetailsModel?.info?.price?.price ?? 0)"), itemImage: image))
+    }
+    
+    func getDescriptionTableViewCellVM() ->DescriptionTableViewCellVM {
+        return DescriptionTableViewCellVM(descModel: DescModel(desc: self.productDetailsModel?.content?.content ?? ""))
     }
 }

@@ -219,6 +219,7 @@ extension ItemDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 3 {
             let cell = itemDetailsTableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell") as! DescriptionTableViewCell
+            cell.descriptionTableViewCellVM = self.vm?.getDescriptionTableViewCellVM()
             return cell
         } else if indexPath.section == 4 {
             let cell = itemDetailsTableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as! ReviewTableViewCell

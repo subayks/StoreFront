@@ -315,15 +315,18 @@ struct Content: Codable {
   var termId : Int?    = nil
   var key    : String? = nil
   var value  : String? = nil
-
-  enum CodingKeys: String, CodingKey {
-
-    case id     = "id"
-    case termId = "term_id"
-    case key    = "key"
-    case value  = "value"
-  
-  }
+  var content : String? = nil
+  var excerpt: String? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case id     = "id"
+        case termId = "term_id"
+        case key    = "key"
+        case value  = "value"
+        case content = "content"
+        case excerpt = "excerpt"
+    }
 
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -332,7 +335,9 @@ struct Content: Codable {
     termId = try values.decodeIfPresent(Int.self    , forKey: .termId )
     key    = try values.decodeIfPresent(String.self , forKey: .key    )
     value  = try values.decodeIfPresent(String.self , forKey: .value  )
- 
+    content = try values.decodeIfPresent(String.self , forKey: .content  )
+    excerpt = try values.decodeIfPresent(String.self , forKey: .excerpt  )
+
   }
 
   init() {
