@@ -59,7 +59,7 @@ class WishListViewControllerVM: BaseViewModel {
         postItem.id = wishLitItem?.id
         var previewItem = PreviewImageModel()
         previewItem.url = wishLitItem?.preview
-        postItem.preview = previewItem
+        postItem.preview = previewItem.pivot
         return postItem
     }
     

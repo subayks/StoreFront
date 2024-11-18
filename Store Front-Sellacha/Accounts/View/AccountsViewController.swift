@@ -27,13 +27,13 @@ class AccountsViewController: UIViewController {
         self.showLoginView()
         
         let imageUrl = UserDefaults.standard.string(forKey: "logo") ?? ""
-        if let webpURL = URL(string: imageUrl)  {
-            DispatchQueue.main.async {
-                self.logoImage.sd_setImage(with: webpURL)
-            }
-        } else {
-            self.logoImage.image = UIImage(named: "Sample Image")
-        }
+//        if let webpURL = URL(string: imageUrl)  {
+//            DispatchQueue.main.async {
+//                self.logoImage.sd_setImage(with: webpURL)
+//            }
+//        } else {
+//            self.logoImage.image = UIImage(named: "Sample Image")
+//        }
         
         self.nameLabel.text = UserDefaults.standard.string(forKey: "userName") ?? ""
         self.orderView.layer.cornerRadius = 10

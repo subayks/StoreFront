@@ -11,8 +11,9 @@ import UIKit
 class CommonConfig {
     
     struct colors {
-        static let themeColor = UIColor(red: 152/255, green: 195/255, blue: 84/255, alpha: 1)
-        static let themeLightColor = UIColor(red: 245/255, green: 249/255, blue: 238/255, alpha: 1)
+        static let themeColor = UIColor(red: 29/255, green: 160/255, blue: 242/255, alpha: 1)
+        static let themeLightColor = UIColor(red: 216/255, green: 239/255, blue: 253/255, alpha: 1)
+        //#D8EFFD
         static let appSmallLogo = UIImage(named: "SmallLogo")
     }
     
@@ -21,7 +22,7 @@ class CommonConfig {
     }
     
     struct url {
-        static let finalURL = "https://storefront.sellacha.com/api"
+        static let finalURL = "https://karidari.com/api"
         static let imageBaseUrl = "https://storefront.sellacha.com/"
         static let createProductURL = "http://thedemostore.in/api/store"
     }

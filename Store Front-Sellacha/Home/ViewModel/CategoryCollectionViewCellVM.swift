@@ -35,7 +35,7 @@ class CategoryCollectionViewCellVM {
         if self.dressCellObject?.medias?.count ?? 0 > 0 {
             return self.dressCellObject?.medias?[0].url ?? ""
         } else {
-            return self.dressCellObject?.preview?.url ?? ""
+            return self.dressCellObject?.preview?.media?.url ?? ""
         }
     }
 }

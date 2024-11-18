@@ -164,12 +164,12 @@ class ItemDetailViewModel: BaseViewModel {
         if self.productDetailsModel?.info?.medias?.count ?? 0 > 0 {
             image = self.productDetailsModel?.info?.medias?[0].url ?? ""
         } else {
-            image = self.productDetailsModel?.info?.preview?.url ?? ""
+            image = self.productDetailsModel?.info?.preview?.media?.url ?? ""
         }
-        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: self.productDetailsModel?.content?.excerpt ?? "",ratingCount: "0", itemName: ("₹\(self.productDetailsModel?.info?.price?.price ?? 0)"), itemImage: image))
+        return ItemImageTableViewCellVM(ordersInfo: ItemImageObject(itemDesc: self.productDetailsModel?.content?.value ?? "",ratingCount: "0", itemName: ("₹\(self.productDetailsModel?.info?.price?.price ?? 0)"), itemImage: image))
     }
     
     func getDescriptionTableViewCellVM() ->DescriptionTableViewCellVM {
-        return DescriptionTableViewCellVM(descModel: DescModel(desc: self.productDetailsModel?.content?.content ?? ""))
+        return DescriptionTableViewCellVM(descModel: DescModel(desc: self.productDetailsModel?.content?.value ?? ""))
     }
 }

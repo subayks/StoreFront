@@ -17,13 +17,13 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageUrl = UserDefaults.standard.string(forKey: "logo") ?? ""
-        if let webpURL = URL(string: imageUrl)  {
-            DispatchQueue.main.async {
-                self.logoImage.sd_setImage(with: webpURL)
-            }
-        } else {
-            self.logoImage.image = UIImage(named: "Sample Image")
-        }
+//        if let webpURL = URL(string: imageUrl)  {
+//            DispatchQueue.main.async {
+//                self.logoImage.sd_setImage(with: webpURL)
+//            }
+//        } else {
+//            self.logoImage.image = UIImage(named: "Sample Image")
+//        }
         
         self.vm.getCategoryList()
         

@@ -36,234 +36,125 @@ struct ProductsModel: Codable {
 
 }
 
-
-//struct ProductsModel: Codable {
-//
-//  var posts      : Posts?   = Posts()
-//  var src        : String?  = nil
-//  var type       : Int?     = nil
-//  var actives    : Int?     = nil
-//  var drafts     : Int?     = nil
-//  var incomplete : Int?     = nil
-//  var trash      : Int?     = nil
-//  var request    : Request? = Request()
-//
-//  enum CodingKeys: String, CodingKey {
-//
-//    case posts      = "posts"
-//    case src        = "src"
-//    case type       = "type"
-//    case actives    = "active"
-//    case drafts     = "drafts"
-//    case incomplete = "incomplete"
-//    case trash      = "trash"
-//    case request    = "requests"
-//  
-//  }
-//
-//  init(from decoder: Decoder) throws {
-//    let values = try decoder.container(keyedBy: CodingKeys.self)
-//
-//    posts      = try values.decodeIfPresent(Posts.self   , forKey: .posts      )
-//    src        = try values.decodeIfPresent(String.self  , forKey: .src        )
-//    type       = try values.decodeIfPresent(Int.self     , forKey: .type       )
-//    actives    = try values.decodeIfPresent(Int.self     , forKey: .actives    )
-//    drafts     = try values.decodeIfPresent(Int.self     , forKey: .drafts     )
-//    incomplete = try values.decodeIfPresent(Int.self     , forKey: .incomplete )
-//    trash      = try values.decodeIfPresent(Int.self     , forKey: .trash      )
-//    request    = try values.decodeIfPresent(Request.self , forKey: .request    )
-// 
-//  }
-//
-//  init() {
-//
-//  }
-//
-//}
-
-//struct Posts: Codable {
-//
-//  var currentPage  : Int?     = nil
-//  var data         : [PostsItem]?  = []
-//  var firstPageUrl : String?  = nil
-//  var from         : Int?     = nil
-//  var lastPage     : Int?     = nil
-//  var lastPageUrl  : String?  = nil
-//  var links        : [Links]? = []
-//  var nextPageUrl  : String?  = nil
-//  var path         : String?  = nil
-//  var perPage      : Int?     = nil
-//  var prevPageUrl  : String?  = nil
-//  var to           : Int?     = nil
-//  var total        : Int?     = nil
-//
-//  enum CodingKeys: String, CodingKey {
-//
-//    case currentPage  = "current_page"
-//    case data         = "data"
-//    case firstPageUrl = "first_page_url"
-//    case from         = "from"
-//    case lastPage     = "last_page"
-//    case lastPageUrl  = "last_page_url"
-//    case links        = "links"
-//    case nextPageUrl  = "next_page_url"
-//    case path         = "path"
-//    case perPage      = "per_page"
-//    case prevPageUrl  = "prev_page_url"
-//    case to           = "to"
-//    case total        = "total"
-//  
-//  }
-//
-//  init(from decoder: Decoder) throws {
-//    let values = try decoder.container(keyedBy: CodingKeys.self)
-//
-//    currentPage  = try values.decodeIfPresent(Int.self     , forKey: .currentPage  )
-//    data         = try values.decodeIfPresent([PostsItem].self  , forKey: .data         )
-//    firstPageUrl = try values.decodeIfPresent(String.self  , forKey: .firstPageUrl )
-//    from         = try values.decodeIfPresent(Int.self     , forKey: .from         )
-//    lastPage     = try values.decodeIfPresent(Int.self     , forKey: .lastPage     )
-//    lastPageUrl  = try values.decodeIfPresent(String.self  , forKey: .lastPageUrl  )
-//    links        = try values.decodeIfPresent([Links].self , forKey: .links        )
-//    nextPageUrl  = try values.decodeIfPresent(String.self  , forKey: .nextPageUrl  )
-//    path         = try values.decodeIfPresent(String.self  , forKey: .path         )
-//    perPage      = try values.decodeIfPresent(Int.self     , forKey: .perPage      )
-//    prevPageUrl  = try values.decodeIfPresent(String.self  , forKey: .prevPageUrl  )
-//    to           = try values.decodeIfPresent(Int.self     , forKey: .to           )
-//    total        = try values.decodeIfPresent(Int.self     , forKey: .total        )
-// 
-//  }
-//
-//  init() {
-//
-//  }
-//
-//}
-
 struct PostsItem: Codable {
+    
+    var id              : Int?      = nil
+    var title           : String?   = nil
+    var slug            : String?   = nil
+    var userId          : Int?      = nil
+    var status          : Int?      = nil
+    var featured        : Int?      = nil
+    var type            : String?   = nil
+    var isAdmin         : Int?      = nil
+    var createdAt       : String?   = nil
+    var updatedAt       : String?   = nil
+    var serviceLocation : String?   = nil
+    var serviceType     : String?   = nil
+    var youtubeLink     : String?   = nil
+    var question1       : String?   = nil
+    var question2       : String?   = nil
+    var question3       : String?   = nil
+    var question4       : String?   = nil
+    var question5       : String?   = nil
+    var answer1         : String?   = nil
+    var answer2         : String?   = nil
+    var answer3         : String?   = nil
+    var answer4         : String?   = nil
+    var answer5         : String?   = nil
+    var affilId         : String?   = nil
+    var prvideo         : String?   = nil
+    var reviewsCount    : Int?      = nil
+    var preview         : PreviewModel?  = PreviewModel()
+    var attributes      : [String]? = []
+    var medias          : [Medias]? = []
+    var price           : Price?    = Price()
+    var stock           : Stock?    = Stock()
+    var affiliate       : String?   = nil
+    var categories      : [Categories]? = []
 
-  var id              : Int?      = nil
-  var title           : String?   = nil
-  var slug            : String?   = nil
-  var userId          : Int?      = nil
-  var status          : Int?      = nil
-  var featured        : Int?      = nil
-  var type            : String?   = nil
-  var isAdmin         : Int?      = nil
-  var createdAt       : String?   = nil
-  var updatedAt       : String?   = nil
-  var serviceLocation : String?   = nil
-  var serviceType     : String?   = nil
-  var youtubeLink     : String?   = nil
-  var question1       : String?   = nil
-  var question2       : String?   = nil
-  var question3       : String?   = nil
-  var question4       : String?   = nil
-  var question5       : String?   = nil
-  var answer1         : String?   = nil
-  var answer2         : String?   = nil
-  var answer3         : String?   = nil
-  var answer4         : String?   = nil
-  var answer5         : String?   = nil
-  var formateDate     : String?   = nil
-  var orderCount      : Int?      = nil
-  var preview         : PreviewImageModel?   = nil
-  var price           : Price?    = Price()
-  var affiliate       : String?   = nil
-  var medias          : [Medias]? = []
-  var content         : Content?  = Content()
-  var categories      : [Category]? = []
-  var brands          : [String]? = []
-  var seo             : Seo?      = Seo()
-  var options         : [String]? = []
-  var stock           : Stock?    = Stock()
+    enum CodingKeys: String, CodingKey {
 
-  enum CodingKeys: String, CodingKey {
+      case id              = "id"
+      case title           = "title"
+      case slug            = "slug"
+      case userId          = "user_id"
+      case status          = "status"
+      case featured        = "featured"
+      case type            = "type"
+      case isAdmin         = "is_admin"
+      case createdAt       = "created_at"
+      case updatedAt       = "updated_at"
+      case serviceLocation = "service_location"
+      case serviceType     = "service_type"
+      case youtubeLink     = "youtube_links"
+      case question1       = "question1"
+      case question2       = "question2"
+      case question3       = "question3"
+      case question4       = "question4"
+      case question5       = "question5"
+      case answer1         = "answer1"
+      case answer2         = "answer2"
+      case answer3         = "answer3"
+      case answer4         = "answer4"
+      case answer5         = "answer5"
+      case affilId         = "affil_id"
+      case prvideo         = "prvideo"
+      case reviewsCount    = "reviews_count"
+      case preview         = "preview"
+      case attributes      = "attributes"
+      case medias          = "medias"
+      case price           = "price"
+      case stock           = "stock"
+      case affiliate       = "affiliate"
+     case categories      = "categories"
 
-    case id              = "id"
-    case title           = "title"
-    case slug            = "slug"
-    case userId          = "user_id"
-    case status          = "status"
-    case featured        = "featured"
-    case type            = "type"
-    case isAdmin         = "is_admin"
-    case createdAt       = "created_at"
-    case updatedAt       = "updated_at"
-    case serviceLocation = "service_location"
-    case serviceType     = "service_type"
-    case youtubeLink     = "youtube_link"
-    case question1       = "question1"
-    case question2       = "question2"
-    case question3       = "question3"
-    case question4       = "question4"
-    case question5       = "question5"
-    case answer1         = "answer1"
-    case answer2         = "answer2"
-    case answer3         = "answer3"
-    case answer4         = "answer4"
-    case answer5         = "answer5"
-    case formateDate     = "formate_date"
-    case orderCount      = "order_count"
-    case preview         = "preview"
-    case price           = "price"
-    case affiliate       = "affiliate"
-    case medias          = "medias"
-    case content         = "content"
-    case categories      = "categories"
-    case brands          = "brands"
-    case seo             = "seo"
-    case options         = "options"
-    case stock           = "stock"
-  
-  }
+    }
 
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
+    init(from decoder: Decoder) throws {
+      let values = try decoder.container(keyedBy: CodingKeys.self)
 
-    id              = try values.decodeIfPresent(Int.self      , forKey: .id              )
-    title           = try values.decodeIfPresent(String.self   , forKey: .title           )
-    slug            = try values.decodeIfPresent(String.self   , forKey: .slug            )
-    userId          = try values.decodeIfPresent(Int.self      , forKey: .userId          )
-    status          = try values.decodeIfPresent(Int.self      , forKey: .status          )
-    featured        = try values.decodeIfPresent(Int.self      , forKey: .featured        )
-    type            = try values.decodeIfPresent(String.self   , forKey: .type            )
-    isAdmin         = try values.decodeIfPresent(Int.self      , forKey: .isAdmin         )
-    createdAt       = try values.decodeIfPresent(String.self   , forKey: .createdAt       )
-    updatedAt       = try values.decodeIfPresent(String.self   , forKey: .updatedAt       )
-    serviceLocation = try values.decodeIfPresent(String.self   , forKey: .serviceLocation )
-    serviceType     = try values.decodeIfPresent(String.self   , forKey: .serviceType     )
-    youtubeLink     = try values.decodeIfPresent(String.self   , forKey: .youtubeLink     )
-    question1       = try values.decodeIfPresent(String.self   , forKey: .question1       )
-    question2       = try values.decodeIfPresent(String.self   , forKey: .question2       )
-    question3       = try values.decodeIfPresent(String.self   , forKey: .question3       )
-    question4       = try values.decodeIfPresent(String.self   , forKey: .question4       )
-    question5       = try values.decodeIfPresent(String.self   , forKey: .question5       )
-    answer1         = try values.decodeIfPresent(String.self   , forKey: .answer1         )
-    answer2         = try values.decodeIfPresent(String.self   , forKey: .answer2         )
-    answer3         = try values.decodeIfPresent(String.self   , forKey: .answer3         )
-    answer4         = try values.decodeIfPresent(String.self   , forKey: .answer4         )
-    answer5         = try values.decodeIfPresent(String.self   , forKey: .answer5         )
-    formateDate     = try values.decodeIfPresent(String.self   , forKey: .formateDate     )
-    orderCount      = try values.decodeIfPresent(Int.self      , forKey: .orderCount      )
-    preview         = try values.decodeIfPresent(PreviewImageModel.self   , forKey: .preview         )
-    price           = try values.decodeIfPresent(Price.self    , forKey: .price           )
-    affiliate       = try values.decodeIfPresent(String.self   , forKey: .affiliate       )
-    medias          = try values.decodeIfPresent([Medias].self , forKey: .medias          )
-    content         = try values.decodeIfPresent(Content.self  , forKey: .content         )
-    categories      = try values.decodeIfPresent([Category].self , forKey: .categories      )
-    brands          = try values.decodeIfPresent([String].self , forKey: .brands          )
-    seo             = try values.decodeIfPresent(Seo.self      , forKey: .seo             )
-    options         = try values.decodeIfPresent([String].self , forKey: .options         )
-    stock           = try values.decodeIfPresent(Stock.self    , forKey: .stock           )
- 
-  }
+      id              = try values.decodeIfPresent(Int.self      , forKey: .id              )
+      title           = try values.decodeIfPresent(String.self   , forKey: .title           )
+      slug            = try values.decodeIfPresent(String.self   , forKey: .slug            )
+      userId          = try values.decodeIfPresent(Int.self      , forKey: .userId          )
+      status          = try values.decodeIfPresent(Int.self      , forKey: .status          )
+      featured        = try values.decodeIfPresent(Int.self      , forKey: .featured        )
+      type            = try values.decodeIfPresent(String.self   , forKey: .type            )
+      isAdmin         = try values.decodeIfPresent(Int.self      , forKey: .isAdmin         )
+      createdAt       = try values.decodeIfPresent(String.self   , forKey: .createdAt       )
+      updatedAt       = try values.decodeIfPresent(String.self   , forKey: .updatedAt       )
+      serviceLocation = try values.decodeIfPresent(String.self   , forKey: .serviceLocation )
+      serviceType     = try values.decodeIfPresent(String.self   , forKey: .serviceType     )
+      youtubeLink     = try values.decodeIfPresent(String.self   , forKey: .youtubeLink     )
+      question1       = try values.decodeIfPresent(String.self   , forKey: .question1       )
+      question2       = try values.decodeIfPresent(String.self   , forKey: .question2       )
+      question3       = try values.decodeIfPresent(String.self   , forKey: .question3       )
+      question4       = try values.decodeIfPresent(String.self   , forKey: .question4       )
+      question5       = try values.decodeIfPresent(String.self   , forKey: .question5       )
+      answer1         = try values.decodeIfPresent(String.self   , forKey: .answer1         )
+      answer2         = try values.decodeIfPresent(String.self   , forKey: .answer2         )
+      answer3         = try values.decodeIfPresent(String.self   , forKey: .answer3         )
+      answer4         = try values.decodeIfPresent(String.self   , forKey: .answer4         )
+      answer5         = try values.decodeIfPresent(String.self   , forKey: .answer5         )
+      affilId         = try values.decodeIfPresent(String.self   , forKey: .affilId         )
+      prvideo         = try values.decodeIfPresent(String.self   , forKey: .prvideo         )
+      reviewsCount    = try values.decodeIfPresent(Int.self      , forKey: .reviewsCount    )
+      preview         = try values.decodeIfPresent(PreviewModel.self  , forKey: .preview         )
+      attributes      = try values.decodeIfPresent([String].self , forKey: .attributes      )
+      medias          = try values.decodeIfPresent([Medias].self , forKey: .medias          )
+      price           = try values.decodeIfPresent(Price.self    , forKey: .price           )
+      stock           = try values.decodeIfPresent(Stock.self    , forKey: .stock           )
+      affiliate       = try values.decodeIfPresent(String.self   , forKey: .affiliate       )
+      categories      = try values.decodeIfPresent([Categories].self , forKey: .categories      )
 
-  init() {
+   
+    }
+
+    init() {
+
+    }
 
   }
-
-}
 
 struct Price: Codable {
 
@@ -315,18 +206,15 @@ struct Content: Codable {
   var termId : Int?    = nil
   var key    : String? = nil
   var value  : String? = nil
-  var content : String? = nil
-  var excerpt: String? = nil
-    
-    enum CodingKeys: String, CodingKey {
-        
-        case id     = "id"
-        case termId = "term_id"
-        case key    = "key"
-        case value  = "value"
-        case content = "content"
-        case excerpt = "excerpt"
-    }
+
+  enum CodingKeys: String, CodingKey {
+
+    case id     = "id"
+    case termId = "term_id"
+    case key    = "key"
+    case value  = "value"
+  
+  }
 
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -335,9 +223,7 @@ struct Content: Codable {
     termId = try values.decodeIfPresent(Int.self    , forKey: .termId )
     key    = try values.decodeIfPresent(String.self , forKey: .key    )
     value  = try values.decodeIfPresent(String.self , forKey: .value  )
-    content = try values.decodeIfPresent(String.self , forKey: .content  )
-    excerpt = try values.decodeIfPresent(String.self , forKey: .excerpt  )
-
+ 
   }
 
   init() {
@@ -345,6 +231,7 @@ struct Content: Codable {
   }
 
 }
+
 
 struct Seo: Codable {
 
@@ -416,6 +303,7 @@ struct Stock: Codable {
 
 }
 
+
 struct Request: Codable {
 
   var attributes : String? = nil
@@ -483,87 +371,6 @@ struct Links: Codable {
 
 }
 
-struct Category: Codable {
-
-  var id         : Int?    = nil
-  var name       : String? = nil
-  var slug       : String? = nil
-  var type       : String? = nil
-  var pId        : Int?    = nil
-  var featured   : Int?    = nil
-  var menuStatus : Int?    = nil
-  var isAdmin    : Int?    = nil
-  var createdAt  : String? = nil
-  var updatedAt  : String? = nil
-  var userId     : Int?    = nil
-  var pivot      : Pivot?  = Pivot()
-
-  enum CodingKeys: String, CodingKey {
-
-    case id         = "id"
-    case name       = "name"
-    case slug       = "slug"
-    case type       = "type"
-    case pId        = "p_id"
-    case featured   = "featured"
-    case menuStatus = "menu_status"
-    case isAdmin    = "is_admin"
-    case createdAt  = "created_at"
-    case updatedAt  = "updated_at"
-    case userId     = "user_id"
-    case pivot      = "pivot"
-  
-  }
-
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-
-    id         = try values.decodeIfPresent(Int.self    , forKey: .id         )
-    name       = try values.decodeIfPresent(String.self , forKey: .name       )
-    slug       = try values.decodeIfPresent(String.self , forKey: .slug       )
-    type       = try values.decodeIfPresent(String.self , forKey: .type       )
-    pId        = try values.decodeIfPresent(Int.self    , forKey: .pId        )
-    featured   = try values.decodeIfPresent(Int.self    , forKey: .featured   )
-    menuStatus = try values.decodeIfPresent(Int.self    , forKey: .menuStatus )
-    isAdmin    = try values.decodeIfPresent(Int.self    , forKey: .isAdmin    )
-    createdAt  = try values.decodeIfPresent(String.self , forKey: .createdAt  )
-    updatedAt  = try values.decodeIfPresent(String.self , forKey: .updatedAt  )
-    userId     = try values.decodeIfPresent(Int.self    , forKey: .userId     )
-    pivot      = try values.decodeIfPresent(Pivot.self  , forKey: .pivot      )
- 
-  }
-
-  init() {
-
-  }
-
-}
-
-struct Pivot: Codable {
-
-  var termId     : Int? = nil
-  var categoryId : Int? = nil
-
-  enum CodingKeys: String, CodingKey {
-
-    case termId     = "term_id"
-    case categoryId = "category_id"
-  
-  }
-
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-
-    termId     = try values.decodeIfPresent(Int.self , forKey: .termId     )
-    categoryId = try values.decodeIfPresent(Int.self , forKey: .categoryId )
- 
-  }
-
-  init() {
-
-  }
-
-}
 
 struct Medias: Codable {
 
@@ -573,7 +380,7 @@ struct Medias: Codable {
   var url       : String? = nil
   var createdAt : String? = nil
   var updatedAt : String? = nil
-  var pivot     : MediaPivot?  = MediaPivot()
+  var pivot     : Pivot?  = Pivot()
 
   enum CodingKeys: String, CodingKey {
 
@@ -596,7 +403,7 @@ struct Medias: Codable {
     url       = try values.decodeIfPresent(String.self , forKey: .url       )
     createdAt = try values.decodeIfPresent(String.self , forKey: .createdAt )
     updatedAt = try values.decodeIfPresent(String.self , forKey: .updatedAt )
-    pivot     = try values.decodeIfPresent(MediaPivot.self  , forKey: .pivot     )
+    pivot     = try values.decodeIfPresent(Pivot.self  , forKey: .pivot     )
  
   }
 
@@ -605,6 +412,7 @@ struct Medias: Codable {
   }
 
 }
+
 
 struct MediaPivot: Codable {
 
@@ -640,7 +448,7 @@ struct PreviewImageModel: Codable {
     var url       : String? = nil
     var createdAt : String? = nil
     var updatedAt : String? = nil
-    var pivot     : PreviewPivot?  = PreviewPivot()
+    var pivot     : PreviewModel?  = PreviewModel()
     
     enum CodingKeys: String, CodingKey {
         
@@ -663,7 +471,7 @@ struct PreviewImageModel: Codable {
         url       = try values.decodeIfPresent(String.self , forKey: .url       )
         createdAt = try values.decodeIfPresent(String.self , forKey: .createdAt )
         updatedAt = try values.decodeIfPresent(String.self , forKey: .updatedAt )
-        pivot     = try values.decodeIfPresent(PreviewPivot.self  , forKey: .pivot     )
+        pivot     = try values.decodeIfPresent(PreviewModel.self  , forKey: .pivot     )
         
     }
     
@@ -673,7 +481,143 @@ struct PreviewImageModel: Codable {
     
 }
 
-struct PreviewPivot: Codable {
+struct PreviewModel: Codable {
+
+  var mediaId : Int?   = nil
+  var termId  : Int?   = nil
+  var media   : Media? = Media()
+
+  enum CodingKeys: String, CodingKey {
+
+    case mediaId = "media_id"
+    case termId  = "term_id"
+    case media   = "media"
+  
+  }
+
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+
+    mediaId = try values.decodeIfPresent(Int.self   , forKey: .mediaId )
+    termId  = try values.decodeIfPresent(Int.self   , forKey: .termId  )
+    media   = try values.decodeIfPresent(Media.self , forKey: .media   )
+ 
+  }
+
+  init() {
+
+  }
+
+}
+
+struct Categories: Codable {
+
+  var id          : Int?    = nil
+  var name        : String? = nil
+  var slug        : String? = nil
+  var type        : String? = nil
+  var pId         : Int?    = nil
+  var featured    : Int?    = nil
+  var menuStatus  : Int?    = nil
+  var isAdmin     : Int?    = nil
+  var createdAt   : String? = nil
+  var updatedAt   : String? = nil
+  var userId      : Int?    = nil
+  var sId         : String? = nil
+  var imgtype     : String? = nil
+  var mainTag     : String? = nil
+  var subTag      : String? = nil
+  var childTag    : String? = nil
+  var nameTag     : String? = nil
+  var title       : String? = nil
+  var description : String? = nil
+  var pivot       : Pivot?  = Pivot()
+
+  enum CodingKeys: String, CodingKey {
+
+    case id          = "id"
+    case name        = "name"
+    case slug        = "slug"
+    case type        = "type"
+    case pId         = "p_id"
+    case featured    = "featured"
+    case menuStatus  = "menu_status"
+    case isAdmin     = "is_admin"
+    case createdAt   = "created_at"
+    case updatedAt   = "updated_at"
+    case userId      = "user_id"
+    case sId         = "s_id"
+    case imgtype     = "imgtype"
+    case mainTag     = "main_tag"
+    case subTag      = "sub_tag"
+    case childTag    = "child_tag"
+    case nameTag     = "name_tag"
+    case title       = "title"
+    case description = "description"
+    case pivot       = "pivot"
+  
+  }
+
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+
+    id          = try values.decodeIfPresent(Int.self    , forKey: .id          )
+    name        = try values.decodeIfPresent(String.self , forKey: .name        )
+    slug        = try values.decodeIfPresent(String.self , forKey: .slug        )
+    type        = try values.decodeIfPresent(String.self , forKey: .type        )
+    pId         = try values.decodeIfPresent(Int.self    , forKey: .pId         )
+    featured    = try values.decodeIfPresent(Int.self    , forKey: .featured    )
+    menuStatus  = try values.decodeIfPresent(Int.self    , forKey: .menuStatus  )
+    isAdmin     = try values.decodeIfPresent(Int.self    , forKey: .isAdmin     )
+    createdAt   = try values.decodeIfPresent(String.self , forKey: .createdAt   )
+    updatedAt   = try values.decodeIfPresent(String.self , forKey: .updatedAt   )
+    userId      = try values.decodeIfPresent(Int.self    , forKey: .userId      )
+    sId         = try values.decodeIfPresent(String.self , forKey: .sId         )
+    imgtype     = try values.decodeIfPresent(String.self , forKey: .imgtype     )
+    mainTag     = try values.decodeIfPresent(String.self , forKey: .mainTag     )
+    subTag      = try values.decodeIfPresent(String.self , forKey: .subTag      )
+    childTag    = try values.decodeIfPresent(String.self , forKey: .childTag    )
+    nameTag     = try values.decodeIfPresent(String.self , forKey: .nameTag     )
+    title       = try values.decodeIfPresent(String.self , forKey: .title       )
+    description = try values.decodeIfPresent(String.self , forKey: .description )
+    pivot       = try values.decodeIfPresent(Pivot.self  , forKey: .pivot       )
+ 
+  }
+
+  init() {
+
+  }
+
+}
+
+struct Media: Codable {
+
+  var id  : Int?    = nil
+  var url : String? = nil
+
+  enum CodingKeys: String, CodingKey {
+
+    case id  = "id"
+    case url = "url"
+  
+  }
+
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+
+    id  = try values.decodeIfPresent(Int.self    , forKey: .id  )
+    url = try values.decodeIfPresent(String.self , forKey: .url )
+ 
+  }
+
+  init() {
+
+  }
+
+}
+
+
+struct Pivot: Codable {
 
   var termId  : Int? = nil
   var mediaId : Int? = nil
